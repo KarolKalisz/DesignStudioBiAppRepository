@@ -3,12 +3,6 @@
 		<bi:property name="THEME" value="sap_bluecrystal"/>
 	</bi:component>
 	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
-		<bi:component name="NOTIFICATIONBAR" type="org_kalisz_karol_scn_pack_NotificationBar">
-			<bi:property name="connectToCommonMessages" value="X"/>
-			<bi:property name="deleteNotificationOnClick" value="false"/>
-			<bi:property name="removeAllOnMinimize" value="X"/>
-			<bi:property name="defaultImage" value="category.png"/>
-		</bi:component>
 		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
 			<bi:property name="TEXT" value="Add Error Message"/>
 			<bi:property name="LEFT_MARGIN" value="49"/>
@@ -146,6 +140,12 @@ NOTIFICATIONBAR.addNotification("Some Category Text", "INFO", INPUTFIELD_4.getVa
 			<bi:property name="TOP_MARGIN" value="493"/>
 			<bi:property name="WIDTH" value="266"/>
 			<bi:property name="VALUE" value="KAROL"/>
+		</bi:component>
+		<bi:component name="NOTIFICATIONBAR" type="org_kalisz_karol_scn_pack_NotificationBar">
+			<bi:property name="connectToCommonMessages" value="X"/>
+			<bi:property name="deleteNotificationOnClick" value="false"/>
+			<bi:property name="removeAllOnMinimize" value="X"/>
+			<bi:property name="defaultImage" value="category.png"/>
 		</bi:component>
 	</bi:component>
 </bi:biapp>
