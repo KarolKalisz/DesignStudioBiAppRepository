@@ -1,0 +1,313 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+		<bi:property name="GLOBALVARIABLES" type="UNORDEREDLIST">
+			<bi:property name="GLOBALVARIABLE" index="0">
+				<bi:property name="NAME" value="MY_VARIABLE"/>
+				<bi:property name="VALUE" value="&apos;&apos;"/>
+				<bi:property name="URL_PARAM" value=""/>
+			</bi:property>
+		</bi:property>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="REUSABLE_SCRIPTS" type="PANEL_COMPONENT">
+			<bi:property name="DESIGNER_VISIBLE" value=""/>
+			<bi:component name="SCRIPT_PREPARE_CONTENT_FOR_LOAD" type="CHECKBOX_COMPONENT">
+				<bi:property name="TEXT" value="function for content preparation before the bookmark will be loaded"/>
+				<bi:property name="ENABLED" value=""/>
+				<bi:property name="DESIGNER_VISIBLE" value=""/>
+				<bi:property name="ON_CLICK">
+					<bi:value><![CDATA[
+// we need to collect the content first
+
+// initialize the local variable
+var contentToMove = "";
+
+// we put the global variable value
+var globalVariableValue = MY_VARIABLE;
+contentToMove = contentToMove + "MY_VARIABLE=" + globalVariableValue + ";";
+
+// we put also the content of the input field
+var inputFieldContent = INPUTFIELD_SOME_CONTENT.getValue();
+contentToMove = contentToMove + "INPUTFIELD_SOME_CONTENT=" + inputFieldContent + ";";
+
+APPLICATION.createInfoMessage("Save = " + contentToMove);
+Bookmark.saveBookmark("|" + contentToMove);
+]]></bi:value>
+				</bi:property>
+				<bi:property name="VISIBLE" value=""/>
+			</bi:component>
+			<bi:component name="SCRIPT_LOAD_CONTENT_AFTER_LOAD" type="CHECKBOX_COMPONENT">
+				<bi:property name="TEXT" value="function for load of the saved content after bookmark load"/>
+				<bi:property name="VISIBLE" value=""/>
+				<bi:property name="DESIGNER_VISIBLE" value=""/>
+				<bi:property name="ON_CLICK">
+					<bi:value><![CDATA[
+var bookmarks = Bookmark.getAllBookmarks();
+
+bookmarks.forEach(function(bookmark, bookmarkIndex) {
+	var description = bookmark.text;
+	
+	if(description.indexOf("|") == 0) {
+		// now we read the content.
+		
+		// and we can / should delete this temporary bookmark
+		Bookmark.deleteBookmark(bookmark.name);
+		
+		// cut the "|" character
+		var content = description.substring(1);
+		var partOfContent = content.split(";");
+
+		APPLICATION.createInfoMessage("content=" + content);
+
+		partOfContent.forEach(function(partLoop, partLoopIndex) {
+			APPLICATION.createInfoMessage("partLoop=" + partLoop);
+
+			if(partLoop != "") {
+				var nameValuePair = partLoop.split("=");
+			
+				var name = "";
+				var value= "";
+	
+				nameValuePair.forEach(function(nameValuePairLoop, nameValuePairLoopIndex) {
+					APPLICATION.createInfoMessage("nameValuePairLoop=" + nameValuePairLoop);
+					
+					if(nameValuePairLoop != "") {
+						if(nameValuePairLoopIndex==0) {
+							name = nameValuePairLoop;
+						}
+						if(nameValuePairLoopIndex==1) {
+							value = nameValuePairLoop;					
+						}
+					}
+				});
+				
+				if(name != "") {
+					if(name == "MY_VARIABLE") {
+						MY_VARIABLE = value;
+					}
+					
+					if(name == "INPUTFIELD_SOME_CONTENT") {
+						INPUTFIELD_SOME_CONTENT.setValue(value);
+					}
+				}
+			}
+		});	
+	}
+});
+]]></bi:value>
+				</bi:property>
+				<bi:property name="ENABLED" value=""/>
+			</bi:component>
+		</bi:component>
+		<bi:component name="BUTTON_LOAD_ALL" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Load All Bookmarks"/>
+			<bi:property name="LEFT_MARGIN" value="72"/>
+			<bi:property name="TOP_MARGIN" value="19"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var all = Bookmark.getAllBookmarks();
+
+var characterForIgnore = "|";
+
+DROPDOWN_BOOKMARKS.removeAllItems();
+
+DROPDOWN_BOOKMARKS.addItem("NA", "- select bookmark -");
+
+all.forEach(function(element, index) {
+	var description = element.text;
+	var id = element.name;
+	
+	// first character is "|"
+	if(Convert.indexOf(description, characterForIgnore) == 0) {
+		// Bookmark.deleteBookmark(id);
+	} else {
+		DROPDOWN_BOOKMARKS.addItem(id, description);		
+	}
+});]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="200"/>
+		</bi:component>
+		<bi:component name="DISPLAY_TEXT_LIST" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="List of Bookmarks"/>
+			<bi:property name="LEFT_MARGIN" value="72"/>
+			<bi:property name="TOP_MARGIN" value="177"/>
+			<bi:property name="WIDTH" value="170"/>
+			<bi:property name="HEIGHT" value="21"/>
+		</bi:component>
+		<bi:component name="DROPDOWN_BOOKMARKS" type="DROPDOWN_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="72"/>
+			<bi:property name="TOP_MARGIN" value="196"/>
+			<bi:property name="WIDTH" value="187"/>
+		</bi:component>
+		<bi:component name="BUTTON_PERSONALIZE" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Personalize Application"/>
+			<bi:property name="LEFT_MARGIN" value="72"/>
+			<bi:property name="TOP_MARGIN" value="57"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[State.setPersonalization();]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="200"/>
+		</bi:component>
+		<bi:component name="BUTTON_DELETE_PERSONALIZATION" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Delete Personalization"/>
+			<bi:property name="LEFT_MARGIN" value="286"/>
+			<bi:property name="TOP_MARGIN" value="56"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[State.deletePersonalization();]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="200"/>
+		</bi:component>
+		<bi:component name="BUTTON_SAVE_BOOKMARK" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Save Bookmark"/>
+			<bi:property name="LEFT_MARGIN" value="72"/>
+			<bi:property name="TOP_MARGIN" value="147"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[// some magic to not save the title in the bookmark
+
+var bookmarkTitle = INPUTFIELD_SAVE_TITLE.getValue();
+
+// clean save title before really save
+INPUTFIELD_SAVE_TITLE.setValue("");
+
+var id = Bookmark.saveBookmark(bookmarkTitle);
+var url = Bookmark.getBookmarkUrl(id);
+Bookmark.shareBookmark(url);
+
+// reload all
+BUTTON_LOAD_ALL.onClick();]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="200"/>
+		</bi:component>
+		<bi:component name="DISPLAY_BOOKMARK_TITLE" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Bookmark Description"/>
+			<bi:property name="LEFT_MARGIN" value="72"/>
+			<bi:property name="TOP_MARGIN" value="100"/>
+			<bi:property name="WIDTH" value="170"/>
+			<bi:property name="HEIGHT" value="21"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_SAVE_TITLE" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="72"/>
+			<bi:property name="TOP_MARGIN" value="121"/>
+			<bi:property name="WIDTH" value="200"/>
+		</bi:component>
+		<bi:component name="BUTTON_LOAD_BOOKMARK_SIMPLE" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Load Bookmark (Simple)"/>
+			<bi:property name="LEFT_MARGIN" value="72"/>
+			<bi:property name="TOP_MARGIN" value="230"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var id = DROPDOWN_BOOKMARKS.getSelectedValue();
+
+Bookmark.loadBookmark(id);
+
+// reload all bookmarks
+BUTTON_LOAD_ALL.onClick();]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="200"/>
+		</bi:component>
+		<bi:component name="BUTTON_LOAD_BOOKMARK_TRANSFER_VARIABLE" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Load Bookmark (Transfer)"/>
+			<bi:property name="LEFT_MARGIN" value="72"/>
+			<bi:property name="TOP_MARGIN" value="272"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var id = DROPDOWN_BOOKMARKS.getSelectedValue();
+
+// magic for move of the global script variable, or any other value
+SCRIPT_PREPARE_CONTENT_FOR_LOAD.onClick();
+
+Bookmark.loadBookmark(id);
+
+SCRIPT_LOAD_CONTENT_AFTER_LOAD.onClick();
+
+// reload all bookmarks
+BUTTON_LOAD_ALL.onClick();
+]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="200"/>
+		</bi:component>
+		<bi:component name="DISPLAY_TEXT_INPUT" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="This input field can be used for Content Check"/>
+			<bi:property name="LEFT_MARGIN" value="72"/>
+			<bi:property name="TOP_MARGIN" value="319"/>
+			<bi:property name="WIDTH" value="250"/>
+			<bi:property name="HEIGHT" value="21"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_CONTENT" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="72"/>
+			<bi:property name="TOP_MARGIN" value="345"/>
+			<bi:property name="WIDTH" value="200"/>
+		</bi:component>
+		<bi:component name="DISPLAY_TEXT_CONTENT" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="This input field will be modified after bookmark load when callint the &quot;Load Bookmark (Transfer)&quot; function"/>
+			<bi:property name="LEFT_MARGIN" value="72"/>
+			<bi:property name="TOP_MARGIN" value="540"/>
+			<bi:property name="WIDTH" value="527"/>
+			<bi:property name="HEIGHT" value="21"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_SOME_CONTENT" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="72"/>
+			<bi:property name="TOP_MARGIN" value="563"/>
+			<bi:property name="WIDTH" value="494"/>
+		</bi:component>
+		<bi:component name="DISPLAY_TEXT_GLOBAL_VAR" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Input Filed for Global Variable"/>
+			<bi:property name="LEFT_MARGIN" value="72"/>
+			<bi:property name="TOP_MARGIN" value="379"/>
+			<bi:property name="WIDTH" value="446"/>
+			<bi:property name="HEIGHT" value="21"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_GLOBAL_VARIABLE" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="72"/>
+			<bi:property name="TOP_MARGIN" value="400"/>
+			<bi:property name="WIDTH" value="200"/>
+		</bi:component>
+		<bi:component name="BUTTON_APPLY_GLOBAL_VARIABLE" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Apply Global Variable"/>
+			<bi:property name="LEFT_MARGIN" value="72"/>
+			<bi:property name="TOP_MARGIN" value="425"/>
+			<bi:property name="WIDTH" value="175"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[MY_VARIABLE = INPUTFIELD_GLOBAL_VARIABLE.getValue();
+
+TEXT_GLOBAL_VARIABLE.setText(MY_VARIABLE);]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_LOAD_GLOBAL_VARIABLE" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Reload Global Variable"/>
+			<bi:property name="LEFT_MARGIN" value="72"/>
+			<bi:property name="TOP_MARGIN" value="465"/>
+			<bi:property name="WIDTH" value="175"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[TEXT_GLOBAL_VARIABLE.setText(MY_VARIABLE);]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="TEXT_GLOBAL_VARIABLE" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="- empty -"/>
+			<bi:property name="LEFT_MARGIN" value="72"/>
+			<bi:property name="TOP_MARGIN" value="510"/>
+			<bi:property name="WIDTH" value="165"/>
+			<bi:property name="HEIGHT" value="21"/>
+		</bi:component>
+		<bi:component name="PANEL_1" type="PANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="473"/>
+			<bi:property name="TOP_MARGIN" value="218"/>
+			<bi:property name="WIDTH" value="376"/>
+			<bi:property name="HEIGHT" value="206"/>
+			<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+				<bi:property name="TEXT" value="Button"/>
+				<bi:property name="LEFT_MARGIN" value="85"/>
+				<bi:property name="TOP_MARGIN" value="141"/>
+			</bi:component>
+		</bi:component>
+		<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Button"/>
+			<bi:property name="LEFT_MARGIN" value="660"/>
+			<bi:property name="TOP_MARGIN" value="55"/>
+		</bi:component>
+		<bi:component name="BUTTON_1_KAROL" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Karol"/>
+			<bi:property name="LEFT_MARGIN" value="691"/>
+			<bi:property name="TOP_MARGIN" value="146"/>
+		</bi:component>
+	</bi:component>
+</bi:biapp>

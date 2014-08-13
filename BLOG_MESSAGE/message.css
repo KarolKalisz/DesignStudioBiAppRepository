@@ -1,0 +1,14 @@
+.sapzenmessageview-PopupContainer {
+	width: 800px !important;
+	height: 520px !important;
+}
+.sapzenmessageview-PopupContainerHeader {
+	width: 800px !important;
+}
+.sapzenmessageview-RowRepeaterRow {
+	width: 800px !important;
+}
+.sapzenmessageview-HeaderText {
+	/* set to popup size - 60px*/
+	width: 740px !important;
+}

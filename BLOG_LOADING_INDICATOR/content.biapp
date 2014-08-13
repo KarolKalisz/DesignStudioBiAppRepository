@@ -1,0 +1,40 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+		<bi:property name="CUSTOM_CSS" value="loading.css"/>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="<first_system"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="<some_query>"/>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Button Which triggers logon dialog to check the loading"/>
+			<bi:property name="LEFT_MARGIN" value="88"/>
+			<bi:property name="TOP_MARGIN" value="125"/>
+			<bi:property name="WIDTH" value="464"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+DS_1.assignDataSource("<second_system>", DataSourceType.QUERY, "<some_query>");
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="CROSSTAB_1" type="CROSSTAB_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="88"/>
+			<bi:property name="TOP_MARGIN" value="185"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="WIDTH" value="565"/>
+			<bi:property name="HEIGHT" value="376"/>
+		</bi:component>
+		<bi:component name="IMAGE_1" type="IMAGE_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="88"/>
+			<bi:property name="TOP_MARGIN" value="64"/>
+			<bi:property name="WIDTH" value="48"/>
+			<bi:property name="HEIGHT" value="48"/>
+			<bi:property name="IMAGE" value="ajax-loader.gif"/>
+		</bi:component>
+	</bi:component>
+</bi:biapp>

@@ -1,0 +1,33 @@
+.sapzencrosstab-loadingAnimation {
+	background-image:url('/aad/zen/mimes/LOADING_INDICATOR/ajax-loader.gif');
+	width: 48px !important;
+	height: 48px !important;
+	top: 50% !important;
+	left:50% !important;
+	z-index: 100000099;
+}
+	
+.customLoadingIndicatorZenClass {
+	background-image:url('/aad/zen/mimes/LOADING_INDICATOR/ajax-loader.gif');
+	width: 48px !important;
+	height: 48px !important;
+	top: 50% !important;
+	left:50% !important;
+	z-index: 100000099;
+}
+
+.customGlasspaneZenClass {
+	background: #ffffff !important;
+	opacity: 0.3 !important;
+	width: 100% !important;
+	height: 100% !important;
+	border: 0px solid !important;
+	z-index: 100000098;
+}
+
+.zenCursorLoadingIndicator-outerDiv {
+	width: 100% !important;
+	height: 100% !important;
+	border: 0px solid !important;
+	z-index: 100000098;
+}
