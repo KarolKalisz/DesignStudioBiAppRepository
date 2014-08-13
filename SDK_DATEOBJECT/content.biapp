@@ -433,15 +433,22 @@ APPLICATION.doBackgroundProcessing();]]></bi:value>
 				<bi:property name="SELECTION_ITEM" index="0">
 					<bi:property name="VALUE" value="DAY"/>
 					<bi:property name="SELECTED" value="X"/>
+					<bi:property name="TEXT" value="DAY"/>
 				</bi:property>
 				<bi:property name="SELECTION_ITEM" index="1">
 					<bi:property name="VALUE" value="WEEK"/>
+					<bi:property name="SELECTED" value=""/>
+					<bi:property name="TEXT" value="WEEK"/>
 				</bi:property>
 				<bi:property name="SELECTION_ITEM" index="2">
 					<bi:property name="VALUE" value="MONTH"/>
+					<bi:property name="SELECTED" value=""/>
+					<bi:property name="TEXT" value="MONTH"/>
 				</bi:property>
 				<bi:property name="SELECTION_ITEM" index="3">
 					<bi:property name="VALUE" value="YEAR"/>
+					<bi:property name="SELECTED" value=""/>
+					<bi:property name="TEXT" value="YEAR"/>
 				</bi:property>
 			</bi:property>
 			<bi:property name="LEFT_MARGIN" value="43"/>
