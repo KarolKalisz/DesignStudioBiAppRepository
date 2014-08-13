@@ -1,0 +1,151 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.kalisz.karol.scn.pack" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="NOTIFICATIONBAR" type="org_kalisz_karol_scn_pack_NotificationBar">
+			<bi:property name="connectToCommonMessages" value="X"/>
+			<bi:property name="deleteNotificationOnClick" value="false"/>
+			<bi:property name="removeAllOnMinimize" value="X"/>
+			<bi:property name="defaultImage" value="category.png"/>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Add Error Message"/>
+			<bi:property name="LEFT_MARGIN" value="49"/>
+			<bi:property name="TOP_MARGIN" value="63"/>
+			<bi:property name="WIDTH" value="246"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+APPLICATION.createErrorMessage("A new Error Message");
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Add Warning Message"/>
+			<bi:property name="LEFT_MARGIN" value="49"/>
+			<bi:property name="TOP_MARGIN" value="114"/>
+			<bi:property name="WIDTH" value="246"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+APPLICATION.createWarningMessage("A new Warning Message");
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Add Info Message"/>
+			<bi:property name="LEFT_MARGIN" value="49"/>
+			<bi:property name="TOP_MARGIN" value="164"/>
+			<bi:property name="WIDTH" value="246"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+APPLICATION.createInfoMessage("A new Info Message");
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_4" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Add Notification Level Error"/>
+			<bi:property name="LEFT_MARGIN" value="430"/>
+			<bi:property name="TOP_MARGIN" value="63"/>
+			<bi:property name="WIDTH" value="246"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+NOTIFICATIONBAR.addErrorNotification("Some Error to Add");
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_5" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Add Notification Level Warning"/>
+			<bi:property name="LEFT_MARGIN" value="430"/>
+			<bi:property name="TOP_MARGIN" value="114"/>
+			<bi:property name="WIDTH" value="246"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+NOTIFICATIONBAR.addWarningNotification("First Warning!");
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_6" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Add Notification Level Info"/>
+			<bi:property name="LEFT_MARGIN" value="430"/>
+			<bi:property name="TOP_MARGIN" value="163"/>
+			<bi:property name="WIDTH" value="246"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+NOTIFICATIONBAR.addInfoNotification("First Info!");
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_7" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Add Notification Success Info"/>
+			<bi:property name="LEFT_MARGIN" value="430"/>
+			<bi:property name="TOP_MARGIN" value="213"/>
+			<bi:property name="WIDTH" value="246"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+NOTIFICATIONBAR.addSuccessNotification("First Success!");
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_8" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Add Category"/>
+			<bi:property name="LEFT_MARGIN" value="430"/>
+			<bi:property name="TOP_MARGIN" value="289"/>
+			<bi:property name="WIDTH" value="246"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+NOTIFICATIONBAR.addCategory(INPUTFIELD_1.getValue(), INPUTFIELD_2.getValue(), INPUTFIELD_3.getValue());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="INPUTFIELD_1" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="518"/>
+			<bi:property name="TOP_MARGIN" value="335"/>
+			<bi:property name="WIDTH" value="266"/>
+			<bi:property name="VALUE" value="KAROL"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_2" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="518"/>
+			<bi:property name="TOP_MARGIN" value="365"/>
+			<bi:property name="WIDTH" value="266"/>
+			<bi:property name="VALUE" value="Karols Infos"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_3" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="518"/>
+			<bi:property name="TOP_MARGIN" value="395"/>
+			<bi:property name="WIDTH" value="266"/>
+			<bi:property name="VALUE" value="category.png"/>
+		</bi:component>
+		<bi:component name="TEXT_1" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Key"/>
+			<bi:property name="LEFT_MARGIN" value="442"/>
+			<bi:property name="TOP_MARGIN" value="338"/>
+		</bi:component>
+		<bi:component name="TEXT_2" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Text"/>
+			<bi:property name="LEFT_MARGIN" value="442"/>
+			<bi:property name="TOP_MARGIN" value="368"/>
+		</bi:component>
+		<bi:component name="TEXT_3" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Image"/>
+			<bi:property name="LEFT_MARGIN" value="442"/>
+			<bi:property name="TOP_MARGIN" value="398"/>
+		</bi:component>
+		<bi:component name="BUTTON_9" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Add Notification to Category"/>
+			<bi:property name="LEFT_MARGIN" value="432"/>
+			<bi:property name="TOP_MARGIN" value="447"/>
+			<bi:property name="WIDTH" value="246"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+NOTIFICATIONBAR.addNotification("Some Category Text", "INFO", INPUTFIELD_4.getValue());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="INPUTFIELD_4" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="520"/>
+			<bi:property name="TOP_MARGIN" value="493"/>
+			<bi:property name="WIDTH" value="266"/>
+			<bi:property name="VALUE" value="KAROL"/>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
