@@ -1,0 +1,501 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.kalisz.karol.scn.simpledate" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+		<bi:property name="ON_BACKGROUND_PROCESSING">
+			<bi:value><![CDATA[
+DATEOBJECT_1.rollDays(-1);
+ROLL_COUNTER = ROLL_COUNTER + 1;
+
+TEXT_3.setText(DATEOBJECT_1.internal_toString());
+
+var oldText = TEXT_10.getText();
+if(oldText.length > 350) {
+	// oldText = oldText.substring("DD.MM.YYYY WW".length + 1);
+}
+
+var dayString = "{\"i\":" + ROLL_COUNTER + ",\"k\":" + DATEOBJECT_1.format("YYYYMMDD") + ",\"y\":" + DATEOBJECT_1.getYear() + ",\"m\":"+DATEOBJECT_1.getMonth()+ ",\"d\":"+DATEOBJECT_1.getDay()+ ",\"w\":"+DATEOBJECT_1.getCalendarWeek() + ",\"s\":"+DATEOBJECT_1.getDayOfWeek()+",\"t\":"+DATEOBJECT_1.getDayOfYear()+"}";
+TEXT_10.setText(oldText + "\n" + dayString);
+
+if(ROLL_COUNTER < 360) {
+	APPLICATION.doBackgroundProcessing();
+}
+]]></bi:value>
+		</bi:property>
+		<bi:property name="GLOBALVARIABLES" type="UNORDEREDLIST">
+			<bi:property name="GLOBALVARIABLE" index="0">
+				<bi:property name="NAME" value="ROLL_COUNTER"/>
+				<bi:property name="VALUE" value="-1"/>
+				<bi:property name="URL_PARAM" value=""/>
+			</bi:property>
+		</bi:property>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="DATEOBJECT_1" type="org_kalisz_karol_scn_simpledate_SimpleDateObject">
+			<bi:property name="LEFT_MARGIN" value="125"/>
+			<bi:property name="TOP_MARGIN" value="94"/>
+		</bi:component>
+		<bi:component name="DATEOBJECT_2" type="org_kalisz_karol_scn_simpledate_SimpleDateObject">
+			<bi:property name="LEFT_MARGIN" value="125"/>
+			<bi:property name="TOP_MARGIN" value="94"/>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="04.08.2014 -&gt; Week 32"/>
+			<bi:property name="LEFT_MARGIN" value="15"/>
+			<bi:property name="TOP_MARGIN" value="18"/>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+DATEOBJECT_1.initialize(2014, 08, 04);
+
+TEXT_1.setText(DATEOBJECT_1.toLocaleString());
+TEXT_2.setText("Week: "+ DATEOBJECT_1.getCalendarWeek());
+
+TEXT_3.setText(DATEOBJECT_1.internal_toString());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="10.08.2014 -&gt; Week 32"/>
+			<bi:property name="LEFT_MARGIN" value="14"/>
+			<bi:property name="TOP_MARGIN" value="64"/>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+DATEOBJECT_1.initialize(2014, 08, 10);
+
+TEXT_1.setText(DATEOBJECT_1.toLocaleString());
+TEXT_2.setText("Week: "+ DATEOBJECT_1.getCalendarWeek());
+
+TEXT_3.setText(DATEOBJECT_1.internal_toString());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_7" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="03.08.2014 -&gt; Week 31"/>
+			<bi:property name="LEFT_MARGIN" value="16"/>
+			<bi:property name="TOP_MARGIN" value="107"/>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+DATEOBJECT_1.initialize(2014, 08, 03);
+
+TEXT_1.setText(DATEOBJECT_1.toLocaleString());
+TEXT_2.setText("Week: "+ DATEOBJECT_1.getCalendarWeek());
+
+TEXT_3.setText(DATEOBJECT_1.internal_toString());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_8" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="11.08.2014 -&gt; Week 33"/>
+			<bi:property name="LEFT_MARGIN" value="15"/>
+			<bi:property name="TOP_MARGIN" value="153"/>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+DATEOBJECT_1.initialize(2014, 08, 11);
+
+TEXT_1.setText(DATEOBJECT_1.toLocaleString());
+TEXT_2.setText("Week: "+ DATEOBJECT_1.getCalendarWeek());
+
+TEXT_3.setText(DATEOBJECT_1.internal_toString());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="07.05.2012 -&gt; Week 19"/>
+			<bi:property name="LEFT_MARGIN" value="14"/>
+			<bi:property name="TOP_MARGIN" value="203"/>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+DATEOBJECT_1.initialize(2012, 05, 07);
+
+TEXT_1.setText(DATEOBJECT_1.toLocaleString());
+TEXT_2.setText("Week: "+ DATEOBJECT_1.getCalendarWeek());
+
+TEXT_3.setText(DATEOBJECT_1.internal_toString());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_4" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="13.05.2012 -&gt; Week 19"/>
+			<bi:property name="LEFT_MARGIN" value="13"/>
+			<bi:property name="TOP_MARGIN" value="249"/>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+DATEOBJECT_1.initialize(2012, 05, 13);
+
+TEXT_1.setText(DATEOBJECT_1.toLocaleString());
+TEXT_2.setText("Week: "+ DATEOBJECT_1.getCalendarWeek());
+
+TEXT_3.setText(DATEOBJECT_1.internal_toString());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_5" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="06.05.2012 -&gt; Week 18"/>
+			<bi:property name="LEFT_MARGIN" value="15"/>
+			<bi:property name="TOP_MARGIN" value="299"/>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+DATEOBJECT_1.initialize(2012, 05, 06);
+
+TEXT_1.setText(DATEOBJECT_1.toLocaleString());
+TEXT_2.setText("Week: "+ DATEOBJECT_1.getCalendarWeek());
+
+TEXT_3.setText(DATEOBJECT_1.internal_toString());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_6" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="13.05.2012 -&gt; Week 20"/>
+			<bi:property name="LEFT_MARGIN" value="14"/>
+			<bi:property name="TOP_MARGIN" value="345"/>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+DATEOBJECT_1.initialize(2012, 05, 14);
+
+TEXT_1.setText(DATEOBJECT_1.toLocaleString());
+TEXT_2.setText("Week: "+ DATEOBJECT_1.getCalendarWeek());
+
+TEXT_3.setText(DATEOBJECT_1.internal_toString());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_17" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Custom as Below"/>
+			<bi:property name="LEFT_MARGIN" value="14"/>
+			<bi:property name="TOP_MARGIN" value="403"/>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+DATEOBJECT_1.initialize(Convert.stringToInt(INPUTFIELD_1.getValue()), Convert.stringToInt(INPUTFIELD_2.getValue()), Convert.stringToInt(INPUTFIELD_3.getValue()));
+
+TEXT_1.setText(DATEOBJECT_1.toLocaleString());
+TEXT_2.setText("Week: "+ DATEOBJECT_1.getCalendarWeek());
+
+TEXT_3.setText(DATEOBJECT_1.internal_toString());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="TEXT_4" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Year"/>
+			<bi:property name="LEFT_MARGIN" value="14"/>
+			<bi:property name="TOP_MARGIN" value="443"/>
+		</bi:component>
+		<bi:component name="TEXT_5" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Month"/>
+			<bi:property name="LEFT_MARGIN" value="14"/>
+			<bi:property name="TOP_MARGIN" value="473"/>
+		</bi:component>
+		<bi:component name="TEXT_6" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Day"/>
+			<bi:property name="LEFT_MARGIN" value="14"/>
+			<bi:property name="TOP_MARGIN" value="503"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_1" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="65"/>
+			<bi:property name="TOP_MARGIN" value="443"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_2" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="65"/>
+			<bi:property name="TOP_MARGIN" value="473"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_3" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="65"/>
+			<bi:property name="TOP_MARGIN" value="503"/>
+		</bi:component>
+		<bi:component name="BUTTON_9" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="01.01.2012 -&gt; Week 52"/>
+			<bi:property name="LEFT_MARGIN" value="273"/>
+			<bi:property name="TOP_MARGIN" value="20"/>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+DATEOBJECT_1.initialize(2012, 01, 01);
+
+TEXT_1.setText(DATEOBJECT_1.toLocaleString());
+TEXT_2.setText("Week: "+ DATEOBJECT_1.getCalendarWeek());
+
+TEXT_3.setText(DATEOBJECT_1.internal_toString());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_10" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="02.01.2012 -&gt; Week 1"/>
+			<bi:property name="LEFT_MARGIN" value="272"/>
+			<bi:property name="TOP_MARGIN" value="66"/>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+DATEOBJECT_1.initialize(2012, 01, 02);
+
+TEXT_1.setText(DATEOBJECT_1.toLocaleString());
+TEXT_2.setText("Week: "+ DATEOBJECT_1.getCalendarWeek());
+
+TEXT_3.setText(DATEOBJECT_1.internal_toString());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_11" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="02.01.2009 -&gt; Week 52"/>
+			<bi:property name="LEFT_MARGIN" value="274"/>
+			<bi:property name="TOP_MARGIN" value="109"/>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+DATEOBJECT_1.initialize(2009, 01, 02);
+
+TEXT_1.setText(DATEOBJECT_1.toLocaleString());
+TEXT_2.setText("Week: "+ DATEOBJECT_1.getCalendarWeek());
+
+TEXT_3.setText(DATEOBJECT_1.internal_toString());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_12" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="01.02.2008 -&gt; Week 5"/>
+			<bi:property name="LEFT_MARGIN" value="273"/>
+			<bi:property name="TOP_MARGIN" value="155"/>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+DATEOBJECT_1.initialize(2008, 02, 01);
+
+TEXT_1.setText(DATEOBJECT_1.toLocaleString());
+TEXT_2.setText("Week: "+ DATEOBJECT_1.getCalendarWeek());
+
+TEXT_3.setText(DATEOBJECT_1.internal_toString());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_13" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="02.01.2010 -&gt; Week 52"/>
+			<bi:property name="LEFT_MARGIN" value="272"/>
+			<bi:property name="TOP_MARGIN" value="205"/>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+DATEOBJECT_1.initialize(2010, 01, 02);
+
+TEXT_1.setText(DATEOBJECT_1.toLocaleString());
+TEXT_2.setText("Week: "+ DATEOBJECT_1.getCalendarWeek());
+
+TEXT_3.setText(DATEOBJECT_1.internal_toString());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_14" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="16.01.2010 -&gt; Week 2"/>
+			<bi:property name="LEFT_MARGIN" value="271"/>
+			<bi:property name="TOP_MARGIN" value="251"/>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+DATEOBJECT_1.initialize(2010, 01, 16);
+
+TEXT_1.setText(DATEOBJECT_1.toLocaleString());
+TEXT_2.setText("Week: "+ DATEOBJECT_1.getCalendarWeek());
+
+TEXT_3.setText(DATEOBJECT_1.internal_toString());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_15" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="06.05.2012 -&gt; Week 18"/>
+			<bi:property name="LEFT_MARGIN" value="273"/>
+			<bi:property name="TOP_MARGIN" value="301"/>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+DATEOBJECT_1.initialize(2012, 05, 06);
+
+TEXT_1.setText(DATEOBJECT_1.toLocaleString());
+TEXT_2.setText("Week: "+ DATEOBJECT_1.getCalendarWeek());
+
+TEXT_3.setText(DATEOBJECT_1.internal_toString());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_16" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="13.05.2012 -&gt; Week 20"/>
+			<bi:property name="LEFT_MARGIN" value="272"/>
+			<bi:property name="TOP_MARGIN" value="347"/>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+DATEOBJECT_1.initialize(2012, 05, 14);
+
+TEXT_1.setText(DATEOBJECT_1.toLocaleString());
+TEXT_2.setText("Week: "+ DATEOBJECT_1.getCalendarWeek());
+
+TEXT_3.setText(DATEOBJECT_1.internal_toString());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_20" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Initialize Today (getInfo)"/>
+			<bi:property name="LEFT_MARGIN" value="272"/>
+			<bi:property name="TOP_MARGIN" value="403"/>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+var today = APPLICATION.getInfo().dateNowInternalFormat;
+TEXT_7.setText(today);
+
+DATEOBJECT_1.initializeWithInternalDate(today);
+
+TEXT_1.setText(DATEOBJECT_1.toLocaleString());
+TEXT_2.setText("Week: "+ DATEOBJECT_1.getCalendarWeek());
+
+TEXT_3.setText(DATEOBJECT_1.internal_toString());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_21" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Some Getter w/o Initialization"/>
+			<bi:property name="LEFT_MARGIN" value="272"/>
+			<bi:property name="TOP_MARGIN" value="460"/>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+TEXT_1.setText(DATEOBJECT_2.toLocaleString());
+TEXT_2.setText("Week: "+ DATEOBJECT_2.getCalendarWeek());
+TEXT_3.setText(DATEOBJECT_2.internal_toString());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_22" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Internal Index"/>
+			<bi:property name="LEFT_MARGIN" value="272"/>
+			<bi:property name="TOP_MARGIN" value="503"/>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[TEXT_1.setText(DATEOBJECT_1.toLocaleString());
+TEXT_2.setText("Index: " + DATEOBJECT_1.internal_getIndex());
+TEXT_3.setText(DATEOBJECT_1.internal_toString());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_23" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Set Internal Index + 2"/>
+			<bi:property name="LEFT_MARGIN" value="273"/>
+			<bi:property name="TOP_MARGIN" value="542"/>
+			<bi:property name="WIDTH" value="247"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var index = DATEOBJECT_1.internal_getIndex();
+index = index + 2;
+DATEOBJECT_1.internal_setIndex(index);
+
+TEXT_1.setText(DATEOBJECT_1.toLocaleString());
+TEXT_2.setText("Week: "+ DATEOBJECT_1.getCalendarWeek());
+
+TEXT_3.setText(DATEOBJECT_1.internal_toString());
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="TEXT_1" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Sample text"/>
+			<bi:property name="LEFT_MARGIN" value="535"/>
+			<bi:property name="TOP_MARGIN" value="22"/>
+			<bi:property name="WIDTH" value="494"/>
+		</bi:component>
+		<bi:component name="TEXT_2" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Sample text"/>
+			<bi:property name="LEFT_MARGIN" value="535"/>
+			<bi:property name="TOP_MARGIN" value="55"/>
+			<bi:property name="WIDTH" value="524"/>
+		</bi:component>
+		<bi:component name="TEXT_3" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Sample text"/>
+			<bi:property name="LEFT_MARGIN" value="535"/>
+			<bi:property name="TOP_MARGIN" value="85"/>
+			<bi:property name="WIDTH" value="431"/>
+			<bi:property name="HEIGHT" value="789"/>
+		</bi:component>
+		<bi:component name="TEXT_10" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Sample text"/>
+			<bi:property name="LEFT_MARGIN" value="971"/>
+			<bi:property name="TOP_MARGIN" value="23"/>
+			<bi:property name="WIDTH" value="600"/>
+			<bi:property name="HEIGHT" value="80000"/>
+		</bi:component>
+		<bi:component name="BUTTON_18" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Roll"/>
+			<bi:property name="LEFT_MARGIN" value="14"/>
+			<bi:property name="TOP_MARGIN" value="544"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[if(RADIOBUTTONGROUP_1.getSelectedValue() == "DAY") {
+	DATEOBJECT_1.rollDays(Convert.stringToInt(INPUTFIELD_4.getValue()));
+}
+
+if(RADIOBUTTONGROUP_1.getSelectedValue() == "WEEK") {
+	DATEOBJECT_1.rollWeeks(Convert.stringToInt(INPUTFIELD_4.getValue()));	
+}
+
+if(RADIOBUTTONGROUP_1.getSelectedValue() == "MONTH") {
+	DATEOBJECT_1.rollMonths(Convert.stringToInt(INPUTFIELD_4.getValue()));
+}
+
+if(RADIOBUTTONGROUP_1.getSelectedValue() == "YEAR") {
+	DATEOBJECT_1.rollYears(Convert.stringToInt(INPUTFIELD_4.getValue()));	
+}
+
+TEXT_1.setText(DATEOBJECT_1.toLocaleString());
+TEXT_2.setText("Week: " + DATEOBJECT_1.getCalendarWeek());
+TEXT_3.setText(DATEOBJECT_1.internal_toString());]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="241"/>
+		</bi:component>
+		<bi:component name="BUTTON_19" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Auto Roll One Year Back"/>
+			<bi:property name="LEFT_MARGIN" value="11"/>
+			<bi:property name="TOP_MARGIN" value="695"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[ROLL_COUNTER = 0;
+TEXT_10.setText("");
+APPLICATION.doBackgroundProcessing();]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="241"/>
+		</bi:component>
+		<bi:component name="RADIOBUTTONGROUP_1" type="RADIOBUTTONGROUP_COMPONENT">
+			<bi:property name="ITEMS" type="ORDEREDLIST">
+				<bi:property name="SELECTION_ITEM" index="0">
+					<bi:property name="VALUE" value="DAY"/>
+					<bi:property name="SELECTED" value="X"/>
+					<bi:property name="TEXT" value="DAY"/>
+				</bi:property>
+				<bi:property name="SELECTION_ITEM" index="1">
+					<bi:property name="VALUE" value="WEEK"/>
+					<bi:property name="SELECTED" value=""/>
+					<bi:property name="TEXT" value="WEEK"/>
+				</bi:property>
+				<bi:property name="SELECTION_ITEM" index="2">
+					<bi:property name="VALUE" value="MONTH"/>
+					<bi:property name="SELECTED" value=""/>
+					<bi:property name="TEXT" value="MONTH"/>
+				</bi:property>
+				<bi:property name="SELECTION_ITEM" index="3">
+					<bi:property name="VALUE" value="YEAR"/>
+					<bi:property name="SELECTED" value=""/>
+					<bi:property name="TEXT" value="YEAR"/>
+				</bi:property>
+			</bi:property>
+			<bi:property name="LEFT_MARGIN" value="43"/>
+			<bi:property name="TOP_MARGIN" value="607"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_4" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="17"/>
+			<bi:property name="TOP_MARGIN" value="581"/>
+		</bi:component>
+		<bi:component name="TEXT_7" type="TEXT_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="276"/>
+			<bi:property name="TOP_MARGIN" value="444"/>
+			<bi:property name="WIDTH" value="214"/>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
