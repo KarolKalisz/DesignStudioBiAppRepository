@@ -1,0 +1,55 @@
+.dialog-design-background {
+	background-color: #FAFAFA !important;
+}
+	
+.dialog-design {
+	background-color: #FAFAFA !important;
+	border:1px solid #647b94;
+	box-shadow:rgba(0, 0, 0, 0.4) 0px 0px 2px 1px;
+}
+
+.dialog-top {
+	background-color: #FFFFFF !important;
+	border-bottom-style:solid;
+	border-bottom-color:#BFBFBF;
+	border-bottom-width:1px;
+}
+
+.dialog-bottom {
+	background-color: #FFFFFF !important;
+	border-top-style:solid;
+	border-top-color:#BFBFBF;
+	border-top-width:1px;
+}
+
+.dialog-title {
+	font-size: 24px !important;
+	font-weight: normal !important;
+	font-family: ‘Helvetica Neue’, Helvetica, Arial, sans-serif !important;
+	color: #333333 !important;
+}
+
+.dialog-description {
+	font-size: 12px !important;
+	font-weight: normal !important;
+	font-family: ‘Helvetica Neue’, Helvetica, Arial, sans-serif !important;
+	color: #333333 !important;
+}
+
+.dialog-frame-680x480 {
+	z-index: 1000010 !important;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -340px; /* half-width */
+	margin-top: -240px; /* half-height */
+	width: 680px;
+	height: 480px;
+}
+
+.dialog-shadow {
+	z-index: 1000009 !important;
+	background-color: #333333;
+	opacity: 0.1;
+}
+	

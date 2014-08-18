@@ -1,0 +1,358 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_goldreflection"/>
+		<bi:property name="CUSTOM_CSS" value="dialog_config.css"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Open Dialog (MODAL)"/>
+			<bi:property name="LEFT_MARGIN" value="60"/>
+			<bi:property name="TOP_MARGIN" value="40"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+// simple call the dialog open button
+DIALOG_X_OPEN.onClick();
+]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="220"/>
+		</bi:component>
+		<bi:component name="BUTTON_5" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Open Popup (MODAL)"/>
+			<bi:property name="LEFT_MARGIN" value="460"/>
+			<bi:property name="TOP_MARGIN" value="40"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+// simple call the dialog open button
+POPUP_X_OPEN.onClick();
+]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="220"/>
+		</bi:component>
+		<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Open Dialog (NON MODAL)"/>
+			<bi:property name="LEFT_MARGIN" value="60"/>
+			<bi:property name="TOP_MARGIN" value="80"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[// do not show the background (styled for "blocking UI")
+// DIALOG_BACKGROUND.setVisible(true);
+
+// show the dilaog frame
+DIALOG_X.setVisible(true);
+
+// show the dialog
+DIALOG_X_CONTENT.setVisible(true);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="220"/>
+		</bi:component>
+		<bi:component name="BUTTON_10" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Open Popup (NON MODAL)"/>
+			<bi:property name="LEFT_MARGIN" value="460"/>
+			<bi:property name="TOP_MARGIN" value="80"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+// show the popup
+POPUP_X.show();
+]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="220"/>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Hide Dialog"/>
+			<bi:property name="LEFT_MARGIN" value="60"/>
+			<bi:property name="TOP_MARGIN" value="120"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[// hide background & dialog
+DIALOG_X.setVisible(false);
+DIALOG_X_CONTENT.setVisible(false);
+DIALOG_BACKGROUND.setVisible(false);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="220"/>
+		</bi:component>
+		<bi:component name="BUTTON_9" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Hide Popup"/>
+			<bi:property name="LEFT_MARGIN" value="460"/>
+			<bi:property name="TOP_MARGIN" value="120"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[// hide background & dialog
+POPUP_X.hide();]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="220"/>
+		</bi:component>
+		<bi:component name="TEXT_2" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Some Content ..."/>
+			<bi:property name="LEFT_MARGIN" value="62"/>
+			<bi:property name="TOP_MARGIN" value="167"/>
+			<bi:property name="WIDTH" value="369"/>
+			<bi:property name="HEIGHT" value="19"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_1" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="82"/>
+			<bi:property name="TOP_MARGIN" value="187"/>
+			<bi:property name="WIDTH" value="250"/>
+		</bi:component>
+		<bi:component name="DIALOG_BACKGROUND" type="PANEL_COMPONENT">
+			<bi:property name="RIGHT_MARGIN" value="0"/>
+			<bi:property name="BOTTOM_MARGIN" value="0"/>
+			<bi:property name="WIDTH" value="auto"/>
+			<bi:property name="HEIGHT" value="auto"/>
+			<bi:property name="CSS_CLASS" value="dialog-shadow"/>
+			<bi:property name="VISIBLE" value=""/>
+			<bi:property name="DESIGNER_VISIBLE" value=""/>
+		</bi:component>
+		<bi:component name="DIALOG_X" type="PANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="266"/>
+			<bi:property name="TOP_MARGIN" value="225"/>
+			<bi:property name="WIDTH" value="680"/>
+			<bi:property name="HEIGHT" value="480"/>
+			<bi:property name="CSS_CLASS" value="dialog-frame-680x480 dialog-design"/>
+			<bi:property name="VISIBLE" value=""/>
+			<bi:property name="DESIGNER_VISIBLE" value="X"/>
+			<bi:component name="DIALOG_X_TOP" type="PANEL_COMPONENT">
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="RIGHT_MARGIN" value="0"/>
+				<bi:property name="HEIGHT" value="84"/>
+				<bi:property name="CSS_CLASS" value="dialog-top"/>
+			</bi:component>
+			<bi:component name="DIALOG_X_BOTTOM" type="PANEL_COMPONENT">
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="RIGHT_MARGIN" value="0"/>
+				<bi:property name="BOTTOM_MARGIN" value="0"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="CSS_CLASS" value="dialog-bottom"/>
+				<bi:property name="HEIGHT" value="42"/>
+			</bi:component>
+			<bi:component name="DIALOG_X_CONTENT" type="PANEL_COMPONENT">
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="HEIGHT" value="auto"/>
+				<bi:property name="RIGHT_MARGIN" value="0"/>
+				<bi:property name="BOTTOM_MARGIN" value="0"/>
+				<bi:component name="DIALOG_X_OPEN" type="BUTTON_COMPONENT">
+					<bi:property name="TEXT" value="Dialog X Open Function"/>
+					<bi:property name="ON_CLICK">
+						<bi:value><![CDATA[// show the background (styled for "blocking UI")
+DIALOG_BACKGROUND.setVisible(true);
+
+// show the dilaog frame
+DIALOG_X.setVisible(true);
+
+// now set the values you want to edit in the dialog...
+
+INPUTFIELD_2.setValue(INPUTFIELD_1.getValue());
+]]></bi:value>
+					</bi:property>
+					<bi:property name="WIDTH" value="220"/>
+					<bi:property name="VISIBLE" value=""/>
+					<bi:property name="ENABLED" value=""/>
+					<bi:property name="HEIGHT" value="16"/>
+				</bi:component>
+				<bi:component name="DIALOG_X_TITLE" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="Title ..."/>
+					<bi:property name="CSS_CLASS" value="dialog-title"/>
+					<bi:property name="TOP_MARGIN" value="20"/>
+					<bi:property name="LEFT_MARGIN" value="16"/>
+					<bi:property name="WIDTH" value="400"/>
+					<bi:property name="HEIGHT" value="24"/>
+				</bi:component>
+				<bi:component name="DIALOG_X_DESC" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="Description... selum polelum selum polelum selum polelum selum polelum selum polelum selum polelum selum polelum selum polelum selum polelum"/>
+					<bi:property name="CSS_CLASS" value="dialog-description"/>
+					<bi:property name="TOP_MARGIN" value="43"/>
+					<bi:property name="LEFT_MARGIN" value="32"/>
+					<bi:property name="WIDTH" value="600"/>
+					<bi:property name="HEIGHT" value="34"/>
+				</bi:component>
+				<bi:component name="DIALOG_X_CLOSE" type="IMAGE_COMPONENT">
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="16"/>
+					<bi:property name="WIDTH" value="24"/>
+					<bi:property name="HEIGHT" value="24"/>
+					<bi:property name="RIGHT_MARGIN" value="16"/>
+					<bi:property name="IMAGE" value="images/close_grey_24.png"/>
+					<bi:property name="HOVER_IMAGE" value="images/close_red_24.png"/>
+					<bi:property name="ON_CLICK">
+						<bi:value><![CDATA[// just call a cancel
+DIALOG_X_CANCEL.onClick();]]></bi:value>
+					</bi:property>
+				</bi:component>
+				<bi:component name="DIALOG_X_OK" type="BUTTON_COMPONENT">
+					<bi:property name="TEXT" value="OK"/>
+					<bi:property name="RIGHT_MARGIN" value="132"/>
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="BOTTOM_MARGIN" value="8"/>
+					<bi:property name="TOP_MARGIN" value="auto"/>
+					<bi:property name="WIDTH" value="100"/>
+					<bi:property name="HEIGHT" value="26"/>
+					<bi:property name="CSS_CLASS" value="lumira-button-sel"/>
+					<bi:property name="ON_CLICK">
+						<bi:value><![CDATA[
+// call the cancel button to hide
+DIALOG_X_CANCEL.onClick();
+
+// pass back the dialog values into the application
+
+INPUTFIELD_1.setValue(INPUTFIELD_2.getValue());
+]]></bi:value>
+					</bi:property>
+				</bi:component>
+				<bi:component name="DIALOG_X_CANCEL" type="BUTTON_COMPONENT">
+					<bi:property name="TEXT" value="Cancel"/>
+					<bi:property name="RIGHT_MARGIN" value="16"/>
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="BOTTOM_MARGIN" value="8"/>
+					<bi:property name="TOP_MARGIN" value="auto"/>
+					<bi:property name="WIDTH" value="100"/>
+					<bi:property name="HEIGHT" value="26"/>
+					<bi:property name="CSS_CLASS" value="lumira-button-non"/>
+					<bi:property name="ON_CLICK">
+						<bi:value><![CDATA[// hide background & dialog
+DIALOG_X.setVisible(false);
+DIALOG_BACKGROUND.setVisible(false);]]></bi:value>
+					</bi:property>
+				</bi:component>
+				<bi:component name="TEXT_3" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="Some Content to change..."/>
+					<bi:property name="LEFT_MARGIN" value="16"/>
+					<bi:property name="TOP_MARGIN" value="100"/>
+					<bi:property name="WIDTH" value="369"/>
+					<bi:property name="HEIGHT" value="19"/>
+				</bi:component>
+				<bi:component name="INPUTFIELD_2" type="INPUTFIELD_COMPONENT">
+					<bi:property name="LEFT_MARGIN" value="32"/>
+					<bi:property name="TOP_MARGIN" value="120"/>
+					<bi:property name="WIDTH" value="250"/>
+				</bi:component>
+			</bi:component>
+		</bi:component>
+		<bi:component name="POPUP_X" type="POPUP_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="267"/>
+			<bi:property name="TOP_MARGIN" value="226"/>
+			<bi:property name="WIDTH" value="683"/>
+			<bi:property name="HEIGHT" value="484"/>
+			<bi:property name="MODAL" value="X"/>
+			<bi:property name="DESIGNER_VISIBLE" value=""/>
+			<bi:component name="POPUP_X_BACKGROUND" type="PANEL_COMPONENT">
+				<bi:property name="CSS_CLASS" value="dialog-design-background"/>
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="RIGHT_MARGIN" value="0"/>
+				<bi:property name="HEIGHT" value="auto"/>
+				<bi:property name="BOTTOM_MARGIN" value="0"/>
+			</bi:component>
+			<bi:component name="POPUP_X_TOP" type="PANEL_COMPONENT">
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="RIGHT_MARGIN" value="0"/>
+				<bi:property name="HEIGHT" value="84"/>
+				<bi:property name="CSS_CLASS" value="dialog-top"/>
+			</bi:component>
+			<bi:component name="POPUP_X_BOTTOM" type="PANEL_COMPONENT">
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="RIGHT_MARGIN" value="0"/>
+				<bi:property name="BOTTOM_MARGIN" value="0"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="CSS_CLASS" value="dialog-bottom"/>
+				<bi:property name="HEIGHT" value="42"/>
+			</bi:component>
+			<bi:component name="POPUP_X_CONTENT" type="PANEL_COMPONENT">
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="HEIGHT" value="auto"/>
+				<bi:property name="RIGHT_MARGIN" value="0"/>
+				<bi:property name="BOTTOM_MARGIN" value="0"/>
+				<bi:component name="POPUP_X_OPEN" type="BUTTON_COMPONENT">
+					<bi:property name="TEXT" value="Popup X Open Function"/>
+					<bi:property name="ON_CLICK">
+						<bi:value><![CDATA[
+// show background & the popup
+POPUP_X.show();
+
+// now set the values you want to edit in the dialog...
+
+INPUTFIELD_3.setValue(INPUTFIELD_1.getValue());
+]]></bi:value>
+					</bi:property>
+					<bi:property name="WIDTH" value="220"/>
+					<bi:property name="VISIBLE" value=""/>
+					<bi:property name="ENABLED" value=""/>
+					<bi:property name="HEIGHT" value="16"/>
+				</bi:component>
+				<bi:component name="POPUP_X_TITLE" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="Title ..."/>
+					<bi:property name="CSS_CLASS" value="dialog-title"/>
+					<bi:property name="TOP_MARGIN" value="20"/>
+					<bi:property name="LEFT_MARGIN" value="16"/>
+					<bi:property name="WIDTH" value="400"/>
+					<bi:property name="HEIGHT" value="24"/>
+				</bi:component>
+				<bi:component name="POPUP_X_DESC" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="Description... selum polelum selum polelum selum polelum selum polelum selum polelum selum polelum selum polelum selum polelum selum polelum"/>
+					<bi:property name="CSS_CLASS" value="dialog-description"/>
+					<bi:property name="TOP_MARGIN" value="43"/>
+					<bi:property name="LEFT_MARGIN" value="32"/>
+					<bi:property name="WIDTH" value="600"/>
+					<bi:property name="HEIGHT" value="34"/>
+				</bi:component>
+				<bi:component name="POPUP_X_CLOSE" type="IMAGE_COMPONENT">
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="16"/>
+					<bi:property name="WIDTH" value="24"/>
+					<bi:property name="HEIGHT" value="24"/>
+					<bi:property name="RIGHT_MARGIN" value="16"/>
+					<bi:property name="IMAGE" value="images/close_grey_24.png"/>
+					<bi:property name="HOVER_IMAGE" value="images/close_red_24.png"/>
+					<bi:property name="ON_CLICK">
+						<bi:value><![CDATA[
+// just call a cancel
+POPUP_X_CANCEL.onClick();
+]]></bi:value>
+					</bi:property>
+				</bi:component>
+				<bi:component name="POPUP_X_OK" type="BUTTON_COMPONENT">
+					<bi:property name="TEXT" value="OK"/>
+					<bi:property name="RIGHT_MARGIN" value="132"/>
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="BOTTOM_MARGIN" value="8"/>
+					<bi:property name="TOP_MARGIN" value="auto"/>
+					<bi:property name="WIDTH" value="100"/>
+					<bi:property name="HEIGHT" value="26"/>
+					<bi:property name="CSS_CLASS" value="lumira-button-sel"/>
+					<bi:property name="ON_CLICK">
+						<bi:value><![CDATA[
+// call the cancel button to hide
+POPUP_X_CANCEL.onClick();
+
+// pass back the dialog values into the application
+
+INPUTFIELD_1.setValue(INPUTFIELD_3.getValue());
+]]></bi:value>
+					</bi:property>
+				</bi:component>
+				<bi:component name="POPUP_X_CANCEL" type="BUTTON_COMPONENT">
+					<bi:property name="TEXT" value="Cancel"/>
+					<bi:property name="RIGHT_MARGIN" value="16"/>
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="BOTTOM_MARGIN" value="8"/>
+					<bi:property name="TOP_MARGIN" value="auto"/>
+					<bi:property name="WIDTH" value="100"/>
+					<bi:property name="HEIGHT" value="26"/>
+					<bi:property name="CSS_CLASS" value="lumira-button-non"/>
+					<bi:property name="ON_CLICK">
+						<bi:value><![CDATA[
+// hide background & dialog
+POPUP_X.hide();
+]]></bi:value>
+					</bi:property>
+				</bi:component>
+				<bi:component name="TEXT_4" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="Some Content to change..."/>
+					<bi:property name="LEFT_MARGIN" value="16"/>
+					<bi:property name="TOP_MARGIN" value="100"/>
+					<bi:property name="WIDTH" value="369"/>
+					<bi:property name="HEIGHT" value="19"/>
+				</bi:component>
+				<bi:component name="INPUTFIELD_3" type="INPUTFIELD_COMPONENT">
+					<bi:property name="LEFT_MARGIN" value="32"/>
+					<bi:property name="TOP_MARGIN" value="120"/>
+					<bi:property name="WIDTH" value="250"/>
+				</bi:component>
+			</bi:component>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
