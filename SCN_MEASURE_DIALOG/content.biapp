@@ -520,7 +520,7 @@ if(selectedMeasure != "N/A") {
 				</bi:component>
 			</bi:component>
 			<bi:component name="DIALOG_MEASURE_CHECKBOX_APPLY" type="CHECKBOX_COMPONENT">
-				<bi:property name="TEXT" value="Apply Immediatelly"/>
+				<bi:property name="TEXT" value="Apply Immediately"/>
 				<bi:property name="LEFT_MARGIN" value="16"/>
 				<bi:property name="TOP_MARGIN" value="auto"/>
 				<bi:property name="BOTTOM_MARGIN" value="8"/>
