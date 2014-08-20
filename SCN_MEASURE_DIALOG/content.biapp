@@ -1,0 +1,717 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+		<bi:property name="CUSTOM_CSS" value="dialog_config.css"/>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q93 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_009_BICSTEST_Q0007"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[eNrtWm1v4jgQ/iuI76dAoepWykUyzgC+dezUdnjp6WRxLbeHdNs9teyHvV9/k1cSCBRaqt2tgqoq8XjG45lnxjMYd8CothMGU8/VoCaMgvVBU8VCw6TAwbk2EFjCGdHezXWv9XsYDTijf7hOheT6xBBLFBDPhyGJuHGdzdDxYm4iUHOvk6jV6Vzb+MGANvam0+lcuU5KR646ZZkYShsqOWE+qNbD4vPy13Yhqu1k0rcJW2u0cS8RCiYGvItOt9/50L3GveRDhQoaONB4XatDgppoqQwTo9b6278oPTNCvGhpokEJR08sDWRzKVGoJyMi3qQfUYO60jFRhBpQTBvcx/ZAsVlqQ1C62y5J1bsrMIGME8JxGpdTi08R6hFAMNgYFD/ddjY/pcTKO6X5YzYa7+Ptdmp4ywxOoVP5GXV1qjs7tFO0zvff6cUb77Q/nH6g/fC6159e9nr8ctoXvd8uiRSVnTs14pwd0NSrkuPwBIxllp8wHWFE35JEDIcJ8E1eqCO6xBjFBhHiu/Rckkwlf5Hc1PaWUAoaRYcKNAhDMkuXXz0DM5RSGaq+xjCqDd5EEL4wAb5NV9RWKsxCaH6fqcy0RFMQPrJjPikG0d6pTHzaUrbklIoarT9XD/erh085sjKGBGAlHhppIwMboq8CQGfFWEAxqLDVYF5vi43L4oXLkp2CVO/MkZJR48334s2AmMaZ78WZoWL0rb3pMx1yMrcfYd449WSTvNy3U2Cjxrc/v2+dcrFUUbv1+cs92nIg5Ue0XlJn6vYbaFd69vKsUQ8/Lz/vD5CxtjtAxePlADXG9H7j/OgQq/r7GbyNGSii6Hjeuv+69BfrrEWJP+0sytsVWO5BQzYBI50NGGdm7iWPHArElUjHbeVMiH9bd1XC6dUtVlPvvDJ9ngznOuSOme+DOBtwv7/dy9sdShVEnOTiUBCVqAcTOo6sIRtFONtbP35dIp5rKO4tKGl1FMY70DES40QcxgulTPvpp3zbkn2vdP6en4ygKVfeZyk6lgE0SfS9NI2a8CZQ32Gg0kgpEHTeROrPGKk/XpsYZ/0DvRye9/uoORIPcGMSahrBphF8bSO4ezlW5wJfMc6tL6fCbs3ff7+bZkm7fR+MVb4ta3TmW9+du1Dn7S8YT7iDfsH95JF2JLMkAc2YzhRQchoDtIgeJCL/BLy/Fv88YTeUvWW+TU+xDmKo9Bpf4Bbceh4gHhSjNp0SSL+QVUvLAy6UmiV7GUiDyCoAWYzvNm4Jv5ACapq2VPbOMP4lv8DAGFNz/E8wsP10iALnel8P+Czfc+jzCk8/hwyvQOhL49CJ/VvxMpU8CkS9o9Md1/n5ovHz6X7emyDO582hAmhi9vy+dA46wElz54a/9bT69BA+Lp+WD+vFevXlAYsJwIQLVkTJb1ta/y0fv1QnCKmCpC8sxORVaFGOtu7+Xjwu7tbLx9XTenV36MipnEnTWdAbR/ymH3Tn4dBcXcMwKcEL8T5Qhotr7xfMLMWLqyl2KWJkh2gJqRLi1pALQTgmmt2Cn8OiNOJqNhJ4yExwEcIL3FQGcW1DGLcol0Y8LXZSENQQaibbTc2y+SXdoVnoyCCXl2lUGnFJGPK5rZFgZHZc6iKYjpiayYu/msSq7wSxR3Hk0bZrvBpCPYJLaDs38JToXY14p98Tw4sLaW6GsznvNcBrgLcNPKeSebPW1RpFhE5FZA1ZtUuzsa8tZwEz8RlWT8hOOon1FckLaJhRCPMXKrH3KUrrze97/wcVNbnL]]></bi:value>
+			</bi:property>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="CROSSTAB_1" type="CROSSTAB_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="33"/>
+			<bi:property name="TOP_MARGIN" value="60"/>
+			<bi:property name="WIDTH" value="auto"/>
+			<bi:property name="HEIGHT" value="auto"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="DESIGNER_VISIBLE" value="X"/>
+			<bi:property name="RIGHT_MARGIN" value="0"/>
+			<bi:property name="BOTTOM_MARGIN" value="0"/>
+		</bi:component>
+		<bi:component name="BUTTON_OPEN" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Open Dialog for measures"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[// call the dialog show function
+DIALOG_MEASURE_OPEN.onClick();
+]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="220"/>
+			<bi:property name="VISIBLE" value="X"/>
+			<bi:property name="ENABLED" value="X"/>
+			<bi:property name="HEIGHT" value="24"/>
+			<bi:property name="LEFT_MARGIN" value="20"/>
+			<bi:property name="TOP_MARGIN" value="20"/>
+		</bi:component>
+		<bi:component name="DIALOG_BACKGROUND" type="PANEL_COMPONENT">
+			<bi:property name="RIGHT_MARGIN" value="0"/>
+			<bi:property name="BOTTOM_MARGIN" value="0"/>
+			<bi:property name="WIDTH" value="auto"/>
+			<bi:property name="HEIGHT" value="auto"/>
+			<bi:property name="CSS_CLASS" value="dialog-shadow"/>
+			<bi:property name="VISIBLE" value=""/>
+			<bi:property name="DESIGNER_VISIBLE" value=""/>
+		</bi:component>
+		<bi:component name="DIALOG_MEASURE" type="PANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="266"/>
+			<bi:property name="TOP_MARGIN" value="225"/>
+			<bi:property name="WIDTH" value="480"/>
+			<bi:property name="HEIGHT" value="440"/>
+			<bi:property name="CSS_CLASS" value="dialog-frame-480x440 dialog-design"/>
+			<bi:property name="VISIBLE" value=""/>
+			<bi:property name="DESIGNER_VISIBLE" value="X"/>
+			<bi:component name="DIALOG_MEASURE_TOP" type="PANEL_COMPONENT">
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="RIGHT_MARGIN" value="0"/>
+				<bi:property name="HEIGHT" value="84"/>
+				<bi:property name="CSS_CLASS" value="dialog-top"/>
+			</bi:component>
+			<bi:component name="DIALOG_MEASURE_BOTTOM" type="PANEL_COMPONENT">
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="RIGHT_MARGIN" value="0"/>
+				<bi:property name="BOTTOM_MARGIN" value="0"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="CSS_CLASS" value="dialog-bottom"/>
+				<bi:property name="HEIGHT" value="42"/>
+			</bi:component>
+			<bi:component name="DIALOG_MEASURE_TITLE" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="Format Measures Display..."/>
+				<bi:property name="CSS_CLASS" value="dialog-title"/>
+				<bi:property name="TOP_MARGIN" value="20"/>
+				<bi:property name="LEFT_MARGIN" value="16"/>
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="HEIGHT" value="24"/>
+				<bi:property name="RIGHT_MARGIN" value="64"/>
+			</bi:component>
+			<bi:component name="DIALOG_MEASURE_DESC" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="Select Measure..."/>
+				<bi:property name="CSS_CLASS" value="dialog-description"/>
+				<bi:property name="TOP_MARGIN" value="45"/>
+				<bi:property name="LEFT_MARGIN" value="32"/>
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="HEIGHT" value="34"/>
+				<bi:property name="RIGHT_MARGIN" value="8"/>
+			</bi:component>
+			<bi:component name="DIALOG_MEASURE_CONTENT" type="PANEL_COMPONENT">
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="HEIGHT" value="auto"/>
+				<bi:property name="RIGHT_MARGIN" value="0"/>
+				<bi:property name="BOTTOM_MARGIN" value="43"/>
+				<bi:property name="TOP_MARGIN" value="85"/>
+				<bi:component name="DIALOG_MEASURE_TEXT_SELECT_MEASURE" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="Select Measure..."/>
+					<bi:property name="LEFT_MARGIN" value="16"/>
+					<bi:property name="TOP_MARGIN" value="20"/>
+					<bi:property name="WIDTH" value="auto"/>
+					<bi:property name="HEIGHT" value="19"/>
+					<bi:property name="CSS_CLASS" value="label-settings-2 border-style-bottom"/>
+					<bi:property name="RIGHT_MARGIN" value="16"/>
+				</bi:component>
+				<bi:component name="DIALOG_MEASURE_DROPDOWN_MEASURES" type="DROPDOWN_COMPONENT">
+					<bi:property name="LEFT_MARGIN" value="32"/>
+					<bi:property name="TOP_MARGIN" value="50"/>
+					<bi:property name="WIDTH" value="194"/>
+					<bi:property name="ON_SELECT">
+						<bi:value><![CDATA[var selectedMeasure = DIALOG_MEASURE_DROPDOWN_MEASURES.getSelectedValue();
+
+// apply change
+if(selectedMeasure == "N/A") {
+	DIALOG_MEASURE_DROPDOWN_DECIMALS.setEnabled(false);
+	DIALOG_MEASURE_DROPDOWN_SCALING.setEnabled(false);
+	DIALOG_MEASURE_DROPDOWN_ZERO.setEnabled(false);
+	DIALOG_MEASURE_DROPDOWN_NEGATIVE.setEnabled(false);
+
+	DIALOG_MEASURE_DESC.setText("Select Measure...");
+} else {
+	DIALOG_MEASURE_DROPDOWN_DECIMALS.setEnabled(true);
+	DIALOG_MEASURE_DROPDOWN_SCALING.setEnabled(true);
+	DIALOG_MEASURE_DROPDOWN_ZERO.setEnabled(true);
+	DIALOG_MEASURE_DROPDOWN_NEGATIVE.setEnabled(true);
+
+	var measureDescription = DIALOG_MEASURE_DROPDOWN_MEASURES.getSelectedText();
+	
+	DIALOG_MEASURE_DESC.setText("Define the display format for " +
+	measureDescription);
+	
+	var scalling = DS_1.getScalingFactor(selectedMeasure);
+	
+	if(scalling == Scaling.FACTOR_DEFAULT) {
+		DIALOG_MEASURE_DROPDOWN_SCALING.setSelectedValue("DEFAULT");
+	}
+	if(scalling == Scaling.FACTOR_1) {
+		DIALOG_MEASURE_DROPDOWN_SCALING.setSelectedValue("1");
+	}
+	if(scalling == Scaling.FACTOR_10) {
+		DIALOG_MEASURE_DROPDOWN_SCALING.setSelectedValue("2");
+	}
+	if(scalling == Scaling.FACTOR_100) {
+		DIALOG_MEASURE_DROPDOWN_SCALING.setSelectedValue("3");
+	}
+	if(scalling == Scaling.FACTOR_1000) {
+		DIALOG_MEASURE_DROPDOWN_SCALING.setSelectedValue("4");
+	}
+	if(scalling == Scaling.FACTOR_10000) {
+		DIALOG_MEASURE_DROPDOWN_SCALING.setSelectedValue("5");
+	}
+	if(scalling == Scaling.FACTOR_100000) {
+		DIALOG_MEASURE_DROPDOWN_SCALING.setSelectedValue("6");
+	}
+	if(scalling == Scaling.FACTOR_1000000) {
+		DIALOG_MEASURE_DROPDOWN_SCALING.setSelectedValue("7");
+	}
+	if(scalling == Scaling.FACTOR_10000000) {
+		DIALOG_MEASURE_DROPDOWN_SCALING.setSelectedValue("8");
+	}
+	if(scalling == Scaling.FACTOR_100000000) {
+		DIALOG_MEASURE_DROPDOWN_SCALING.setSelectedValue("9");
+	}
+	if(scalling == Scaling.FACTOR_1000000000) {
+		DIALOG_MEASURE_DROPDOWN_SCALING.setSelectedValue("10");
+	}
+	
+	var decimal = DS_1.getDecimalPlaces(selectedMeasure);
+	
+	if(decimal == -1) {
+		DIALOG_MEASURE_DROPDOWN_DECIMALS.setSelectedValue("DEFAULT");
+	}
+	if(decimal == 0) {
+		DIALOG_MEASURE_DROPDOWN_DECIMALS.setSelectedValue("0");
+	}
+	if(decimal == 1) {
+		DIALOG_MEASURE_DROPDOWN_DECIMALS.setSelectedValue("1");
+	}
+	if(decimal == 2) {
+		DIALOG_MEASURE_DROPDOWN_DECIMALS.setSelectedValue("2");
+	}
+	if(decimal == 3) {
+		DIALOG_MEASURE_DROPDOWN_DECIMALS.setSelectedValue("3");
+	}
+	if(decimal == 4) {
+		DIALOG_MEASURE_DROPDOWN_DECIMALS.setSelectedValue("4");
+	}
+	if(decimal == 5) {
+		DIALOG_MEASURE_DROPDOWN_DECIMALS.setSelectedValue("5");
+	}
+	if(decimal == 6) {
+		DIALOG_MEASURE_DROPDOWN_DECIMALS.setSelectedValue("6");
+	}
+	if(decimal == 7) {
+		DIALOG_MEASURE_DROPDOWN_DECIMALS.setSelectedValue("7");
+	}
+	if(decimal == 8) {
+		DIALOG_MEASURE_DROPDOWN_DECIMALS.setSelectedValue("8");
+	}
+	if(decimal == 9) {
+		DIALOG_MEASURE_DROPDOWN_DECIMALS.setSelectedValue("9");
+	}
+	if(decimal == 10) {
+		DIALOG_MEASURE_DROPDOWN_DECIMALS.setSelectedValue("10");
+	}
+	
+	// prepare current value and preview
+	var preview = DS_1.getDataAsString(selectedMeasure, {});
+	
+	if(preview == "") {
+		preview = "Measure Not in Resultset";
+		
+		DIALOG_MEASURE_CURRENT.setText(preview);
+		DIALOG_MEASURE_PREVIEW.setText("");	
+	} else {
+		if(preview.indexOf("-") == -1 && preview.indexOf("(") == -1) {
+			var selectedNegative = DIALOG_MEASURE_DROPDOWN_NEGATIVE.getSelectedValue();
+			
+			if(selectedNegative == "LEADING_MINUS") {
+				preview = "-" + preview;
+			}
+			
+			if(selectedNegative == "PARENTHESES") {
+				preview = "(" + preview + ")";
+			}
+			
+			if(selectedNegative == "TRAILING_MINUS") {
+				preview = preview + "-";
+			}
+		}
+	
+		DIALOG_MEASURE_CURRENT.setText(preview);
+		DIALOG_MEASURE_PREVIEW.setText(preview);	
+	}	
+}]]></bi:value>
+					</bi:property>
+					<bi:property name="RIGHT_MARGIN" value="auto"/>
+				</bi:component>
+				<bi:component name="DIALOG_MEASURE_TEXT_SCALING" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="Scaling Factor"/>
+					<bi:property name="LEFT_MARGIN" value="16"/>
+					<bi:property name="TOP_MARGIN" value="95"/>
+					<bi:property name="WIDTH" value="210"/>
+					<bi:property name="HEIGHT" value="19"/>
+					<bi:property name="CSS_CLASS" value="label-settings-2 border-style-bottom"/>
+				</bi:component>
+				<bi:component name="DIALOG_MEASURE_DROPDOWN_SCALING" type="DROPDOWN_COMPONENT">
+					<bi:property name="LEFT_MARGIN" value="32"/>
+					<bi:property name="TOP_MARGIN" value="125"/>
+					<bi:property name="WIDTH" value="194"/>
+					<bi:property name="ON_SELECT">
+						<bi:value><![CDATA[if(DIALOG_MEASURE_CHECKBOX_APPLY.isChecked()) {
+	var selectedMeasure = DIALOG_MEASURE_DROPDOWN_MEASURES.getSelectedValue();
+	
+	if(selectedMeasure != "N/A") {
+		var selectedScale = DIALOG_MEASURE_DROPDOWN_SCALING.getSelectedValue();
+		
+		var enabled = false;
+		
+		if(selectedScale == "DEFAULT") {
+			DS_1.setScalingFactor(selectedMeasure, Scaling.FACTOR_DEFAULT);
+		}
+		
+		if(selectedScale == "1") {
+			DS_1.setScalingFactor(selectedMeasure, Scaling.FACTOR_1);
+		}
+		if(selectedScale == "2") {
+			DS_1.setScalingFactor(selectedMeasure, Scaling.FACTOR_10);
+		}
+		if(selectedScale == "3") {
+			DS_1.setScalingFactor(selectedMeasure, Scaling.FACTOR_100);
+		}
+		if(selectedScale == "4") {
+			DS_1.setScalingFactor(selectedMeasure, Scaling.FACTOR_1000);
+		}
+		if(selectedScale == "5") {
+			DS_1.setScalingFactor(selectedMeasure, Scaling.FACTOR_10000);
+		}
+		if(selectedScale == "6") {
+			DS_1.setScalingFactor(selectedMeasure, Scaling.FACTOR_100000);
+		}
+		if(selectedScale == "7") {
+			DS_1.setScalingFactor(selectedMeasure, Scaling.FACTOR_1000000);
+		}
+		if(selectedScale == "8") {
+			DS_1.setScalingFactor(selectedMeasure, Scaling.FACTOR_10000000);
+		}
+		if(selectedScale == "9") {
+			DS_1.setScalingFactor(selectedMeasure, Scaling.FACTOR_100000000);
+		}
+		if(selectedScale == "10") {
+			DS_1.setScalingFactor(selectedMeasure, Scaling.FACTOR_1000000000);
+		}
+	}
+}
+
+DIALOG_MEASURE_UPDATE_PREVIEW.onClick();]]></bi:value>
+					</bi:property>
+				</bi:component>
+				<bi:component name="DIALOG_MEASURE_TEXT_DECIMALS" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="Number of Decimals"/>
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="95"/>
+					<bi:property name="WIDTH" value="210"/>
+					<bi:property name="HEIGHT" value="19"/>
+					<bi:property name="RIGHT_MARGIN" value="16"/>
+					<bi:property name="CSS_CLASS" value="label-settings-2 border-style-bottom"/>
+				</bi:component>
+				<bi:component name="DIALOG_MEASURE_DROPDOWN_DECIMALS" type="DROPDOWN_COMPONENT">
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="125"/>
+					<bi:property name="WIDTH" value="194"/>
+					<bi:property name="ON_SELECT">
+						<bi:value><![CDATA[if(DIALOG_MEASURE_CHECKBOX_APPLY.isChecked()) {
+	var selectedMeasure = DIALOG_MEASURE_DROPDOWN_MEASURES.getSelectedValue();
+
+	if(selectedMeasure != "N/A") {
+		var selectedDecimals = DIALOG_MEASURE_DROPDOWN_DECIMALS.getSelectedValue();
+		
+		var enabled = false;
+		
+		if(selectedDecimals == "DEFAULT") {
+			DS_1.setDecimalPlaces(selectedMeasure, -1);
+		}
+		
+		if(selectedDecimals == "0") {
+			DS_1.setDecimalPlaces(selectedMeasure, 0);
+		}
+		if(selectedDecimals == "1") {
+			DS_1.setDecimalPlaces(selectedMeasure, 1);
+		}
+		if(selectedDecimals == "2") {
+			DS_1.setDecimalPlaces(selectedMeasure, 2);
+		}
+		if(selectedDecimals == "3") {
+			DS_1.setDecimalPlaces(selectedMeasure, 3);
+		}
+		if(selectedDecimals == "4") {
+			DS_1.setDecimalPlaces(selectedMeasure, 4);
+		}
+		if(selectedDecimals == "5") {
+			DS_1.setDecimalPlaces(selectedMeasure, 5);
+		}
+		if(selectedDecimals == "6") {
+			DS_1.setDecimalPlaces(selectedMeasure, 6);
+		}
+		if(selectedDecimals == "7") {
+			DS_1.setDecimalPlaces(selectedMeasure, 7);
+		}
+		if(selectedDecimals == "8") {
+			DS_1.setDecimalPlaces(selectedMeasure, 8);
+		}
+		if(selectedDecimals == "9") {
+			DS_1.setDecimalPlaces(selectedMeasure, 9);
+		}
+		if(selectedDecimals == "10") {
+			DS_1.setDecimalPlaces(selectedMeasure, 10);
+		}
+	}
+}
+
+DIALOG_MEASURE_UPDATE_PREVIEW.onClick();]]></bi:value>
+					</bi:property>
+					<bi:property name="RIGHT_MARGIN" value="16"/>
+				</bi:component>
+				<bi:component name="DIALOG_MEASURE_TEXT_NEGATIVE" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="Negative Value Display"/>
+					<bi:property name="LEFT_MARGIN" value="16"/>
+					<bi:property name="TOP_MARGIN" value="165"/>
+					<bi:property name="WIDTH" value="210"/>
+					<bi:property name="HEIGHT" value="19"/>
+					<bi:property name="CSS_CLASS" value="label-settings-2 border-style-bottom"/>
+				</bi:component>
+				<bi:component name="DIALOG_MEASURE_TEXT_ZERO" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="Zero Display"/>
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="165"/>
+					<bi:property name="WIDTH" value="210"/>
+					<bi:property name="HEIGHT" value="19"/>
+					<bi:property name="RIGHT_MARGIN" value="16"/>
+					<bi:property name="CSS_CLASS" value="label-settings-2 border-style-bottom"/>
+				</bi:component>
+				<bi:component name="DIALOG_MEASURE_TEXT_NEGATIVE_ALL" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="(applies for all measures)"/>
+					<bi:property name="LEFT_MARGIN" value="32"/>
+					<bi:property name="TOP_MARGIN" value="190"/>
+					<bi:property name="WIDTH" value="196"/>
+					<bi:property name="HEIGHT" value="19"/>
+					<bi:property name="CSS_CLASS" value="label-settings-2"/>
+				</bi:component>
+				<bi:component name="DIALOG_MEASURE_DROPDOWN_NEGATIVE" type="DROPDOWN_COMPONENT">
+					<bi:property name="LEFT_MARGIN" value="32"/>
+					<bi:property name="TOP_MARGIN" value="210"/>
+					<bi:property name="WIDTH" value="194"/>
+					<bi:property name="ON_SELECT">
+						<bi:value><![CDATA[if(DIALOG_MEASURE_CHECKBOX_APPLY.isChecked()) {
+	var selectedNegativeNumer = DIALOG_MEASURE_DROPDOWN_NEGATIVE.getSelectedValue();
+	
+	if(selectedNegativeNumer == "LEADING_MINUS") {
+		DS_1.setNegativeNumberDisplay(NegativeNumberDisplay.LEADING_MINUS);
+	}
+	if(selectedNegativeNumer == "PARENTHESES") {
+		DS_1.setNegativeNumberDisplay(NegativeNumberDisplay.PARENTHESES);
+	}
+	if(selectedNegativeNumer == "TRAILING_MINUS") {
+		DS_1.setNegativeNumberDisplay(NegativeNumberDisplay.TRAILING_MINUS);
+	}
+}
+
+DIALOG_MEASURE_UPDATE_PREVIEW.onClick();]]></bi:value>
+					</bi:property>
+				</bi:component>
+				<bi:component name="DIALOG_MEASURE_TEXT_ZERO_ALL" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="(applies for all measures)"/>
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="190"/>
+					<bi:property name="WIDTH" value="196"/>
+					<bi:property name="HEIGHT" value="19"/>
+					<bi:property name="RIGHT_MARGIN" value="16"/>
+					<bi:property name="CSS_CLASS" value="label-settings-2"/>
+				</bi:component>
+				<bi:component name="DIALOG_MEASURE_DROPDOWN_ZERO" type="DROPDOWN_COMPONENT">
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="210"/>
+					<bi:property name="WIDTH" value="196"/>
+					<bi:property name="ON_SELECT">
+						<bi:value><![CDATA[if(DIALOG_MEASURE_CHECKBOX_APPLY.isChecked()) {
+	var selectedZero = DIALOG_MEASURE_DROPDOWN_ZERO.getSelectedValue();
+	
+	if(selectedZero == "CUSTOM") {
+		DS_1.setZeroDisplay(ZeroDisplay.CUSTOM);
+	}
+	
+	if(selectedZero == "DEFAULT") {
+		DS_1.setZeroDisplay(ZeroDisplay.DEFAULT);
+	}
+	if(selectedZero == "EMPTY_CELL") {
+		DS_1.setZeroDisplay(ZeroDisplay.EMPTY_CELL);
+	}
+	if(selectedZero == "WITHOUT_CURRENCY_UNIT") {
+		DS_1.setZeroDisplay(ZeroDisplay.WITHOUT_CURRENCY_UNIT);
+	}
+}
+
+DIALOG_MEASURE_UPDATE_PREVIEW.onClick();]]></bi:value>
+					</bi:property>
+					<bi:property name="RIGHT_MARGIN" value="16"/>
+				</bi:component>
+				<bi:component name="DIALOG_MEASURE_TEXT_CURRENT" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="Current Value"/>
+					<bi:property name="LEFT_MARGIN" value="16"/>
+					<bi:property name="TOP_MARGIN" value="245"/>
+					<bi:property name="WIDTH" value="210"/>
+					<bi:property name="HEIGHT" value="19"/>
+					<bi:property name="CSS_CLASS" value="label-settings-2 border-style-bottom"/>
+				</bi:component>
+				<bi:component name="DIALOG_MEASURE_CURRENT" type="TEXT_COMPONENT">
+					<bi:property name="LEFT_MARGIN" value="32"/>
+					<bi:property name="TOP_MARGIN" value="275"/>
+					<bi:property name="WIDTH" value="400"/>
+					<bi:property name="HEIGHT" value="19"/>
+					<bi:property name="CSS_CLASS" value="label-settings-2"/>
+				</bi:component>
+				<bi:component name="DIALOG_MEASURE_TEXT_PREVIEW" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="Preview"/>
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="245"/>
+					<bi:property name="WIDTH" value="210"/>
+					<bi:property name="HEIGHT" value="19"/>
+					<bi:property name="RIGHT_MARGIN" value="16"/>
+					<bi:property name="CSS_CLASS" value="label-settings-2 border-style-bottom"/>
+				</bi:component>
+				<bi:component name="DIALOG_MEASURE_PREVIEW" type="TEXT_COMPONENT">
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="275"/>
+					<bi:property name="WIDTH" value="194"/>
+					<bi:property name="HEIGHT" value="19"/>
+					<bi:property name="RIGHT_MARGIN" value="16"/>
+					<bi:property name="CSS_CLASS" value="label-settings-2"/>
+				</bi:component>
+				<bi:component name="DIALOG_MEASURE_UPDATE_PREVIEW" type="CHECKBOX_COMPONENT">
+					<bi:property name="TEXT" value="Checkbox"/>
+					<bi:property name="TOP_MARGIN" value="-300"/>
+					<bi:property name="LEFT_MARGIN" value="-300"/>
+					<bi:property name="VISIBLE" value=""/>
+					<bi:property name="ON_CLICK">
+						<bi:value><![CDATA[var selectedMeasure = DIALOG_MEASURE_DROPDOWN_MEASURES.getSelectedValue();
+
+if(selectedMeasure != "N/A") {
+	// prepare preview
+	var preview = DS_1.getDataAsString(selectedMeasure, {});
+	
+	if(preview == "") {
+		preview = "Measure Not in Resultset";
+		
+		DIALOG_MEASURE_PREVIEW.setText("");	
+	} else {
+		if(preview.indexOf("-") == -1 && preview.indexOf("(") == -1) {
+			var selectedNegative = DIALOG_MEASURE_DROPDOWN_NEGATIVE.getSelectedValue();
+			
+			if(selectedNegative == "LEADING_MINUS") {
+				preview = "-" + preview;
+			}
+			
+			if(selectedNegative == "PARENTHESES") {
+				preview = "(" + preview + ")";
+			}
+			
+			if(selectedNegative == "TRAILING_MINUS") {
+				preview = preview + "-";
+			}
+		}
+	
+		DIALOG_MEASURE_PREVIEW.setText(preview);	
+	}	
+}
+
+]]></bi:value>
+					</bi:property>
+					<bi:property name="DESIGNER_VISIBLE" value="X"/>
+				</bi:component>
+			</bi:component>
+			<bi:component name="DIALOG_MEASURE_CHECKBOX_APPLY" type="CHECKBOX_COMPONENT">
+				<bi:property name="TEXT" value="Apply Immediatelly"/>
+				<bi:property name="LEFT_MARGIN" value="16"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="BOTTOM_MARGIN" value="8"/>
+				<bi:property name="WIDTH" value="160"/>
+				<bi:property name="CHECKED" value=""/>
+				<bi:property name="ON_CLICK">
+					<bi:value><![CDATA[if(DIALOG_MEASURE_CHECKBOX_APPLY.isChecked()) {
+	DIALOG_MEASURE_DROPDOWN_DECIMALS.onSelect();
+	DIALOG_MEASURE_DROPDOWN_NEGATIVE.onSelect();
+	DIALOG_MEASURE_DROPDOWN_SCALING.onSelect();
+	DIALOG_MEASURE_DROPDOWN_ZERO.onSelect();
+
+	DIALOG_MEASURE_PREVIEW.setVisible(true);
+} else {
+	DIALOG_MEASURE_PREVIEW.setVisible(false);
+}]]></bi:value>
+				</bi:property>
+			</bi:component>
+			<bi:component name="DIALOG_MEASURE_CLOSE" type="IMAGE_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="auto"/>
+				<bi:property name="TOP_MARGIN" value="16"/>
+				<bi:property name="WIDTH" value="24"/>
+				<bi:property name="HEIGHT" value="24"/>
+				<bi:property name="RIGHT_MARGIN" value="16"/>
+				<bi:property name="IMAGE" value="images/close_grey_24.png"/>
+				<bi:property name="HOVER_IMAGE" value="images/close_red_24.png"/>
+				<bi:property name="ON_CLICK">
+					<bi:value><![CDATA[// just call a cancel
+DIALOG_MEASURE_CANCEL.onClick();]]></bi:value>
+				</bi:property>
+			</bi:component>
+			<bi:component name="DIALOG_MEASURE_OK" type="BUTTON_COMPONENT">
+				<bi:property name="TEXT" value="OK"/>
+				<bi:property name="RIGHT_MARGIN" value="132"/>
+				<bi:property name="LEFT_MARGIN" value="auto"/>
+				<bi:property name="BOTTOM_MARGIN" value="8"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="WIDTH" value="100"/>
+				<bi:property name="HEIGHT" value="26"/>
+				<bi:property name="CSS_CLASS" value="lumira-button-sel"/>
+				<bi:property name="ON_CLICK">
+					<bi:value><![CDATA[// call the cancel button to hide
+DIALOG_MEASURE_CANCEL.onClick();
+
+// pass back the dialog values into the application
+
+// commit via check box code
+DIALOG_MEASURE_CHECKBOX_APPLY.setChecked(true);
+DIALOG_MEASURE_CHECKBOX_APPLY.onClick();]]></bi:value>
+				</bi:property>
+			</bi:component>
+			<bi:component name="DIALOG_MEASURE_CANCEL" type="BUTTON_COMPONENT">
+				<bi:property name="TEXT" value="Cancel"/>
+				<bi:property name="RIGHT_MARGIN" value="16"/>
+				<bi:property name="LEFT_MARGIN" value="auto"/>
+				<bi:property name="BOTTOM_MARGIN" value="8"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="WIDTH" value="100"/>
+				<bi:property name="HEIGHT" value="26"/>
+				<bi:property name="CSS_CLASS" value="lumira-button-non"/>
+				<bi:property name="ON_CLICK">
+					<bi:value><![CDATA[// hide background & dialog
+DIALOG_MEASURE.setVisible(false);
+DIALOG_BACKGROUND.setVisible(false);]]></bi:value>
+				</bi:property>
+			</bi:component>
+			<bi:component name="DIALOG_MEASURE_OPEN" type="BUTTON_COMPONENT">
+				<bi:property name="TEXT" value="Dialog Open Function"/>
+				<bi:property name="ON_CLICK">
+					<bi:value><![CDATA[// first set the values you want to edit in the dialog...
+
+// read all dimensions
+var dimenstions = DS_1.getDimensions();
+var measureDimensionId = "";
+
+dimenstions.forEach(function(dimension, index) {
+	// find key figures (1.3 solution, language dependent; in 1.4 will bring better function "getMeasureDimension()")
+	// you need to change for other languages and add your language description for key figures
+	if(dimension.text == "Key Figures" || dimension.text == "-your-lang-description-" ) {
+		measureDimensionId = dimension.name;
+	}
+});
+
+//  read first 100 members (should be ok for majority of queries)
+var measureDimensionMembers = DS_1.getMembers(measureDimensionId, 100);
+
+// initialize the dropdowns, can be one once, but the code here is not performance critical
+DIALOG_MEASURE_DROPDOWN_MEASURES.removeAllItems();
+
+// add initial entry, required to trigger "selected" event, could be changed to auto-select the first measure
+DIALOG_MEASURE_DROPDOWN_MEASURES.addItem("N/A", " -- select measure --");
+
+// add all measures
+measureDimensionMembers.forEach(function(member, index) {
+  DIALOG_MEASURE_DROPDOWN_MEASURES.addItem(member.internalKey, member.text);
+});
+
+// decimals initialisation
+DIALOG_MEASURE_DROPDOWN_DECIMALS.setEnabled(false);
+DIALOG_MEASURE_DROPDOWN_DECIMALS.removeAllItems();
+DIALOG_MEASURE_DROPDOWN_DECIMALS.addItem("DEFAULT", "Query Default");
+DIALOG_MEASURE_DROPDOWN_DECIMALS.addItem("0", "0 (0)");
+DIALOG_MEASURE_DROPDOWN_DECIMALS.addItem("1", "0.0 (1)");
+DIALOG_MEASURE_DROPDOWN_DECIMALS.addItem("2", "0.00 (2)");
+DIALOG_MEASURE_DROPDOWN_DECIMALS.addItem("3", "0.000 (3)");
+DIALOG_MEASURE_DROPDOWN_DECIMALS.addItem("4", "0.0000 (4)");
+DIALOG_MEASURE_DROPDOWN_DECIMALS.addItem("5", "0.00000 (5)");
+DIALOG_MEASURE_DROPDOWN_DECIMALS.addItem("6", "0.000000 (6)");
+DIALOG_MEASURE_DROPDOWN_DECIMALS.addItem("7", "0.0000000 (7)");
+DIALOG_MEASURE_DROPDOWN_DECIMALS.addItem("8", "0.00000000 (8)");
+DIALOG_MEASURE_DROPDOWN_DECIMALS.addItem("9", "0.000000000 (9)");
+DIALOG_MEASURE_DROPDOWN_DECIMALS.addItem("10", "0.0000000000 (10)");
+
+// scaling initialisation
+DIALOG_MEASURE_DROPDOWN_SCALING.setEnabled(false);
+DIALOG_MEASURE_DROPDOWN_SCALING.removeAllItems();
+DIALOG_MEASURE_DROPDOWN_SCALING.addItem("DEFAULT", "Query Default");
+DIALOG_MEASURE_DROPDOWN_SCALING.addItem("1", "1");
+DIALOG_MEASURE_DROPDOWN_SCALING.addItem("2", "10");
+DIALOG_MEASURE_DROPDOWN_SCALING.addItem("3", "100");
+DIALOG_MEASURE_DROPDOWN_SCALING.addItem("4", "1.000");
+DIALOG_MEASURE_DROPDOWN_SCALING.addItem("5", "10.000");
+DIALOG_MEASURE_DROPDOWN_SCALING.addItem("6", "100.000");
+DIALOG_MEASURE_DROPDOWN_SCALING.addItem("7", "1.000.000");
+DIALOG_MEASURE_DROPDOWN_SCALING.addItem("8", "10.000.000");
+DIALOG_MEASURE_DROPDOWN_SCALING.addItem("9", "100.000.000");
+DIALOG_MEASURE_DROPDOWN_SCALING.addItem("10", "1.000.000.000");
+
+// zero initialisation
+DIALOG_MEASURE_DROPDOWN_ZERO.setEnabled(false);
+DIALOG_MEASURE_DROPDOWN_ZERO.removeAllItems();
+DIALOG_MEASURE_DROPDOWN_ZERO.addItem("DEFAULT", "Query Default");
+DIALOG_MEASURE_DROPDOWN_ZERO.addItem("EMPTY_CELL", "Empty Cell");
+DIALOG_MEASURE_DROPDOWN_ZERO.addItem("WITHOUT_CURRENCY_UNIT", "Without Currency");
+DIALOG_MEASURE_DROPDOWN_ZERO.addItem("CUSTOM", "Custom");
+
+// negative initialisation
+DIALOG_MEASURE_DROPDOWN_NEGATIVE.setEnabled(false);
+DIALOG_MEASURE_DROPDOWN_NEGATIVE.removeAllItems();
+DIALOG_MEASURE_DROPDOWN_NEGATIVE.addItem("LEADING_MINUS", "Leading Minus: -56");
+DIALOG_MEASURE_DROPDOWN_NEGATIVE.addItem("PARENTHESES", "Parentheses: (56)");
+DIALOG_MEASURE_DROPDOWN_NEGATIVE.addItem("TRAILING_MINUS", "Trailing Minus: 56-");
+
+// fill in the values which are coming from the query, those are not dependent on selected measure
+var zeroDisplayValue = DS_1.getZeroDisplay();
+	
+var enabledCustom = false;
+if(zeroDisplayValue == ZeroDisplay.DEFAULT) {
+	DIALOG_MEASURE_DROPDOWN_ZERO.setSelectedValue("DEFAULT");
+}
+if(zeroDisplayValue == ZeroDisplay.CUSTOM) {
+	DIALOG_MEASURE_DROPDOWN_ZERO.setSelectedValue("CUSTOM");	
+	
+	enabledCustom = true;	
+}
+if(zeroDisplayValue == ZeroDisplay.EMPTY_CELL) {
+	DIALOG_MEASURE_DROPDOWN_ZERO.setSelectedValue("EMPTY_CELL");
+}
+if(zeroDisplayValue == ZeroDisplay.WITHOUT_CURRENCY_UNIT) {
+	DIALOG_MEASURE_DROPDOWN_ZERO.setSelectedValue("WITHOUT_CURRENCY_UNIT");
+}
+
+var negativeNumberDisplayValue = DS_1.getNegativeNumberDisplay();
+
+if(negativeNumberDisplayValue == NegativeNumberDisplay.LEADING_MINUS) {
+	DIALOG_MEASURE_DROPDOWN_NEGATIVE.setSelectedValue("LEADING_MINUS");
+}
+if(negativeNumberDisplayValue == NegativeNumberDisplay.PARENTHESES) {
+	DIALOG_MEASURE_DROPDOWN_NEGATIVE.setSelectedValue("PARENTHESES");
+}
+if(negativeNumberDisplayValue == NegativeNumberDisplay.TRAILING_MINUS) {
+	DIALOG_MEASURE_DROPDOWN_NEGATIVE.setSelectedValue("TRAILING_MINUS");
+}
+
+// initialize the ui elements in dialog
+DIALOG_MEASURE_PREVIEW.setVisible(true);
+DIALOG_MEASURE_CHECKBOX_APPLY.setChecked(false);
+	
+// show the background (styled for "blocking UI")
+DIALOG_BACKGROUND.setVisible(true);
+
+// show the dilaog frame
+DIALOG_MEASURE.setVisible(true);]]></bi:value>
+				</bi:property>
+				<bi:property name="WIDTH" value="220"/>
+				<bi:property name="VISIBLE" value=""/>
+				<bi:property name="ENABLED" value="X"/>
+				<bi:property name="HEIGHT" value="16"/>
+				<bi:property name="LEFT_MARGIN" value="0"/>
+				<bi:property name="TOP_MARGIN" value="0"/>
+			</bi:component>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
