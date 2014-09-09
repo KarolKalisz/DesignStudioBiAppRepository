@@ -1,0 +1,303 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+		<bi:property name="CUSTOM_CSS" value="thermo.css"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Set Value"/>
+			<bi:property name="LEFT_MARGIN" value="15"/>
+			<bi:property name="TOP_MARGIN" value="305"/>
+			<bi:property name="WIDTH" value="123"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[// here the value must be manually calculated
+var valueAsIntegerBetween0and100 = Convert.stringToInt(INPUTFIELD_1.getValue());
+
+// the value is visualized by the hight of the corresponding PANEL
+PANEL_TH_VALUE.setHeight(valueAsIntegerBetween0and100 * 2);
+
+// assuming the base line is already set, here the "back" calculation from bottom margin to percentage value
+var baselineValueBwtween0and100 = PANEL_TH_BASELINE.getBottomMargin();
+baselineValueBwtween0and100 = baselineValueBwtween0and100 - 100;
+baselineValueBwtween0and100 = baselineValueBwtween0and100 / 2;
+
+// based on the difference between base line and value, different css styles can be set
+if(valueAsIntegerBetween0and100 >= baselineValueBwtween0and100) {
+	PANEL_TH_BASE.setCSSClass("th-base th-good");
+	PANEL_TH_VALUE.setCSSClass("th-value th-good");
+	PANEL_TH_DOT.setCSSClass("th-dot th-good");
+} else {
+	PANEL_TH_BASE.setCSSClass("th-base th-bad");
+	PANEL_TH_VALUE.setCSSClass("th-value th-bad");
+	PANEL_TH_DOT.setCSSClass("th-dot th-bad");
+}]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="INPUTFIELD_1" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="15"/>
+			<bi:property name="TOP_MARGIN" value="278"/>
+			<bi:property name="WIDTH" value="222"/>
+		</bi:component>
+		<bi:component name="TEXT_SOME_VALUE" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Value as Integer"/>
+			<bi:property name="LEFT_MARGIN" value="15"/>
+			<bi:property name="TOP_MARGIN" value="257"/>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Set Baseline"/>
+			<bi:property name="LEFT_MARGIN" value="13"/>
+			<bi:property name="TOP_MARGIN" value="170"/>
+			<bi:property name="WIDTH" value="123"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[// baseline between 0 and 100
+var valueAsIntegerBetween0and100 = Convert.stringToInt(INPUTFIELD_2.getValue());
+
+// baseline is aline positioned in the scale using bottom margin value
+PANEL_TH_BASELINE.setBottomMargin(valueAsIntegerBetween0and100 * 2 + 100);]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="INPUTFIELD_2" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="13"/>
+			<bi:property name="TOP_MARGIN" value="143"/>
+			<bi:property name="WIDTH" value="222"/>
+		</bi:component>
+		<bi:component name="TEXT_13" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Value as Integer"/>
+			<bi:property name="LEFT_MARGIN" value="13"/>
+			<bi:property name="TOP_MARGIN" value="116"/>
+		</bi:component>
+		<bi:component name="PANEL_THERMOMETER" type="PANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="300"/>
+			<bi:property name="TOP_MARGIN" value="50"/>
+			<bi:property name="WIDTH" value="160"/>
+			<bi:property name="HEIGHT" value="329"/>
+			<bi:component name="IMAGE_BACKGROUND_THERMOMETER" type="IMAGE_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="0"/>
+				<bi:property name="TOP_MARGIN" value="0"/>
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="HEIGHT" value="auto"/>
+				<bi:property name="BOTTOM_MARGIN" value="0"/>
+				<bi:property name="RIGHT_MARGIN" value="0"/>
+			</bi:component>
+			<bi:component name="PANEL_TH_10" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="40"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="WIDTH" value="100"/>
+				<bi:property name="HEIGHT" value="10"/>
+				<bi:property name="BOTTOM_MARGIN" value="300"/>
+				<bi:property name="CSS_CLASS" value="th-border-top"/>
+			</bi:component>
+			<bi:component name="PANEL_TH_9" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="40"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="WIDTH" value="100"/>
+				<bi:property name="HEIGHT" value="10"/>
+				<bi:property name="BOTTOM_MARGIN" value="280"/>
+				<bi:property name="CSS_CLASS" value="th-border-top"/>
+			</bi:component>
+			<bi:component name="PANEL_TH_8" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="40"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="WIDTH" value="100"/>
+				<bi:property name="HEIGHT" value="10"/>
+				<bi:property name="BOTTOM_MARGIN" value="260"/>
+				<bi:property name="CSS_CLASS" value="th-border-top"/>
+			</bi:component>
+			<bi:component name="PANEL_TH_7" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="40"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="WIDTH" value="100"/>
+				<bi:property name="HEIGHT" value="10"/>
+				<bi:property name="BOTTOM_MARGIN" value="240"/>
+				<bi:property name="CSS_CLASS" value="th-border-top"/>
+			</bi:component>
+			<bi:component name="PANEL_TH_6" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="40"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="WIDTH" value="100"/>
+				<bi:property name="HEIGHT" value="10"/>
+				<bi:property name="BOTTOM_MARGIN" value="220"/>
+				<bi:property name="CSS_CLASS" value="th-border-top"/>
+			</bi:component>
+			<bi:component name="PANEL_TH_5" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="40"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="WIDTH" value="100"/>
+				<bi:property name="HEIGHT" value="10"/>
+				<bi:property name="BOTTOM_MARGIN" value="200"/>
+				<bi:property name="CSS_CLASS" value="th-border-top"/>
+			</bi:component>
+			<bi:component name="PANEL_TH_4" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="40"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="WIDTH" value="100"/>
+				<bi:property name="HEIGHT" value="10"/>
+				<bi:property name="BOTTOM_MARGIN" value="180"/>
+				<bi:property name="CSS_CLASS" value="th-border-top"/>
+			</bi:component>
+			<bi:component name="PANEL_TH_3" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="40"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="WIDTH" value="100"/>
+				<bi:property name="HEIGHT" value="10"/>
+				<bi:property name="BOTTOM_MARGIN" value="160"/>
+				<bi:property name="CSS_CLASS" value="th-border-top"/>
+			</bi:component>
+			<bi:component name="PANEL_TH_2" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="40"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="WIDTH" value="100"/>
+				<bi:property name="HEIGHT" value="10"/>
+				<bi:property name="BOTTOM_MARGIN" value="140"/>
+				<bi:property name="CSS_CLASS" value="th-border-top"/>
+			</bi:component>
+			<bi:component name="PANEL_TH_1" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="40"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="WIDTH" value="100"/>
+				<bi:property name="HEIGHT" value="10"/>
+				<bi:property name="BOTTOM_MARGIN" value="120"/>
+				<bi:property name="CSS_CLASS" value="th-border-top"/>
+			</bi:component>
+			<bi:component name="PANEL_TH_0" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="40"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="WIDTH" value="100"/>
+				<bi:property name="HEIGHT" value="10"/>
+				<bi:property name="BOTTOM_MARGIN" value="100"/>
+				<bi:property name="CSS_CLASS" value="th-border-top"/>
+			</bi:component>
+			<bi:component name="PANEL_TH_DOT" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="50"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="WIDTH" value="80"/>
+				<bi:property name="HEIGHT" value="80"/>
+				<bi:property name="BOTTOM_MARGIN" value="10"/>
+				<bi:property name="CSS_CLASS" value="th-dot th-good"/>
+			</bi:component>
+			<bi:component name="PANEL_TH_BASE" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="70"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="WIDTH" value="40"/>
+				<bi:property name="HEIGHT" value="60"/>
+				<bi:property name="BOTTOM_MARGIN" value="51"/>
+				<bi:property name="CSS_CLASS" value="th-base th-good"/>
+			</bi:component>
+			<bi:component name="PANEL_TH_VALUE" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="70"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="WIDTH" value="40"/>
+				<bi:property name="HEIGHT" value="200"/>
+				<bi:property name="BOTTOM_MARGIN" value="111"/>
+				<bi:property name="CSS_CLASS" value="th-base th-good"/>
+			</bi:component>
+			<bi:component name="PANEL_TH_BASELINE" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="40"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="WIDTH" value="100"/>
+				<bi:property name="HEIGHT" value="10"/>
+				<bi:property name="BOTTOM_MARGIN" value="100"/>
+				<bi:property name="CSS_CLASS" value="th-border-top-baseline"/>
+			</bi:component>
+			<bi:component name="TEXT_TH_0" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="0 %"/>
+				<bi:property name="LEFT_MARGIN" value="5"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="CSS_STYLE" value="text-align: right;"/>
+				<bi:property name="WIDTH" value="30"/>
+				<bi:property name="HEIGHT" value="20"/>
+				<bi:property name="BOTTOM_MARGIN" value="105"/>
+			</bi:component>
+			<bi:component name="TEXT_TH_1" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="10 %"/>
+				<bi:property name="LEFT_MARGIN" value="5"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="CSS_STYLE" value="text-align: right;"/>
+				<bi:property name="WIDTH" value="30"/>
+				<bi:property name="HEIGHT" value="20"/>
+				<bi:property name="BOTTOM_MARGIN" value="125"/>
+			</bi:component>
+			<bi:component name="TEXT_TH_2" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="20 %"/>
+				<bi:property name="LEFT_MARGIN" value="5"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="CSS_STYLE" value="text-align: right;"/>
+				<bi:property name="WIDTH" value="30"/>
+				<bi:property name="HEIGHT" value="20"/>
+				<bi:property name="BOTTOM_MARGIN" value="145"/>
+			</bi:component>
+			<bi:component name="TEXT_TH_3" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="30 %"/>
+				<bi:property name="LEFT_MARGIN" value="5"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="CSS_STYLE" value="text-align: right;"/>
+				<bi:property name="WIDTH" value="30"/>
+				<bi:property name="HEIGHT" value="20"/>
+				<bi:property name="BOTTOM_MARGIN" value="165"/>
+			</bi:component>
+			<bi:component name="TEXT_TH_4" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="40 %"/>
+				<bi:property name="LEFT_MARGIN" value="5"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="CSS_STYLE" value="text-align: right;"/>
+				<bi:property name="WIDTH" value="30"/>
+				<bi:property name="HEIGHT" value="20"/>
+				<bi:property name="BOTTOM_MARGIN" value="185"/>
+			</bi:component>
+			<bi:component name="TEXT_TH_5" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="50 %"/>
+				<bi:property name="LEFT_MARGIN" value="5"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="CSS_STYLE" value="text-align: right;"/>
+				<bi:property name="WIDTH" value="30"/>
+				<bi:property name="HEIGHT" value="20"/>
+				<bi:property name="BOTTOM_MARGIN" value="205"/>
+			</bi:component>
+			<bi:component name="TEXT_TH_6" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="60 %"/>
+				<bi:property name="LEFT_MARGIN" value="5"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="CSS_STYLE" value="text-align: right;"/>
+				<bi:property name="WIDTH" value="30"/>
+				<bi:property name="HEIGHT" value="20"/>
+				<bi:property name="BOTTOM_MARGIN" value="225"/>
+			</bi:component>
+			<bi:component name="TEXT_TH_7" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="70 %"/>
+				<bi:property name="LEFT_MARGIN" value="5"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="CSS_STYLE" value="text-align: right;"/>
+				<bi:property name="WIDTH" value="30"/>
+				<bi:property name="HEIGHT" value="20"/>
+				<bi:property name="BOTTOM_MARGIN" value="245"/>
+			</bi:component>
+			<bi:component name="TEXT_TH_8" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="80 %"/>
+				<bi:property name="LEFT_MARGIN" value="5"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="CSS_STYLE" value="text-align: right;"/>
+				<bi:property name="WIDTH" value="30"/>
+				<bi:property name="HEIGHT" value="20"/>
+				<bi:property name="BOTTOM_MARGIN" value="265"/>
+			</bi:component>
+			<bi:component name="TEXT_TH_9" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="90 %"/>
+				<bi:property name="LEFT_MARGIN" value="5"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="CSS_STYLE" value="text-align: right;"/>
+				<bi:property name="WIDTH" value="30"/>
+				<bi:property name="HEIGHT" value="20"/>
+				<bi:property name="BOTTOM_MARGIN" value="285"/>
+			</bi:component>
+			<bi:component name="TEXT_TH_10" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="100 %"/>
+				<bi:property name="LEFT_MARGIN" value="0"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="CSS_STYLE" value="text-align: right;"/>
+				<bi:property name="WIDTH" value="35"/>
+				<bi:property name="HEIGHT" value="20"/>
+				<bi:property name="BOTTOM_MARGIN" value="305"/>
+			</bi:component>
+		</bi:component>
+	</bi:component>
+</bi:biapp>

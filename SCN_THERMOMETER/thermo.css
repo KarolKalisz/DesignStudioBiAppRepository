@@ -1,0 +1,28 @@
+.th-border-top {
+	border-top: 1px solid #cccccc;
+}
+
+.th-border-top-baseline {
+	border-top: 3px solid black;
+}
+
+.th-base {
+	
+}
+
+.th-value {
+	
+}
+
+.th-dot {
+	border-radius: 40px 40px 40px 40px / 40px 40px 40px 40px;
+	border: 1px solid #cccccc;
+}
+
+.th-bad {
+	background-color: red;
+}
+
+.th-good {
+	background-color: green;
+}
