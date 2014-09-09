@@ -3,6 +3,16 @@
 		<bi:property name="THEME" value="sap_platinum"/>
 		<bi:property name="CUSTOM_CSS" value="thermo.css"/>
 	</bi:component>
+	<bi:data_source_alias name="DS_1" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q93 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_009_BICSTEST_Q0007"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[eNrtWm1v4jgQ/iuI76fQQtVDykYyzgC+deJgO0B6Ollcy+0h3dJTy364+/U3eSWhgUJLr7tVKlTFHns8nucZe4ZgDxhVZspg5tgK5JRRMC4oKlmgmfCxM1IaPEM4I8qZ9LutX4NwwBn9zbYqItslmhgigTguDEnItW1tu45XMwlBRk4nMavT6Zv4QYPSZtLpdK5tK5XjrDpjmT8UJpBiylyQrfXi6/JTu1DVtjLtu4KdNdq4lxAVEw3OZeei1+l3+riXvKswQQEHGq9rVEDQEiWkZv6otfnnb9SeOSFetDRQo4ajB5Y6srGUSLSTET/epBtSjbbSMZGEapBMadzHbkexWWoCkOqiXdKqcE2rOvzQdFzyhdN7w9nPtBf0u73ZVbfLr2Y9v/vLFRH+s+qsJ9uzignl59xjJ3gj286UqRC5d0MSNRymwLcMrhPaRGvJBiEiUXouaaaCv0ivB94ApCGUgkLVgQQFvk6G7DQdDXPUUumqNnFCPc0SRdhgPrgmXVEZITFe0P0uk5lriaLguzgdmV90or9Tnfi0Y2wJlIoZrd9X67vV+sundmVCzPYykDRUWngmQKw8QLBiLqAaNNgo0K/3xRayeOGyZqsQ1YM5kiJs0PwoaHpEN2B+FDADyehbo+kyFXASmc8QNaCe7JKXYzsDNmqw/fGxtcrJUsXs1tf7O/TlQIjP6L0p4SGo9htYV3p28lOjnn5Oft8fEGNud0CK18sBaczp/c753ilWxfsZvo0ZSCLpOGrdfVu6i00c1dlfO4vydoWWe9iQDcBIZwPGmY6c5JFDwbiS6LitnInxbwtXJZxeXWI1+c4rj8+T6VzH3DFzXfDPRtz393t5u0MhvZCTXB0qogLtYL6KI2vIRiGOdjYP35bI5xqJfQNSGBUG8Q5UzMT4IA7ihdJJ++WnfIWRfQNy/pqfjKBJVz5mKjoWHjSH6EcpGhXhTaB+wECloZTg06iJ1B8xUs9aJtaZdf46Mr4WDhR7mBDsk+ZUPTAbT6mmUvzOKsW3odX7lpJPX6/VYeRKxrlxxcw3O+P3v8tMz1mz++4T6wRTtujMbzjf4xXlK9+3PvOG80g/knlyQs2ZygyQYhYzuAgvFOL8KTh/LP56xHoqa2XYpvdgBzlUatpWabaKPOSDZNSkQzzhFrpqZXlEBkKxZC8DoZFZBSGL/qelXzLfFz7UlH2p7ifd+El+bYAxJiP8TzDy3bSLAudqXxX57Lzn2OcUSL80uqwYtQp2VPDQ8+vhS/dRh95lg97p6O0N+/OhOZQATST+X5EY3wCvxM5KD9Pt0q3H1Zd18LB8XK43i83qfo3pB+AJDMYP43u53fp3+XBfHeAL6SWlZqEmT2yLDLd1++fiYXG7WT6sHjer20N3UOWSms297jjkk553EQVDfd2HYZLVF+pdoAwXV85P6IqiYSuKhY8/MkN0hJCJcKfLBi8YE8VuwM0ZVeqxFRv5eOtMcRHCC8pVOnFtTRg3qJeGPM1+Uv7UCGoGm20Ss/0Z2aFRCKSX68ssKvXYJAh4ZGo0aJHdn6qIwyOGZvribzsxTzxB7VEz8kB96rwaQT2DS2w7N/Gk370e8U6v6w8vL4WeDOcR7zbEa4i3Szyrcmhnxa7RkvgqVZGVcNW6zsRYG848puPrr16QXZICEy6SZ9QwpxDkDSqwGCpy7e2PW/8DpLZyHA==]]></bi:value>
+			</bi:property>
+		</bi:property>
+	</bi:data_source_alias>
 	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
 		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
 			<bi:property name="TEXT" value="Set Value"/>
@@ -298,6 +308,82 @@ PANEL_TH_BASELINE.setBottomMargin(valueAsIntegerBetween0and100 * 2 + 100);]]></b
 				<bi:property name="HEIGHT" value="20"/>
 				<bi:property name="BOTTOM_MARGIN" value="305"/>
 			</bi:component>
+		</bi:component>
+		<bi:component name="CROSSTAB_1" type="CROSSTAB_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="519"/>
+			<bi:property name="TOP_MARGIN" value="56"/>
+			<bi:property name="HEIGHT" value="800"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+		</bi:component>
+		<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Set Value From Data Key 00013"/>
+			<bi:property name="LEFT_MARGIN" value="16"/>
+			<bi:property name="TOP_MARGIN" value="402"/>
+			<bi:property name="WIDTH" value="269"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[// here the value must be manually calculated
+var dataValue = DS_1.getData("4FW8RN37GL043NF22OTQFXYL3", {
+	"0BC_PERS1": "00020"
+});
+
+// read the value from the data cell
+var dataValueFull = dataValue.value;
+
+// use formatting to get the number w/o decimal places
+var dataValueString = Convert.floatToString(dataValueFull,  "###");
+
+// convert to integer and save
+var valueAsIntegerBetween0and100Original = Convert.stringToInt(dataValueString);
+
+// calculate
+var valueAsIntegerBetween0and100 = valueAsIntegerBetween0and100Original;
+valueAsIntegerBetween0and100 = valueAsIntegerBetween0and100 * 2;
+
+// the value is visualized by the hight of the corresponding PANEL
+PANEL_TH_VALUE.setHeight(valueAsIntegerBetween0and100);
+
+// assuming the base line is already set, here the "back" calculation from bottom margin to percentage value
+var baselineValueBwtween0and100 = PANEL_TH_BASELINE.getBottomMargin();
+baselineValueBwtween0and100 = baselineValueBwtween0and100 - 100;
+baselineValueBwtween0and100 = baselineValueBwtween0and100 / 2;
+
+// based on the difference between base line and value, different css styles can be set
+if(valueAsIntegerBetween0and100Original >= baselineValueBwtween0and100) {
+	PANEL_TH_BASE.setCSSClass("th-base th-good");
+	PANEL_TH_VALUE.setCSSClass("th-value th-good");
+	PANEL_TH_DOT.setCSSClass("th-dot th-good");
+} else {
+	PANEL_TH_BASE.setCSSClass("th-base th-bad");
+	PANEL_TH_VALUE.setCSSClass("th-value th-bad");
+	PANEL_TH_DOT.setCSSClass("th-dot th-bad");
+}]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_4" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Set Base Line from Data Key 00020"/>
+			<bi:property name="LEFT_MARGIN" value="16"/>
+			<bi:property name="TOP_MARGIN" value="365"/>
+			<bi:property name="WIDTH" value="269"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[// here the value must be manually calculated
+var dataValue = DS_1.getData("4FW8RN37GL043NF22OTQFXYL3", {
+	"0BC_PERS1": "00020"
+});
+
+// read the value from the data cell
+var dataValueFull = dataValue.value;
+
+// use formatting to get the number w/o decimal places
+var dataValueString = Convert.floatToString(dataValueFull,  "###");
+
+// convert to integer
+var valueAsIntegerBetween0and100 = Convert.stringToInt(dataValueString);
+valueAsIntegerBetween0and100 = valueAsIntegerBetween0and100 * 2;
+valueAsIntegerBetween0and100 = valueAsIntegerBetween0and100 + 100;
+
+// baseline is aline positioned in the scale using bottom margin value
+PANEL_TH_BASELINE.setBottomMargin(valueAsIntegerBetween0and100);]]></bi:value>
+			</bi:property>
 		</bi:component>
 	</bi:component>
 </bi:biapp>
