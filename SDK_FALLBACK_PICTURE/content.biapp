@@ -1,0 +1,33 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.kalisz.karol.scn.pack" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="FALLBACKPICTURE_1" type="org_kalisz_karol_scn_pack_FallbackPicture">
+			<bi:property name="LEFT_MARGIN" value="101"/>
+			<bi:property name="TOP_MARGIN" value="205"/>
+			<bi:property name="WIDTH" value="160"/>
+			<bi:property name="HEIGHT" value="160"/>
+			<bi:property name="picture" value="Lighthouse160.jpg"/>
+			<bi:property name="fallbackPicture" value="Penguins160.jpg"/>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Change Normal Picture to Existing One"/>
+			<bi:property name="LEFT_MARGIN" value="98"/>
+			<bi:property name="TOP_MARGIN" value="56"/>
+			<bi:property name="WIDTH" value="272"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[FALLBACKPICTURE_1.setPicture("Lighthouse160.jpg");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Change Normal Picture to NON Existing One"/>
+			<bi:property name="LEFT_MARGIN" value="99"/>
+			<bi:property name="TOP_MARGIN" value="96"/>
+			<bi:property name="WIDTH" value="272"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[FALLBACKPICTURE_1.setPicture("Lighthouse160-non.jpg");]]></bi:value>
+			</bi:property>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
