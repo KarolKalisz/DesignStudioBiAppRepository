@@ -1,0 +1,51 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.kalisz.karol.scn.ui5basics" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="setEditable(false);"/>
+			<bi:property name="LEFT_MARGIN" value="46"/>
+			<bi:property name="TOP_MARGIN" value="52"/>
+			<bi:property name="WIDTH" value="169"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[RATINGINDICATOR_1.setEditable(false);]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="setValue(3.54);"/>
+			<bi:property name="LEFT_MARGIN" value="46"/>
+			<bi:property name="TOP_MARGIN" value="94"/>
+			<bi:property name="WIDTH" value="169"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[RATINGINDICATOR_1.setValue(3.54);]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Button"/>
+			<bi:property name="LEFT_MARGIN" value="46"/>
+			<bi:property name="TOP_MARGIN" value="134"/>
+			<bi:property name="WIDTH" value="169"/>
+		</bi:component>
+		<bi:component name="BUTTON_4" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Button"/>
+			<bi:property name="LEFT_MARGIN" value="46"/>
+			<bi:property name="TOP_MARGIN" value="176"/>
+			<bi:property name="WIDTH" value="169"/>
+		</bi:component>
+		<bi:component name="BUTTON_5" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Button"/>
+			<bi:property name="LEFT_MARGIN" value="46"/>
+			<bi:property name="TOP_MARGIN" value="217"/>
+			<bi:property name="WIDTH" value="169"/>
+		</bi:component>
+		<bi:component name="RATINGINDICATOR_1" type="org_kalisz_karol_scn_ui5basics_RatingIndicator">
+			<bi:property name="LEFT_MARGIN" value="52"/>
+			<bi:property name="TOP_MARGIN" value="298"/>
+			<bi:property name="onChange">
+				<bi:value><![CDATA[APPLICATION.createInfoMessage("Rate: " + RATINGINDICATOR_1.getValue());]]></bi:value>
+			</bi:property>
+		</bi:component>
+	</bi:component>
+</bi:biapp>

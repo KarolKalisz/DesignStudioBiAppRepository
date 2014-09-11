@@ -1,0 +1,53 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.kalisz.karol.scn.ui5basics" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="setLogoText"/>
+			<bi:property name="LEFT_MARGIN" value="46"/>
+			<bi:property name="TOP_MARGIN" value="52"/>
+			<bi:property name="WIDTH" value="169"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[APPLICATIONHEADER_1.setLogoText("My New Logo");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="setUserName"/>
+			<bi:property name="LEFT_MARGIN" value="46"/>
+			<bi:property name="TOP_MARGIN" value="94"/>
+			<bi:property name="WIDTH" value="169"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[APPLICATIONHEADER_1.setUserName("Kalisz, Karol");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Button"/>
+			<bi:property name="LEFT_MARGIN" value="46"/>
+			<bi:property name="TOP_MARGIN" value="134"/>
+			<bi:property name="WIDTH" value="169"/>
+		</bi:component>
+		<bi:component name="BUTTON_4" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Button"/>
+			<bi:property name="LEFT_MARGIN" value="46"/>
+			<bi:property name="TOP_MARGIN" value="176"/>
+			<bi:property name="WIDTH" value="169"/>
+		</bi:component>
+		<bi:component name="BUTTON_5" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Button"/>
+			<bi:property name="LEFT_MARGIN" value="46"/>
+			<bi:property name="TOP_MARGIN" value="217"/>
+			<bi:property name="WIDTH" value="169"/>
+		</bi:component>
+		<bi:component name="APPLICATIONHEADER_1" type="org_kalisz_karol_scn_ui5basics_ApplicationHeader">
+			<bi:property name="LEFT_MARGIN" value="50"/>
+			<bi:property name="TOP_MARGIN" value="295"/>
+			<bi:property name="RIGHT_MARGIN" value="50"/>
+			<bi:property name="displayLogoff" value="X"/>
+			<bi:property name="onLogoff">
+				<bi:value><![CDATA[APPLICATION.createInfoMessage("Now Log Off");]]></bi:value>
+			</bi:property>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
