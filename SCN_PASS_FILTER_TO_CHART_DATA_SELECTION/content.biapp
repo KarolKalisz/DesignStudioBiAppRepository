@@ -1,0 +1,108 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q93 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_009_BICSTEST_Q0007"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[eNrtWm1v2zYQ/iuGvw9yYgdZAFUATZ1srpSokJRtZRgIL/E6A6s7JO6H7dfv9GrJkR07dtY2UBEUIo88Hu95jryzZA8ZVWbCYOrYCuSEUTAuKCpZqJkIsDNWGnxDOCPKub3pd34NoyFn9Dfbqolsl2hiiATiuOCRiGvb2nQdruY2Ahk7vdSsXu/GJA8alDa3vV7v2rYyOc5qMpYFnjChFBPmguys5p8XH7qlqq6Va98WbK3Rxb1EqJhocC57F4PezcUF7qXoKk1QwIEm6xoVErRECalZMOqs//kbtedOSBatDNSo4eCBlY58LCUS7WQkSDbpRlSjrXRMJKEaJFMa97HdUW6WmhCkuuhWtCpc06oP3zcdl3zl9IE3/ZkOwpv+YHrV7/Or6SDo/3JFRPCiOuvZ9qxyQvW58NgR3si3M2EqQu7dkVQNhwnwDYObhDbRWrJhhEhUniuaqeCv0uuDPwRpCKWgUHUoQUGg0yFbTUfDDLXUuupNnNBMs1QRNlgArslWVEZIjBd0v8tk7lqiKAQuTkfml53o70wnPm0ZWwGlZkbn9+XqYbn69KFbm5CwvQokjZQWvgkRKx8QrIQLqAYNNgr06b7YQJYsXNVslaJmMEdSRC2a7wVNn+gWzPcCZigZfWs0XaZCTmLzEeIW1KNd8npsp8BGLbY/PrZWNVmqmd35/OUBfTkU4iN6b0J4BKr7BtZVnp3i1Gimn1Pc93vEmNvtkeL1skeacHq3c753itXxfoFvYwaSSDqOOw9fF+58nUR1/q+bR3m3RssdbMgHYKSzIeNMx076yKFkXEV02FbOxPi3hasWTieXWG2+c+LxeTSdm5g7Zq4LwdmI++39Xt2uJ6QfcVKoQ0VUoB0sUElkeWwU4Whn/fh1gXxukNh3IIVRUZjsQCVMTA7iMFkom7RbfsxPGPkvIOev+ckI2nTlfaaiY+FDe4i+l6JREd4G6jsMVBpJCQGN20j9ESP1+ysTk1N/Ty2H9/0uacHEPbPxEGoLwbYQPLUQfP5yrAkCVzLOjSumgdkav/tNZHZKmu03l5jlm6pFZ34/+S1eMJ74tvSF95MH+pHM0gNoxlRugBTThKBl9KAQ50/A+WP+1xNWQ3krxza7xXrIoUrTtiqzVewjHySjJhviC7fU1SgrAi4UiqV7GQqNzCoJWfY/L9zS+YEIoKFoy3Q/68a/9FsBjDEZ4/8EA9vNuihwrnbVgC/Oe4l9Ton0a6PLSlCrYUcFj/ygGb5sH03oXbboHY/ezrA/H5qeBGgj8f+KxOQGOBE7KztMN0t3npafVuHj4mmxWs/Xyy8rzC4AT2AwQZTcy93Ov4vHL/UBgZB+WiiWaoq0tMxPO/d/zh/n9+vF4/JpvbzfdwfVLqnpzO+PI3478C/i0NPXN+ClOXmp3gXKcHHl/JR8dlQ0bEWxbAlGxkNHCJkKt7ps8MMxUewO3IJRlR5bsVGAt84EFyG8pFytE9fWhHGDemnEs+wn40+DoGGw2SQxm4/A9o1CIP1CX25RpccmYchj06BBi/z+VGUcHjA015f8Volp4BFqD5pRBOpz5zUImhlcYdu5iSeD/vWI9wb9wLu8FPrWm8W83xKvJd428azaoZ3XskZLEqhMRV6h1cs2k2BtOPOZTq6/ZkF+SQpMuEiRUcOMQlg0qMBiqMy1N5+m/gftmV7V]]></bi:value>
+			</bi:property>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:data_source_alias name="DS_2" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q93 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_009_BICSTEST_Q0007"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[eNrtWm1v2zYQ/iuGvw9yYgdZAFUATZ1srpSokJRtZRgIL/E6A6s7JO6H7dfv9GrJkR07dtY2UBEUIo88Hu95jryzZA8ZVWbCYOrYCuSEUTAuKCpZqJkIsDNWGnxDOCPKub3pd34NoyFn9Dfbqolsl2hiiATiuOCRiGvb2nQdruY2Ahk7vdSsXu/GJA8alDa3vV7v2rYyOc5qMpYFnjChFBPmguys5p8XH7qlqq6Va98WbK3Rxb1EqJhocC57F4PezcUF7qXoKk1QwIEm6xoVErRECalZMOqs//kbtedOSBatDNSo4eCBlY58LCUS7WQkSDbpRlSjrXRMJKEaJFMa97HdUW6WmhCkuuhWtCpc06oP3zcdl3zl9IE3/ZkOwpv+YHrV7/Or6SDo/3JFRPCiOuvZ9qxyQvW58NgR3si3M2EqQu7dkVQNhwnwDYObhDbRWrJhhEhUniuaqeCv0uuDPwRpCKWgUHUoQUGg0yFbTUfDDLXUuupNnNBMs1QRNlgArslWVEZIjBd0v8tk7lqiKAQuTkfml53o70wnPm0ZWwGlZkbn9+XqYbn69KFbm5CwvQokjZQWvgkRKx8QrIQLqAYNNgr06b7YQJYsXNVslaJmMEdSRC2a7wVNn+gWzPcCZigZfWs0XaZCTmLzEeIW1KNd8npsp8BGLbY/PrZWNVmqmd35/OUBfTkU4iN6b0J4BKr7BtZVnp3i1Gimn1Pc93vEmNvtkeL1skeacHq3c753itXxfoFvYwaSSDqOOw9fF+58nUR1/q+bR3m3RssdbMgHYKSzIeNMx076yKFkXEV02FbOxPi3hasWTieXWG2+c+LxeTSdm5g7Zq4LwdmI++39Xt2uJ6QfcVKoQ0VUoB0sUElkeWwU4Whn/fh1gXxukNh3IIVRUZjsQCVMTA7iMFkom7RbfsxPGPkvIOev+ckI2nTlfaaiY+FDe4i+l6JREd4G6jsMVBpJCQGN20j9ESP1+ysTk1N/Ty2H9/0uacHEPbPxEGoLwbYQPLUQfP5yrAkCVzLOjSumgdkav/tNZHZKmu03l5jlm6pFZ34/+S1eMJ74tvSF95MH+pHM0gNoxlRugBTThKBl9KAQ50/A+WP+1xNWQ3krxza7xXrIoUrTtiqzVewjHySjJhviC7fU1SgrAi4UiqV7GQqNzCoJWfY/L9zS+YEIoKFoy3Q/68a/9FsBjDEZ4/8EA9vNuihwrnbVgC/Oe4l9Ton0a6PLSlCrYUcFj/ygGb5sH03oXbboHY/ezrA/H5qeBGgj8f+KxOQGOBE7KztMN0t3npafVuHj4mmxWs/Xyy8rzC4AT2AwQZTcy93Ov4vHL/UBgZB+WiiWaoq0tMxPO/d/zh/n9+vF4/JpvbzfdwfVLqnpzO+PI3478C/i0NPXN+ClOXmp3gXKcHHl/JR8dlQ0bEWxbAlGxkNHCJkKt7ps8MMxUewO3IJRlR5bsVGAt84EFyG8pFytE9fWhHGDemnEs+wn40+DoGGw2SQxm4/A9o1CIP1CX25RpccmYchj06BBi/z+VGUcHjA015f8Volp4BFqD5pRBOpz5zUImhlcYdu5iSeD/vWI9wb9wLu8FPrWm8W83xKvJd428azaoZ3XskZLEqhMRV6h1cs2k2BtOPOZTq6/ZkF+SQpMuEiRUcOMQlg0qMBiqMy1N5+m/gftmV7V]]></bi:value>
+			</bi:property>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="CHART_1" type="CHART_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="28"/>
+			<bi:property name="TOP_MARGIN" value="89"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Read Filter 0BC_PERS1 and pass on DS_2"/>
+			<bi:property name="LEFT_MARGIN" value="26"/>
+			<bi:property name="TOP_MARGIN" value="49"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[// get the filter with external key
+var externalFilter = DS_1.getFilterExt("0BC_PERS1");
+
+APPLICATION.createErrorMessage("Filter External: " + externalFilter);
+
+var splittedString = externalFilter.split(";");
+var first = "";
+var second = "";
+
+var anArrayOf5ForLoop = [0,1,2,3,4];
+
+splittedString.forEach(function(filterELem, index) {
+	// clean up any spaces
+	filterELem = Convert.replaceAll(filterELem, " ", "");
+	
+	// very basic conversion from external key to internal key, add 0 (works only for me!)
+	anArrayOf5ForLoop.forEach(function(loopElem, index) {
+	  if(filterELem.length < 5) {
+	  	filterELem = "0" + filterELem;
+	  }
+	});
+		
+	if (index == 0) {
+		first = filterELem;
+	}
+	
+	if (index == 1) {
+		second = filterELem;		
+	}
+});
+
+var thirdAsEmpty = "";
+var selectionsAsArray = [first, second, thirdAsEmpty];
+
+var selectionArrayAsString = "";
+
+selectionsAsArray.forEach(function(selArrayInternalElem, index) {
+	selectionArrayAsString = selectionArrayAsString + " | " + selArrayInternalElem;
+});
+
+APPLICATION.createErrorMessage("Filter Internal: " + selectionArrayAsString);
+
+// hmm, works only for me as I can convert
+CHART_1.setDataSelection({
+	"0BC_PERS1": selectionsAsArray
+});
+
+DS_2.setFilterExt("0BC_PERS1", externalFilter);]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="270"/>
+		</bi:component>
+		<bi:component name="CROSSTAB_1" type="CROSSTAB_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="25"/>
+			<bi:property name="TOP_MARGIN" value="404"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="HEIGHT" value="656"/>
+			<bi:property name="WIDTH" value="327"/>
+		</bi:component>
+		<bi:component name="CROSSTAB_2" type="CROSSTAB_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="356"/>
+			<bi:property name="TOP_MARGIN" value="404"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_2"/>
+			<bi:property name="HEIGHT" value="656"/>
+		</bi:component>
+		<bi:component name="DIMENSIONFILTER_1" type="DIMENSIONFILTER_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="27"/>
+			<bi:property name="TOP_MARGIN" value="3"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="TARGET_DATA_SOURCES_ALIAS_REF" value=""/>
+			<bi:property name="DIMENSION_NAME" value="0BC_PERS1"/>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
