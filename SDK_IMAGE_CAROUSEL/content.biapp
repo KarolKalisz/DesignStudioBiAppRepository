@@ -1,0 +1,156 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.kalisz.karol.scn.pack" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+		<bi:property name="CUSTOM_CSS" value="image.css"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Remove All"/>
+			<bi:property name="LEFT_MARGIN" value="100"/>
+			<bi:property name="TOP_MARGIN" value="25"/>
+			<bi:property name="WIDTH" value="258"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[IMAGECAROUSEL_1.removeAllElements();
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Add Item"/>
+			<bi:property name="LEFT_MARGIN" value="100"/>
+			<bi:property name="TOP_MARGIN" value="206"/>
+			<bi:property name="WIDTH" value="101"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[IMAGECAROUSEL_1.addElement(INPUTFIELD_1.getValue(), INPUTFIELD_2.getValue(), INPUTFIELD_3.getValue());]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Select by Key"/>
+			<bi:property name="LEFT_MARGIN" value="336"/>
+			<bi:property name="TOP_MARGIN" value="207"/>
+			<bi:property name="WIDTH" value="101"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[IMAGECAROUSEL_1.setSelectedKey(INPUTFIELD_1.getValue());]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_8" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Update by Key"/>
+			<bi:property name="LEFT_MARGIN" value="452"/>
+			<bi:property name="TOP_MARGIN" value="208"/>
+			<bi:property name="WIDTH" value="101"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[IMAGECAROUSEL_1.updateElement(INPUTFIELD_1.getValue(), "Update for " + INPUTFIELD_2.getValue(), INPUTFIELD_3.getValue());]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_4" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Insert Item @ 1"/>
+			<bi:property name="LEFT_MARGIN" value="219"/>
+			<bi:property name="TOP_MARGIN" value="206"/>
+			<bi:property name="WIDTH" value="101"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[IMAGECAROUSEL_1.insertElement(INPUTFIELD_1.getValue(), INPUTFIELD_2.getValue(), INPUTFIELD_3.getValue(), 1);]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_5" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Delete Item"/>
+			<bi:property name="LEFT_MARGIN" value="102"/>
+			<bi:property name="TOP_MARGIN" value="247"/>
+			<bi:property name="WIDTH" value="101"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[IMAGECAROUSEL_1.deleteElement(INPUTFIELD_1.getValue());]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_6" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="First Key"/>
+			<bi:property name="LEFT_MARGIN" value="464"/>
+			<bi:property name="TOP_MARGIN" value="116"/>
+			<bi:property name="WIDTH" value="101"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[INPUTFIELD_1.setValue("Penguins160");
+INPUTFIELD_2.setValue("Penguins160.jpg Text");
+INPUTFIELD_3.setValue("Penguins160.jpg");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_7" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Second Key"/>
+			<bi:property name="LEFT_MARGIN" value="579"/>
+			<bi:property name="TOP_MARGIN" value="116"/>
+			<bi:property name="WIDTH" value="101"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[INPUTFIELD_1.setValue("Lighthouse160");
+INPUTFIELD_2.setValue("Lighthouse160.jpg Text");
+INPUTFIELD_3.setValue("Lighthouse160.jpg");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="INPUTFIELD_1" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="192"/>
+			<bi:property name="TOP_MARGIN" value="115"/>
+			<bi:property name="WIDTH" value="253"/>
+			<bi:property name="VALUE" value="Penguins160"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_2" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="192"/>
+			<bi:property name="TOP_MARGIN" value="142"/>
+			<bi:property name="WIDTH" value="253"/>
+			<bi:property name="VALUE" value="Penguins160 Some Ping"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_3" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="192"/>
+			<bi:property name="TOP_MARGIN" value="172"/>
+			<bi:property name="WIDTH" value="253"/>
+			<bi:property name="VALUE" value="Penguins160.jpg"/>
+		</bi:component>
+		<bi:component name="TEXT_1" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Key"/>
+			<bi:property name="LEFT_MARGIN" value="110"/>
+			<bi:property name="TOP_MARGIN" value="117"/>
+		</bi:component>
+		<bi:component name="TEXT_2" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Text"/>
+			<bi:property name="LEFT_MARGIN" value="110"/>
+			<bi:property name="TOP_MARGIN" value="142"/>
+		</bi:component>
+		<bi:component name="TEXT_3" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Image"/>
+			<bi:property name="LEFT_MARGIN" value="110"/>
+			<bi:property name="TOP_MARGIN" value="172"/>
+		</bi:component>
+		<bi:component name="FALLBACKPICTURE_1" type="org_kalisz_karol_scn_pack_FallbackPicture">
+			<bi:property name="LEFT_MARGIN" value="101"/>
+			<bi:property name="TOP_MARGIN" value="559"/>
+			<bi:property name="fallbackPicture" value="Lighthouse160.jpg"/>
+			<bi:property name="WIDTH" value="160"/>
+			<bi:property name="HEIGHT" value="160"/>
+			<bi:property name="picture" value=""/>
+			<bi:property name="RIGHT_MARGIN" value="auto"/>
+			<bi:property name="BOTTOM_MARGIN" value="auto"/>
+		</bi:component>
+		<bi:component name="TEXT_4" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Sample text"/>
+			<bi:property name="LEFT_MARGIN" value="101"/>
+			<bi:property name="TOP_MARGIN" value="529"/>
+			<bi:property name="WIDTH" value="318"/>
+		</bi:component>
+		<bi:component name="PANEL_1" type="PANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="100"/>
+			<bi:property name="TOP_MARGIN" value="400"/>
+			<bi:property name="WIDTH" value="600"/>
+			<bi:property name="HEIGHT" value="120"/>
+			<bi:property name="CSS_STYLE" value="border: 1px solid #000000;"/>
+			<bi:component name="IMAGECAROUSEL_1" type="org_kalisz_karol_scn_pack_ImageCarousel">
+				<bi:property name="LEFT_MARGIN" value="3"/>
+				<bi:property name="TOP_MARGIN" value="3"/>
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="onSelectionChanged">
+					<bi:value><![CDATA[TEXT_4.setText("Selected: " + IMAGECAROUSEL_1.getSelectedKey());
+
+FALLBACKPICTURE_1.setPicture(IMAGECAROUSEL_1.getSelectedKey() + ".jpg");]]></bi:value>
+				</bi:property>
+				<bi:property name="defaultImage" value="Penguins160.jpg"/>
+				<bi:property name="CSS_CLASS" value="redefined"/>
+				<bi:property name="HEIGHT" value="auto"/>
+				<bi:property name="RIGHT_MARGIN" value="3"/>
+				<bi:property name="BOTTOM_MARGIN" value="3"/>
+			</bi:component>
+		</bi:component>
+	</bi:component>
+</bi:biapp>

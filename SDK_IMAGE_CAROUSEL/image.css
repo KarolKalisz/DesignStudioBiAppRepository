@@ -1,0 +1,11 @@
+.redefined .scn-pack-ImageCarousel-SelectedImage {
+	border: solid 3px #000000 !important;
+}
+
+.redefined .scn-pack-ImageCarousel-Image {
+	width: 100px !important;
+	height: 80px !important;
+	border: solid 3px transparent;
+	margin-top: 23px; /* for center: (height - width) / 2*/
+	margin-left: 23px; /* for center: (height - width) / 2*/
+}
