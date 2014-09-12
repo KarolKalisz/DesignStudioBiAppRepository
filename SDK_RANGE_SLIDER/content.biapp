@@ -1,0 +1,57 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.kalisz.karol.scn.ui5basics" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="setValue(56.0);"/>
+			<bi:property name="LEFT_MARGIN" value="46"/>
+			<bi:property name="TOP_MARGIN" value="52"/>
+			<bi:property name="WIDTH" value="169"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[RANGESLIDER_1.setValue(56.0);]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="setValue2(86.0)"/>
+			<bi:property name="LEFT_MARGIN" value="46"/>
+			<bi:property name="TOP_MARGIN" value="94"/>
+			<bi:property name="WIDTH" value="169"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[RANGESLIDER_1.setValue2(86.0);]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Button"/>
+			<bi:property name="LEFT_MARGIN" value="46"/>
+			<bi:property name="TOP_MARGIN" value="134"/>
+			<bi:property name="WIDTH" value="169"/>
+		</bi:component>
+		<bi:component name="BUTTON_4" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Button"/>
+			<bi:property name="LEFT_MARGIN" value="46"/>
+			<bi:property name="TOP_MARGIN" value="176"/>
+			<bi:property name="WIDTH" value="169"/>
+		</bi:component>
+		<bi:component name="BUTTON_5" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Button"/>
+			<bi:property name="LEFT_MARGIN" value="46"/>
+			<bi:property name="TOP_MARGIN" value="217"/>
+			<bi:property name="WIDTH" value="169"/>
+		</bi:component>
+		<bi:component name="RANGESLIDER_1" type="org_kalisz_karol_scn_ui5basics_RangeSlider">
+			<bi:property name="LEFT_MARGIN" value="48"/>
+			<bi:property name="TOP_MARGIN" value="290"/>
+			<bi:property name="stepLabels" value="X"/>
+			<bi:property name="WIDTH" value="568"/>
+			<bi:property name="value" value="40"/>
+			<bi:property name="value2" value="50"/>
+			<bi:property name="onChange">
+				<bi:value><![CDATA[APPLICATION.createInfoMessage("Value: " + RANGESLIDER_1.getValue());
+
+APPLICATION.createInfoMessage("Value2: " + RANGESLIDER_1.getValue2());]]></bi:value>
+			</bi:property>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
