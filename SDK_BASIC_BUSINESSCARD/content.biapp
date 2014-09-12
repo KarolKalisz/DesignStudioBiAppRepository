@@ -1,0 +1,25 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.kalisz.karol.scn.pack" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="BASICBUSINESSCARD_1" type="org_kalisz_karol_scn_pack_BasicBusinessCard">
+			<bi:property name="LEFT_MARGIN" value="43"/>
+			<bi:property name="TOP_MARGIN" value="39"/>
+			<bi:property name="name" value="Kalisz, Karol"/>
+			<bi:property name="title" value="Development SAP"/>
+			<bi:property name="HEIGHT" value="42"/>
+			<bi:property name="image" value="Lighthouse160.jpg"/>
+			<bi:property name="WIDTH" value="193"/>
+			<bi:property name="onPress">
+				<bi:value><![CDATA[IMAGE_1.setImage(BASICBUSINESSCARD_1.getImage());]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="IMAGE_1" type="IMAGE_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="47"/>
+			<bi:property name="TOP_MARGIN" value="115"/>
+			<bi:property name="WIDTH" value="124"/>
+			<bi:property name="HEIGHT" value="103"/>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
