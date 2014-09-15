@@ -1,0 +1,100 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+		<bi:property name="CUSTOM_CSS" value="scroll.css"/>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q93 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_009_BICSTEST_Q0007"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[eNrtWm1v4jgQ/iuI76fQQtWrlI1knAF868TBdoD0dLK4lttDuqWnlv1w9+tv8koC4aUtve5WqVAVe+zxeJ5n7BmC3WdUmQmDqWMrkBNGwbigqGSBZsLHzkhp8AzhjChnfNNt/RqEfc7ob7ZVEdku0cQQCcRxYUBCrm1r03W6mnEIMnI6iVmdzo2JHzQobcadTufatlI5zqozlvkDYQIpJswF2VrNvy4+tQtVbSvTvi3YWqONewlRMdHgXHYuep2biyvcS95VmKCAA43XNSogaIkSUjN/2Fr/8zdqz5wQL1oaqFHDyQNLHdlYSiTayYgfb9INqUZb6YhIQjVIpjTuY7uj2Cw1AUh10S5pVbimVR1+aDou+cLpvcH0Z9oLbrq96VW3y6+mPb/7yxUR/lF11s72rGJC+Tn32DO8kW1nwlSI3LsliRoOE+AbBtcJbaK1ZP0QkSg9lzRTwV+k1wOvD9IQSkGh6kCCAl8nQ7aajoYZaql0VZs4oZ5miSJsMB9ck66ojJAYL+h+l8nMtURR8F2cjswvOtHfqU582jK2BErFjNbvy9X9cvXlU7syIWZ7GUgaKi08EyBWHiBYMRdQDRpsFOjX+2IDWbxwWbNViOrBHEoRNmh+FDQ9ohswPwqYgWT0rdF0mQo4icxniBpQn+2Sl2M7BTZssP3xsbXKyVLF7NbXh3v0ZV+Iz+i9CeEhqPYbWFd6dvJTo55+Tn7fHxBjbndAitfLAWnM6f3O+d4pVsX7CN9GDCSRdBS17r8t3Pk6jursr51FebtCyz1syAZgpLM+40xHTvLIoWBcSXTaVs7E+LeFqxJOry6xmnznlcfns+lcx9wRc13wz0bc9/d7ebsDIb2Qk1wdKqIC7WC+iiNrwIYhjnbWj98WyOcaiX0LUhgVBvEOVMzE+CAO4oXSSfvlz/kKI/sG5Pw1PxlCk658zFR0JDxoDtGPUjQqwptA/YCBSkMpwadRE6k/YqSetUysM+v8dWR8LRwo9jAh2CfNqXpgNp5STaX4nVWKb0Or9y0ld1+v1WHkSsa5ccXUN1vj97/LTM9Zs/3uE+sEU7bozG843+MV5Svftx55w3miH8ksOaFmTGUGSDGNGVyEFwpx/gScP+Z/PWE9lbUybNN7sIMcKjVtqzRbRR7yQTJq0iGecAtdtbI8IgOhWLKXvtDIrIKQRf9u6ZfM94UPNWVfqnunGz/Jrw0wxmSE/wlGvpt2UeBc7asij87bZp9VHyJW7PoKAFTw0PPrMUiNqYPgsoHgKATbHU4RbMeC09kb5S89GndxH0iAJvD+L9TjA/+V2Fnp2blZuvW0/LIKHhdPi9V6vl4+rDDbADxwwfhhfA23W/8uHh+qA3whvaSyLNTkeWyR0Lbu/pw/zu/Wi8fl03p5d+jKqdxJ05nXHYV83PMuomCgr29gkCTxhXoXKMPFlfMTuqJo2IpineMPzQAdIWQi3OqywQtGRLFbcHNGlXpsxYY+XjITXITwgnKVTlxbE8YN6qUhT5OdlD81gprBZpOzbH41dmgUAunl+jKLSj02CQIemRoNWmTXpSri8IShmb74y01MC5+h9qQZeaDuOq9GUM/gEtvOTTzpd6+HvNPr+oPLS6HHg1nEuw3xGuJtE8+qHNpZbWu0JL5KVWQVW7WMMzHWhjOP6fj6qxdkl6TAy53kCTTMKAR5gwqsfYrUevNb1v8Aro5tQw==]]></bi:value>
+			</bi:property>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="DIMENSIONFILTER_1" type="DIMENSIONFILTER_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="27"/>
+			<bi:property name="TOP_MARGIN" value="3"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="TARGET_DATA_SOURCES_ALIAS_REF" value=""/>
+			<bi:property name="DIMENSION_NAME" value="0BC_PERS1"/>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Remove Drill Down"/>
+			<bi:property name="LEFT_MARGIN" value="27"/>
+			<bi:property name="TOP_MARGIN" value="50"/>
+			<bi:property name="WIDTH" value="226"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[DS_1.removeDimension("0BC_PERS1");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_4" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Change Drill to Columns"/>
+			<bi:property name="LEFT_MARGIN" value="27"/>
+			<bi:property name="TOP_MARGIN" value="91"/>
+			<bi:property name="WIDTH" value="226"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[DS_1.moveDimensionToColumns("0BC_PERS1");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Scroll X Only"/>
+			<bi:property name="LEFT_MARGIN" value="265"/>
+			<bi:property name="TOP_MARGIN" value="49"/>
+			<bi:property name="WIDTH" value="226"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[PANEL_1.setCSSClass("scroll-x");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Scroll Y Only"/>
+			<bi:property name="LEFT_MARGIN" value="507"/>
+			<bi:property name="TOP_MARGIN" value="49"/>
+			<bi:property name="WIDTH" value="226"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[PANEL_1.setCSSClass("scroll-y");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_5" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Scroll X Y"/>
+			<bi:property name="LEFT_MARGIN" value="744"/>
+			<bi:property name="TOP_MARGIN" value="49"/>
+			<bi:property name="WIDTH" value="226"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[PANEL_1.setCSSClass("scroll-xy");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="PANEL_1" type="PANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="24"/>
+			<bi:property name="TOP_MARGIN" value="160"/>
+			<bi:property name="HEIGHT" value="288"/>
+			<bi:property name="WIDTH" value="821"/>
+			<bi:property name="CSS_STYLE" value=""/>
+			<bi:property name="CSS_CLASS" value="hidden"/>
+			<bi:component name="PANEL_2" type="PANEL_COMPONENT">
+				<bi:property name="HEIGHT" value="600"/>
+				<bi:property name="WIDTH" value="347"/>
+				<bi:property name="LEFT_MARGIN" value="58"/>
+				<bi:property name="TOP_MARGIN" value="181"/>
+				<bi:property name="CSS_STYLE" value="background: lightblue;"/>
+				<bi:component name="TEXT_1" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="Wow, a Text !"/>
+					<bi:property name="LEFT_MARGIN" value="80"/>
+					<bi:property name="TOP_MARGIN" value="auto"/>
+					<bi:property name="BOTTOM_MARGIN" value="20"/>
+					<bi:property name="STYLE" value="HEADING1"/>
+					<bi:property name="WIDTH" value="140"/>
+				</bi:component>
+			</bi:component>
+			<bi:component name="CROSSTAB_1" type="CROSSTAB_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="0"/>
+				<bi:property name="TOP_MARGIN" value="0"/>
+				<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+				<bi:property name="HEIGHT" value="271"/>
+				<bi:property name="WIDTH" value="6000"/>
+			</bi:component>
+		</bi:component>
+	</bi:component>
+</bi:biapp>

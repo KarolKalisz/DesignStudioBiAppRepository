@@ -1,0 +1,31 @@
+div.zenborder div.scroll-x {
+	/* allow X scroll */
+	overflow-x: scroll !important;
+
+	/* do not allow Y scroll */
+	overflow-y: hidden !important;
+}
+
+div.zenborder div.scroll-y {
+	/* do not allow X scroll */
+	overflow-x: hidden !important;
+
+	/* allow Y scroll */
+	overflow-y: scroll !important;
+}
+
+div.zenborder div.scroll-xy {
+	/* allow X scroll */
+	overflow-x: scroll !important;
+
+	/* allow Y scroll */
+	overflow-y: scroll !important;
+}
+
+div.zenborder div.hidden {
+	/* do not allow X scroll */
+	overflow-x: hidden !important;
+
+	/* do not allow Y scroll */
+	overflow-y: hidden !important;
+}
