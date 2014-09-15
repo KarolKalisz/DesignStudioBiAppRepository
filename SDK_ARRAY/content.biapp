@@ -1,0 +1,80 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.kalisz.karol.scn.pack" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="ARRAY_1" type="org_kalisz_karol_scn_pack_Array"/>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Create by Input, Sep |"/>
+			<bi:property name="LEFT_MARGIN" value="25"/>
+			<bi:property name="TOP_MARGIN" value="8"/>
+			<bi:property name="WIDTH" value="200"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[ARRAY_1.setValues(INPUTFIELD_1.getValue(), "|");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_4" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Add Ka-4"/>
+			<bi:property name="LEFT_MARGIN" value="239"/>
+			<bi:property name="TOP_MARGIN" value="45"/>
+			<bi:property name="WIDTH" value="200"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[ARRAY_1.addValue("Ka-4");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Print All Methods"/>
+			<bi:property name="LEFT_MARGIN" value="26"/>
+			<bi:property name="TOP_MARGIN" value="103"/>
+			<bi:property name="WIDTH" value="200"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[LISTBOX_1.removeAllItems();
+LISTBOX_1.addItem("start", "print out methods");
+
+var int = 0;
+LISTBOX_1.addItem("v" + int, "getValues: "+ ARRAY_1.getValues("|"));
+int = int + 1;
+LISTBOX_1.addItem("v" + int, "getValueByIndex 2: "+ ARRAY_1.getValueByIndex(2));
+int = int + 1;
+LISTBOX_1.addItem("v" + int, "getValueByIndex 3: "+ ARRAY_1.getValueByIndex(3));
+int = int + 1;
+
+LISTBOX_1.addItem("v" + int, "getLength: "+ ARRAY_1.getLength());
+int = int + 1;
+
+LISTBOX_1.addItem("v" + int, "... now all values getValuesAsStringArray ...");
+int = int + 1;
+
+var content = ARRAY_1.getValuesAsStringArray();
+
+// a loop for all entries
+content.forEach(function(element, index) {
+  LISTBOX_1.addItem(""+ index, element.value + "[ " + index + " ]");
+});
+]]></bi:value>
+			</bi:property>
+			<bi:property name="HEIGHT" value="34"/>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Create Primitive 10 Members"/>
+			<bi:property name="LEFT_MARGIN" value="26"/>
+			<bi:property name="TOP_MARGIN" value="51"/>
+			<bi:property name="WIDTH" value="200"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[ARRAY_1.createArray(10);]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="LISTBOX_1" type="LISTBOX_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="25"/>
+			<bi:property name="TOP_MARGIN" value="174"/>
+			<bi:property name="WIDTH" value="319"/>
+			<bi:property name="HEIGHT" value="400"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_1" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="238"/>
+			<bi:property name="TOP_MARGIN" value="13"/>
+			<bi:property name="WIDTH" value="320"/>
+			<bi:property name="VALUE" value="Ka-1|Ka-2|Ka-3"/>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
