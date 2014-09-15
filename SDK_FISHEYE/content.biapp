@@ -1,0 +1,129 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.kalisz.karol.scn.pack" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+		<bi:property name="CUSTOM_CSS" value=""/>
+		<bi:property name="ON_STARTUP">
+			<bi:value><![CDATA[FISHEYE_1.addElement(INPUTFIELD_1.getValue()+ "1", INPUTFIELD_2.getValue()+" basdkjbnk jh 1", INPUTFIELD_3.getValue());
+FISHEYE_1.addElement(INPUTFIELD_1.getValue()+ "2", INPUTFIELD_2.getValue()+" basdkjbnk jh 2", INPUTFIELD_3.getValue());
+FISHEYE_1.addElement(INPUTFIELD_1.getValue()+ "3", INPUTFIELD_2.getValue()+" basdkjbnk jh 3", INPUTFIELD_3.getValue());
+FISHEYE_1.addElement(INPUTFIELD_1.getValue()+ "4", INPUTFIELD_2.getValue()+" basdkjbnk jh 4", INPUTFIELD_3.getValue());
+FISHEYE_1.addElement(INPUTFIELD_1.getValue()+ "5", INPUTFIELD_2.getValue()+" basdkjbnk jh 5", INPUTFIELD_3.getValue());
+
+FISHEYE_2.addElement(INPUTFIELD_1.getValue()+ "1", INPUTFIELD_2.getValue()+" basdkjbnk jh 1", INPUTFIELD_3.getValue());
+FISHEYE_2.addElement(INPUTFIELD_1.getValue()+ "2", INPUTFIELD_2.getValue()+" basdkjbnk jh 2", INPUTFIELD_3.getValue());
+FISHEYE_2.addElement(INPUTFIELD_1.getValue()+ "3", INPUTFIELD_2.getValue()+" basdkjbnk jh 3", INPUTFIELD_3.getValue());
+FISHEYE_2.addElement(INPUTFIELD_1.getValue()+ "4", INPUTFIELD_2.getValue()+" basdkjbnk jh 4", INPUTFIELD_3.getValue());
+FISHEYE_2.addElement(INPUTFIELD_1.getValue()+ "5", INPUTFIELD_2.getValue()+" basdkjbnk jh 5", INPUTFIELD_3.getValue());]]></bi:value>
+		</bi:property>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Remove All"/>
+			<bi:property name="LEFT_MARGIN" value="100"/>
+			<bi:property name="TOP_MARGIN" value="25"/>
+			<bi:property name="WIDTH" value="258"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[FISHEYE_1.removeAllElements();]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Add Item"/>
+			<bi:property name="LEFT_MARGIN" value="100"/>
+			<bi:property name="TOP_MARGIN" value="206"/>
+			<bi:property name="WIDTH" value="258"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[FISHEYE_1.addElement(INPUTFIELD_1.getValue(), INPUTFIELD_2.getValue(), INPUTFIELD_3.getValue());]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="INPUTFIELD_1" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="192"/>
+			<bi:property name="TOP_MARGIN" value="115"/>
+			<bi:property name="WIDTH" value="253"/>
+			<bi:property name="VALUE" value="Penguins160"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_2" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="192"/>
+			<bi:property name="TOP_MARGIN" value="142"/>
+			<bi:property name="WIDTH" value="253"/>
+			<bi:property name="VALUE" value="Penguins160 Some Ping"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_3" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="192"/>
+			<bi:property name="TOP_MARGIN" value="172"/>
+			<bi:property name="WIDTH" value="253"/>
+			<bi:property name="VALUE" value="Penguins160.jpg"/>
+		</bi:component>
+		<bi:component name="TEXT_1" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Key"/>
+			<bi:property name="LEFT_MARGIN" value="110"/>
+			<bi:property name="TOP_MARGIN" value="117"/>
+		</bi:component>
+		<bi:component name="TEXT_2" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Text"/>
+			<bi:property name="LEFT_MARGIN" value="110"/>
+			<bi:property name="TOP_MARGIN" value="142"/>
+		</bi:component>
+		<bi:component name="TEXT_3" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Image"/>
+			<bi:property name="LEFT_MARGIN" value="110"/>
+			<bi:property name="TOP_MARGIN" value="172"/>
+		</bi:component>
+		<bi:component name="FISHEYE_1" type="org_kalisz_karol_scn_pack_FishEye">
+			<bi:property name="LEFT_MARGIN" value="50"/>
+			<bi:property name="TOP_MARGIN" value="301"/>
+			<bi:property name="WIDTH" value="auto"/>
+			<bi:property name="defaultImage" value="Lighthouse160.jpg"/>
+			<bi:property name="HEIGHT" value="187"/>
+			<bi:property name="onSelectionChanged">
+				<bi:value><![CDATA[var selectedKey = FISHEYE_1.getSelectedKey(); 
+
+TEXT_4.setText("Selected: " + selectedKey);
+
+// cut last
+selectedKey = selectedKey.substring(0, selectedKey.length-1);
+
+FALLBACKPICTURE_1.setPicture(selectedKey + ".jpg");]]></bi:value>
+			</bi:property>
+			<bi:property name="RIGHT_MARGIN" value="50"/>
+		</bi:component>
+		<bi:component name="FISHEYE_2" type="org_kalisz_karol_scn_pack_FishEye">
+			<bi:property name="LEFT_MARGIN" value="55"/>
+			<bi:property name="TOP_MARGIN" value="522"/>
+			<bi:property name="WIDTH" value="auto"/>
+			<bi:property name="defaultImage" value="Lighthouse160.jpg"/>
+			<bi:property name="HEIGHT" value="133"/>
+			<bi:property name="onSelectionChanged">
+				<bi:value><![CDATA[var selectedKey = FISHEYE_2.getSelectedKey(); 
+
+TEXT_4.setText("Selected: " + selectedKey);
+
+// cut last
+selectedKey = selectedKey.substring(0, selectedKey.length-1);
+
+FALLBACKPICTURE_1.setPicture(selectedKey + ".jpg");]]></bi:value>
+			</bi:property>
+			<bi:property name="RIGHT_MARGIN" value="45"/>
+			<bi:property name="orientation" value="horizontal-top"/>
+		</bi:component>
+		<bi:component name="PANEL_1" type="PANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="554"/>
+			<bi:property name="TOP_MARGIN" value="41"/>
+			<bi:property name="CSS_STYLE" value="background: lightgray;"/>
+			<bi:property name="WIDTH" value="294"/>
+			<bi:property name="HEIGHT" value="242"/>
+			<bi:component name="FALLBACKPICTURE_1" type="org_kalisz_karol_scn_pack_FallbackPicture">
+				<bi:property name="LEFT_MARGIN" value="16"/>
+				<bi:property name="TOP_MARGIN" value="50"/>
+				<bi:property name="fallbackPicture" value="Lighthouse160.jpg"/>
+				<bi:property name="WIDTH" value="153"/>
+				<bi:property name="HEIGHT" value="151"/>
+			</bi:component>
+			<bi:component name="TEXT_4" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="Sample text"/>
+				<bi:property name="LEFT_MARGIN" value="39"/>
+				<bi:property name="TOP_MARGIN" value="31"/>
+				<bi:property name="WIDTH" value="318"/>
+			</bi:component>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
