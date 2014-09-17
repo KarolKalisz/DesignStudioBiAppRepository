@@ -1,0 +1,41 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.kalisz.karol.scn.pack" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+		<bi:property name="CUSTOM_CSS" value="custom.css"/>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q93 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_009_BICSTEST_Q0007"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[eNrtWm1v4jgQ/iuI76fQQtWrlI1knAF868Sp7QDp6WRxLbeHdNs9teyHu19/Y/JCQgOFQm93USpUxR57PJ7nGXuG4PYZVWbMYOK5CuSYUTA+KCpZpJkIsTNRGgJDOCPKu73ptn6N4j5n9DfXqYhcn2hiiATi+TAgMdeus+7aX81tDDLxOiuzOp0bYx80KG1uO53OteukcpxVZywLB8JEUoyZD7L1OPs8/9AuVLWdTPumYGONNu4lRsVEg3fZueh1bi5w3aKrMEEBB2rXNSoiaIkSUrNw2Fr+8zdqz5xgFy0N1Khh74GljmwsJRLtZCS0m/RjqtFWOiKSUA2SKY372OwoNktNBFJdtEtaFa7pVIfvmo5LvnF6bzD5mfaim25vctXt8qtJL+z+ckVE+Ko658X2nGJC+Tn32AHeyLYzZipG7t2RlRoOY+BrBtcJXaK1ZP0YkSg9lzRTwd+kN4CgD9IQSkGh6kiCglCvhmw0PQ1T1FLpqjZxQj3NVoqwwULwTbqiMkJivKD7fSYz1xJFIfRxOjK/6ER/pzrxacPYEigVM1q/Lx4fFo+fPrQrEyzby0DSWGkRmAixCgDBslxANWiwUaCP98UaMrtwWbNTiOrBHEoRN2ieC5oB0Q2Y5wJmJBl9bzR9piJOEvMRkgbUg13ydmwnwIYNtj8+tk45WaqY3fr85QF92RfiI3pvTHgMqv0O1pWevfzUqKefl9/3O8SY2+2Q4vWyQ2o5vd053zvFqni/wrcRA0kkHSWth69zf7a0UZ39tbMob1douYUN2QCMdNZnnOnEWz1yKBhXEu23lRMx/n3hqoTT0SVWk+8ceXweTOc65o6Y70N4MuJ+e7+XtzsQMog5ydWhIirQDhYqG1kDNoxxtLd8+jpHPtdI3DuQwqg4sjtQlon2II7sQumk7fJDvsLIvgE5fc1PhtCkK+eZio5EAM0hei5FoyK8CdQzDFQaSwkhTZpI/REj9fsrE+2pv6OWw/t+mzRn4o7ZeAg1hWBTCB5bCL58OVYHgS8Z58YXk9BsjN/+JjI9Jc3mm0vM8k3ZohO/n/wWLxiPfFv6yvvJPf1IpqsDaMpUZoAUE0vQInpQiPPH4P0x++sZq6GslWGb3mId5FCp6Tql2SoJkA+SUZMOCYRf6KqV5QEXCcVWe+kLjcwqCFn0vyzcVvNDEUJN0ZbqftGNn9VvBTDGZIL/CQa2n3ZR4FxtqwFfnfca+7wC6bdGl2NRq2BHBY+DsB6+dB916F026B2O3tawPx2aAwnQROL/FYn2BjgSOyc9TNdLt54Xnx6jp/nz/HE5Wy6+PGJ2AXgCgwljey+3W//On75UB4RCBqtCsVCTp6VFftq6/3P2NLtfzp8Wz8vF/a47qHJJTaZBdxTz215wkUQDfX0Dg1VOXqj3gTJcXHk/oSuKhqsoli3h0AzQEUJ6XaRLtceFIBoRxe7AzwlV6nEVG4Z46YxxDcILxlU6cWlNGDeol8Y8TX5S+tQIagabdQ6z/g3YrlGIY5Dryywq9bgkinhiajRokV2fqgjDPYZm+uxXlZgFHqB2rxl5nL50Xo2gnsAlsp2adzLsXg95p9cNB5eXQt8OpgnvvoV3VtgQ73yJ51TO7KyUNVqSUKUqsgKtWrUZi7XhLGDa3n71guyOFJhvkTyhhimFKG9QgbVQkWqvf5n6HyfkXrA=]]></bi:value>
+			</bi:property>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="KPIVIEW_1" type="org_kalisz_karol_scn_pack_KpiView">
+			<bi:property name="LEFT_MARGIN" value="45"/>
+			<bi:property name="TOP_MARGIN" value="38"/>
+			<bi:property name="WIDTH" value="219"/>
+			<bi:property name="HEIGHT" value="202"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="data" value="{&quot;4FW8C4P934W533L5W4N3J5AON&quot;: &quot;4FW8C4WXM3HULQ4M1YPFT79EF&quot;, &quot;0BC_PERS1&quot;: &quot;(RESULT_MEMBER)&quot;}"/>
+			<bi:property name="valueSuffixText" value="T$"/>
+			<bi:property name="valueDecimalPlaces" value="2"/>
+			<bi:property name="image" value="Penguins160.jpg"/>
+			<bi:property name="linkText" value="go here"/>
+			<bi:property name="onClick">
+				<bi:value><![CDATA[APPLICATION.createInfoMessage("On CLick!");]]></bi:value>
+			</bi:property>
+			<bi:property name="onLinkClick">
+				<bi:value><![CDATA[APPLICATION.createInfoMessage("On Link CLick!");]]></bi:value>
+			</bi:property>
+			<bi:property name="titleCssClass" value="myTitle"/>
+			<bi:property name="imageSize" value="64px"/>
+			<bi:property name="valueHAlign" value="right"/>
+			<bi:property name="footerHAlign" value="right"/>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
