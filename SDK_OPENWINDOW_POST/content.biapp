@@ -1,0 +1,26 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.kalisz.karol.scn.constants" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="OPENWINDOWPOST_1" type="org_kalisz_karol_scn_constants_OpenWindowPost">
+			<bi:property name="LEFT_MARGIN" value="119"/>
+			<bi:property name="TOP_MARGIN" value="156"/>
+			<bi:property name="url" value="http://localhost:65037/aad/web.do"/>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Call URL"/>
+			<bi:property name="LEFT_MARGIN" value="37"/>
+			<bi:property name="TOP_MARGIN" value="37"/>
+			<bi:property name="WIDTH" value="166"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[
+
+OPENWINDOWPOST_1.addParameter("APPLICATION", "SDK_OPENWINDOW_POST");
+OPENWINDOWPOST_1.addParameter("designersessionid", "25d9c2721c084d8c98684721835379d8");
+
+OPENWINDOWPOST_1.triggerExecution();]]></bi:value>
+			</bi:property>
+		</bi:component>
+	</bi:component>
+</bi:biapp>

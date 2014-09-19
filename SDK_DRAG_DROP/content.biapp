@@ -17,7 +17,7 @@ DRAGDROPAREA_COLUMNS.removeAllElements();
 var dimensionsRows = DS_1.getDimensions(Axis.ROWS);
 
 dimensionsRows.forEach(function(element, index) {
-   DRAGDROPAREA_ROWS.addElement(element.name, element.text, "");
+   DRAGDROPAREA_ROWS.addElement(element.name, element.text, "Lighthouse160.jpg");
 });
 
 var dimensionsCols = DS_1.getDimensions(Axis.COLUMNS);
@@ -56,6 +56,7 @@ if(context == DRAGDROPAREA_FREE.getDragContext()) {
 }]]></bi:value>
 			</bi:property>
 			<bi:property name="itemWidth" value="160"/>
+			<bi:property name="defaultImage" value="Lighthouse160.jpg"/>
 		</bi:component>
 		<bi:component name="DRAGDROPAREA_COLUMNS" type="org_kalisz_karol_scn_pack_DragDropArea">
 			<bi:property name="LEFT_MARGIN" value="24"/>
@@ -88,6 +89,7 @@ if(context == DRAGDROPAREA_COLUMNS.getDragContext()) {
 	}
 }]]></bi:value>
 			</bi:property>
+			<bi:property name="defaultImage" value="Lighthouse160.jpg"/>
 		</bi:component>
 		<bi:component name="DRAGDROPAREA_ROWS" type="org_kalisz_karol_scn_pack_DragDropArea">
 			<bi:property name="LEFT_MARGIN" value="24"/>
@@ -121,6 +123,7 @@ if(context == DRAGDROPAREA_ROWS.getDragContext()) {
 }]]></bi:value>
 			</bi:property>
 			<bi:property name="orientation" value="vertical"/>
+			<bi:property name="defaultImage" value="Lighthouse160.jpg"/>
 		</bi:component>
 		<bi:component name="CROSSTAB_1" type="CROSSTAB_COMPONENT">
 			<bi:property name="LEFT_MARGIN" value="174"/>
