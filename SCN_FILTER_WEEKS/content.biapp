@@ -1,0 +1,60 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.kalisz.karol.scn.pack" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+		<bi:property name="ON_STARTUP">
+			<bi:value><![CDATA[DROPDOWN_1.addItem("--seelct--", "Select Year ...");
+DROPDOWN_1.addItem("2012", "Year 2012");
+DROPDOWN_1.addItem("2013", "Year 2013");
+DROPDOWN_1.addItem("2014", "Year 2014");
+DROPDOWN_1.addItem("2015", "Year 2015");]]></bi:value>
+		</bi:property>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="ARRAY_1" type="org_kalisz_karol_scn_pack_Array"/>
+		<bi:component name="DROPDOWN_1" type="DROPDOWN_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="124"/>
+			<bi:property name="TOP_MARGIN" value="41"/>
+			<bi:property name="ON_SELECT">
+				<bi:value><![CDATA[// this will return eg. 2014
+var selectedYear = DROPDOWN_1.getSelectedValue();
+
+if(selectedYear != "--seelct--") {
+	var eachesArray = ARRAY_1.eaches(1, 52, 1);
+	
+	eachesArray.forEach(function(element, index) {
+	  var week = "" + (index + 1);
+	  
+	  if(week.length < 2) {
+	  	week = "0" + week;
+	  }
+	  
+	  ARRAY_1.addValue(selectedYear + "." + week);
+	});
+	
+	var allValues = ARRAY_1.getValues(";");
+	TEXT_2.setText(allValues);	
+} else {
+	TEXT_2.setText("! select Year!");	
+}]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="TEXT_1" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Year"/>
+			<bi:property name="LEFT_MARGIN" value="37"/>
+			<bi:property name="TOP_MARGIN" value="41"/>
+		</bi:component>
+		<bi:component name="TEXT_2" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="&lt;empty&gt;"/>
+			<bi:property name="LEFT_MARGIN" value="37"/>
+			<bi:property name="TOP_MARGIN" value="119"/>
+			<bi:property name="WIDTH" value="760"/>
+			<bi:property name="HEIGHT" value="168"/>
+			<bi:property name="CSS_STYLE" value="word-wrap: break-word;"/>
+		</bi:component>
+		<bi:component name="TEXT_3" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Output:"/>
+			<bi:property name="LEFT_MARGIN" value="37"/>
+			<bi:property name="TOP_MARGIN" value="95"/>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
