@@ -1,0 +1,80 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+		<bi:property name="ON_STARTUP">
+			<bi:value><![CDATA[var bookmarks = Bookmark.getAllBookmarks();
+
+bookmarks.forEach(function(element, index) {
+	DROPDOWN_1.addItem(element.name, element.text);
+});]]></bi:value>
+		</bi:property>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q93 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_009_BICSTEST_Q0007"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[eNrtWm1v4jgQ/iuI76fQQtWrlI1knAn41olT2wHS08niWm4P6ZY9teyHu19/k1cSGigUertbpUJV7LHH43mesWcI9pBRZSYMpo6tQE4YBeOCopKFmokAO2OlwTeEM6Kc25t+59cwGnJGf7Otmsh2iSaGSCCOCx6JuLatTdfham4jkLHTS83q9W5M8qBBaXPb6/WubSuT46wmY1ngCRNKMWEuyM5q/nnxoVuq6lq59m3B1hpd3EuEiokG57J3MejdXF7hXoqu0gQFHGiyrlEhQUuUkJoFo876n79Re+6EZNHKQI0aDh5Y6cjHUiLRTkaCZJNuRDXaSsdEEqpBMqVxH9sd5WapCUGqi25Fq8I1rfrwfdNxyVdOH3jTn+kgvOkPplf9Pr+aDoL+L1dEBC+qs55tzyonVJ8Ljx3hjXw7E6Yi5N4dSdVwmADfMLhJaBOtJRtGiETluaKZCv4qvT74Q5CGUAoKVYcSFAQ6HbLVdDTMUEutq97ECc00SxVhgwXgmmxFZYTEeEH3u0zmriWKQuDidGR+2Yn+znTi05axFVBqZnR+X64elqtPH7q1CQnbq0DSSGnhmxCx8gHBSriAatBgo0Cf7osNZMnCVc1WKWoGcyRF1KL5XtD0iW7BfC9ghpLRt0bTZSrkJDYfIW5BPdolr8d2CmzUYvvjY2tVk6Wa2Z3PXx7Ql0MhPqL3JoRHoLpvYF3l2SlOjWb6OcV9v0eMud0eKV4ve6QJp3c753unWB3vF/g2ZiCJpOO48/B14c7XSVTnf908yrs1Wu5gQz4AI50NGWc6dtJHDiXjKqLDtnImxr8tXLVwOrnEavOdE4/Po+ncxNwxc10Izkbcb+/36nY9If2Ik0IdKqIC7WCBSiLLY6MIRzvrx68L5HODxL4DKYyKwmQHKmFichCHyULZpN3yY77CyL8BOX/NT0bQpivvMxUdCx/aQ/S9FI2K8DZQ32Gg0khKCGjcRuqPGKnfX5mYnPp7ajm873dJCybumY2HUFsItoXgqYXg85djTRC4knFuXDENzNb43W8is1PSbL+5xCzfVC068/vJb/GC8cS3pS+8nzzQj2SWHkAzpnIDpJgmBC2jB4U4fwLOH/O/nrAayls5ttkt1kMOVZq2VZmtYh/5IBk12RBfuKWuRlkRcKFQLN3LUGhkVknIsv954ZbOD0QADUVbpvtZN37S3wpgjMkY/xMMbDfrosC52lUDvjjvJfY5JdKvjS4rQa2GHRU88oNm+LJ9NKF32aJ3PHo7w/58aHoSoI3E/ysSkxvgROys7DDdLN15Wn5ahY+Lp8VqPV8vv6wwuwA8gcEEUXIvdzv/Lh6/1AcEQvppoViqKdLSMj/t3P85f5zfrxePy6f18n7fHVS7pKYzvz+O+O3Av4hDT1/fgJfm5KV6FyjDxZXzE7qibNiKYtkSjIyHjhAyFW512eCHY6LYHbgFoyo9tmKjAG+dCS5CeEm5WieurQnjBvXSiGfZT8afBkHDYLNJYjY/Ats3CoH0C325RZUem4Qhj02DBi3y+1OVcXjA0Fxf8l0lpoFHqD1oRhGoz53XIGhmcIVt5yaeDPrXI94b9APv8lLoW28W835LvJZ428Szaod2XssaLUmgMhV5hVYv20yCteHMZzq5/poF+SUpMOEiRUYNMwph0aACi6Ey1978NPU/vSle2g==]]></bi:value>
+			</bi:property>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="CROSSTAB_1" type="CROSSTAB_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="44"/>
+			<bi:property name="TOP_MARGIN" value="116"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="WIDTH" value="353"/>
+			<bi:property name="HEIGHT" value="527"/>
+		</bi:component>
+		<bi:component name="DROPDOWN_1" type="DROPDOWN_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="47"/>
+			<bi:property name="TOP_MARGIN" value="25"/>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Save"/>
+			<bi:property name="LEFT_MARGIN" value="181"/>
+			<bi:property name="TOP_MARGIN" value="25"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[// assure your filters are acutal
+TEXT_FILTER.setText(DS_1.getFilterExt("0BC_PERS1"));
+
+// save bookmark
+var bookmark = Bookmark.saveBookmark();
+
+// add on drop down
+DROPDOWN_1.addItem(bookmark, DS_1.getFilterExt("0BC_PERS1"));]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Load"/>
+			<bi:property name="LEFT_MARGIN" value="274"/>
+			<bi:property name="TOP_MARGIN" value="25"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var bookmarkId = DROPDOWN_1.getSelectedValue();
+
+Bookmark.loadBookmark(bookmarkId);
+
+// now, apply the saved filter
+DS_1.setFilterExt("0BC_PERS1", TEXT_FILTER.getText());]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="TEXT_FILTER" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Sample text"/>
+			<bi:property name="LEFT_MARGIN" value="419"/>
+			<bi:property name="TOP_MARGIN" value="38"/>
+			<bi:property name="WIDTH" value="371"/>
+		</bi:component>
+		<bi:component name="DIMENSIONFILTER_1" type="DIMENSIONFILTER_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="48"/>
+			<bi:property name="TOP_MARGIN" value="63"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="TARGET_DATA_SOURCES_ALIAS_REF" value=""/>
+			<bi:property name="DIMENSION_NAME" value="0BC_PERS1"/>
+			<bi:property name="ON_SUBMIT">
+				<bi:value><![CDATA[TEXT_FILTER.setText(DS_1.getFilterExt("0BC_PERS1"));]]></bi:value>
+			</bi:property>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
