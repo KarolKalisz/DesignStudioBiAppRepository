@@ -1,0 +1,95 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.kalisz.karol.scn.pack" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+		<bi:property name="GLOBALVARIABLES" type="UNORDEREDLIST">
+			<bi:property name="GLOBALVARIABLE" index="0">
+				<bi:property name="NAME" value="MAX"/>
+				<bi:property name="VALUE" value="0"/>
+				<bi:property name="URL_PARAM" value=""/>
+			</bi:property>
+		</bi:property>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="TREE_1" type="org_kalisz_karol_scn_pack_Tree">
+			<bi:property name="LEFT_MARGIN" value="188"/>
+			<bi:property name="TOP_MARGIN" value="44"/>
+			<bi:property name="onFirstExpand">
+				<bi:value><![CDATA[var hasNoChildren = TREE_1.getExpandedKey().indexOf("no") > -1;
+
+if(!hasNoChildren && MAX < 6){
+	TREE_1.addNode(TREE_1.getExpandedKey() + "a", "My Child Leaf a", "", TREE_1.getExpandedKey(), false);
+	TREE_1.addNode(TREE_1.getExpandedKey() + "b", "My Child Leaf b", "", TREE_1.getExpandedKey(), false);
+	TREE_1.addNode(TREE_1.getExpandedKey() + "c", "My Child Leaf c", "", TREE_1.getExpandedKey(), false);
+	TREE_1.addNode(TREE_1.getExpandedKey() + "d", "My Child Node d", "", TREE_1.getExpandedKey(), true);
+	TREE_1.addNode(TREE_1.getExpandedKey() + "e", "My Child Leaf e", "", TREE_1.getExpandedKey(), false);
+}
+
+MAX = MAX + 1;]]></bi:value>
+			</bi:property>
+			<bi:property name="onSelectionChanged">
+				<bi:value><![CDATA[APPLICATION.createInfoMessage("Selected Node: " + TREE_1.getSelectedKey());]]></bi:value>
+			</bi:property>
+			<bi:property name="defaultImage" value="00017.jpg"/>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Add Node"/>
+			<bi:property name="LEFT_MARGIN" value="20"/>
+			<bi:property name="TOP_MARGIN" value="211"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[if(INPUTFIELD_1.getValue() == "00017") {
+	TREE_1.addNode(INPUTFIELD_1.getValue(), INPUTFIELD_2.getValue() + "/" + INPUTFIELD_1.getValue(), "00017.jpg", INPUTFIELD_3.getValue(), CHECKBOX_1.isChecked());	
+} else {
+	TREE_1.addNode(INPUTFIELD_1.getValue(), INPUTFIELD_2.getValue() + "/" + INPUTFIELD_1.getValue(), "", INPUTFIELD_3.getValue(), CHECKBOX_1.isChecked());	
+}]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="162"/>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Remove All"/>
+			<bi:property name="LEFT_MARGIN" value="21"/>
+			<bi:property name="TOP_MARGIN" value="250"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[TREE_1.removeAllNodes();]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="162"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_1" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="83"/>
+			<bi:property name="TOP_MARGIN" value="88"/>
+			<bi:property name="VALUE" value="KEY1"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_2" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="83"/>
+			<bi:property name="TOP_MARGIN" value="118"/>
+			<bi:property name="VALUE" value="This is Text for"/>
+		</bi:component>
+		<bi:component name="INPUTFIELD_3" type="INPUTFIELD_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="83"/>
+			<bi:property name="TOP_MARGIN" value="150"/>
+			<bi:property name="VALUE" value="ROOT"/>
+		</bi:component>
+		<bi:component name="TEXT_1" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Key"/>
+			<bi:property name="LEFT_MARGIN" value="18"/>
+			<bi:property name="TOP_MARGIN" value="90"/>
+		</bi:component>
+		<bi:component name="TEXT_2" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Text"/>
+			<bi:property name="LEFT_MARGIN" value="18"/>
+			<bi:property name="TOP_MARGIN" value="120"/>
+		</bi:component>
+		<bi:component name="TEXT_3" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Parent Key"/>
+			<bi:property name="LEFT_MARGIN" value="18"/>
+			<bi:property name="TOP_MARGIN" value="150"/>
+		</bi:component>
+		<bi:component name="CHECKBOX_1" type="CHECKBOX_COMPONENT">
+			<bi:property name="TEXT" value="is a leaf only"/>
+			<bi:property name="LEFT_MARGIN" value="22"/>
+			<bi:property name="TOP_MARGIN" value="183"/>
+			<bi:property name="WIDTH" value="160"/>
+			<bi:property name="CHECKED" value="X"/>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
