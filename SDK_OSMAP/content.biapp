@@ -1,0 +1,145 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.kalisz.karol.scn.pack" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+		<bi:property name="ON_STARTUP">
+			<bi:value><![CDATA[OSMAP_1.addLocation("MADRIT", "Madrit", "", 40.4, -3.7);
+OSMAP_1.addLocation("WALLDORF", "SAP SE Headquaters", "SAP.jpg", 49.293417, 8.642384);
+]]></bi:value>
+		</bi:property>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q99 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="INFOPROVIDER"/>
+			<bi:property name="DATA_SOURCE_NAME" value="ZBM_GEO"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[eNrtWm1v2zYQ/iuuvw9yiu5DAFUATZ4dohSpkpQTZxgIL/E6A6szJO6H7dfvqDdLjpS4zssaT0VQSHfHhy/3HO9IORxzatyMw3kUGtAzTsExMFTzxHIlUTg3FmJHBCcm+nx6OvglSceC01/DoKEKGbHEEQ0kYjAhqbBhsBWFXE6US7SacQY6uhzHbgoqDJpihGwbQsNosF58XX4cFgjDIAo/p6DnhfjdO1JqcEQpAhEL0fvRyYeT0fufcUSlKAyyZn7SAqjvx5mEYM9GacvldLD5+y/EK6biu6kZWkTY27AmKGwp0RYMJ9JPiqXU4ljpGdGEWtDcWPTIrqCY3oimWoOk82EN1WCfQdO8qzlzNDVWxaAPBmBj71DKngCgYUrVoQAxEJNqMKOdf4/CBfeWOKga1J9Lr32/R2bcpBgMlySDETADsY2FNmUYQzwG7QilYMzg6801Io6V+gTMzYhIwSBqgpMFabN2pvkaWbhA6Iao+YoN2nmaAeELl9hXPgzjlMYAw7VjXBfrQgwFybA5hk4lxMXKMfGpMYOaC3bGPfhttb5erb98HDYa+HCpeyFnp0twoWPAlfaOPOOgiaZn88H1tyVbbPyilz4vnOBhsDeclzNgO9axMEA/8DEX3M4jqnBqvmMiwuC+er8Z/HAe2S7EYdvC97OYWKv5OMU9rfa8xeaSIbp+hgh5OBgYN4kgc/cJ5rse+N8FTZ0Er7VmWxoEuzSsVC0EEdjepgz+Q3r03p+/kHMRheKOynrnHqFzjaa9Z4/Ss1gQqFT2ObvP2R05W8lpn7SPNfqJ6CuyY3FuUD+cPfW64WV2ntpztM087RSNaufJLotqc+o0KE4cXfqS/136rO7pUpYVb7cXfnQuN4l1VLczr0Dgw9j3igQ56H6oduvb33L2t5xv9Jaz9umhZ3HP4jfJ4ge+f71osd7Tt4W+bUw944yBPFKSTpSOU0FKOATCwLSES+NrqgmfempGm9tvS+Rziya8BK2cSRM/A+OZONUqTXxHeaNu/T5fdNucyjQXwjF1Lt2Offcn/DxY3O4nf5y9q69G/2H/DXzY39OX5CIr5C+4KQak1bkPxmpPQCW2n0H0++LPO2Rq8VbwK99QRxhDtdcwqLU28xg5qTl1uUmsWIXVqiv3lkSZLPNFY2XRxVVAVvL7QZW1l0pCS0Dl2PfE+Jf9XAf84Rv/J2OB20YmoiCE6YrPR9s9FgFRjbyHxnjg/dbwHlUijWXvwFdxYFfoPp87Jxqg9+Vr+LJMRI9t21EtZexnm2eHJ3IiyPfp7ZQGd6sv6+R2ebdcbxab1c0aTxOAmzs4mfoaZTj4Z3l70zSQWMUQMazBbLOYUMaaTFnUOOXD4OqPxe3iarO8Xd1tVlcPZawK7bRA2zUIqnLWzwUox+GY6KcTZGz5EhqK5bqcugkujdKZckcUQpycEcMvgZXcrUlCw6cSU9wMOyGiIndDiH1jiSYc4tJU5NVlztQWRYux21aM2x99PmSFro1LvGJENUlIkkTMXQuCVUWyLqm/j2UB52tWLK8fti33kf1blDvC/bVrUbRTuqJfKxMleOpk5+HnoGIJ93QqjnomHjETg0a6KLKBs5pIk0MUdzbNk7DzrnaCx9x6frQrivSsEszDZTkPFxSS8qW65ckGtf1p+r/OiYA0]]></bi:value>
+			</bi:property>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="OSMAP_1" type="org_kalisz_karol_scn_pack_OSMap">
+			<bi:property name="LEFT_MARGIN" value="63"/>
+			<bi:property name="TOP_MARGIN" value="82"/>
+			<bi:property name="WIDTH" value="698"/>
+			<bi:property name="HEIGHT" value="389"/>
+			<bi:property name="defaultImage" value="Home.png"/>
+			<bi:property name="onSelectionChanged">
+				<bi:value><![CDATA[APPLICATION.createInfoMessage("Map: Click: " + OSMAP_1.getSelectedKey());]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Button"/>
+			<bi:property name="LEFT_MARGIN" value="577"/>
+			<bi:property name="TOP_MARGIN" value="35"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[OSMAP_1.moveTo("MADRIT");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="-"/>
+			<bi:property name="LEFT_MARGIN" value="725"/>
+			<bi:property name="TOP_MARGIN" value="216"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[OSMAP_1.zoomIn();]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="30"/>
+		</bi:component>
+		<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="+"/>
+			<bi:property name="LEFT_MARGIN" value="725"/>
+			<bi:property name="TOP_MARGIN" value="183"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[OSMAP_1.zoomOut();]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="30"/>
+		</bi:component>
+		<bi:component name="BUTTON_4" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="&gt;"/>
+			<bi:property name="LEFT_MARGIN" value="723"/>
+			<bi:property name="TOP_MARGIN" value="123"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[OSMAP_1.panRight();]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="30"/>
+		</bi:component>
+		<bi:component name="BUTTON_5" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="&apos;"/>
+			<bi:property name="LEFT_MARGIN" value="691"/>
+			<bi:property name="TOP_MARGIN" value="93"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[OSMAP_1.panUp();]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="30"/>
+		</bi:component>
+		<bi:component name="BUTTON_6" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="&lt;"/>
+			<bi:property name="LEFT_MARGIN" value="662"/>
+			<bi:property name="TOP_MARGIN" value="123"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[OSMAP_1.panLeft();]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="30"/>
+		</bi:component>
+		<bi:component name="BUTTON_7" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="."/>
+			<bi:property name="LEFT_MARGIN" value="691"/>
+			<bi:property name="TOP_MARGIN" value="153"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[OSMAP_1.panDown();]]></bi:value>
+			</bi:property>
+			<bi:property name="WIDTH" value="30"/>
+		</bi:component>
+		<bi:component name="CROSSTAB_1" type="CROSSTAB_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="792"/>
+			<bi:property name="TOP_MARGIN" value="98"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="WIDTH" value="800"/>
+			<bi:property name="CROSSTAB_ENABLE_SELECTION" value="X"/>
+			<bi:property name="ON_SELECT">
+				<bi:value><![CDATA[var mem = CROSSTAB_1.getSelectedMember("0D_CUSTOMER");
+
+var lat = mem.getAttributeMember("0LATITUDE");
+var lon = mem.getAttributeMember("0LONGITUDE");
+
+var latValue = lat.internalKey;
+var lonValue = lon.internalKey;
+
+var latNegative = false;
+var lonNegative = false;
+
+if(latValue.indexOf("-")) {
+	latValue = latValue.substring(0, latValue.length -1);
+	latNegative = true;
+}
+
+if(lonValue.indexOf("-")) {
+	lonValue = lonValue.substring(0, lonValue.length -1);
+	lonNegative = true;
+}
+
+var latValueFloat = Convert.stringToFloat(latValue);
+var lonValueFloat = Convert.stringToFloat(lonValue);
+
+// korrections as we have dummy data
+latValueFloat = latValueFloat - 40;
+lonValueFloat = lonValueFloat - 18;
+
+if(latNegative) {
+	latValueFloat = latValueFloat * -1;
+}
+
+if(lonNegative) {
+	lonValueFloat = lonValueFloat * -1;
+}
+
+var key = mem.internalKey;
+var tex = mem.text;
+
+OSMAP_1.addLocation(key, tex, key + ".jpg", latValueFloat, lonValueFloat);
+OSMAP_1.moveTo(key);]]></bi:value>
+			</bi:property>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
