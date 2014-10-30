@@ -1,0 +1,84 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.kalisz.karol.scn.constants" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+		<bi:property name="GLOBALVARIABLES" type="UNORDEREDLIST">
+			<bi:property name="GLOBALVARIABLE" index="0">
+				<bi:property name="NAME" value="XCOLOR"/>
+				<bi:property name="VALUE" value="&apos;RED&apos;"/>
+				<bi:property name="URL_PARAM" value="X"/>
+			</bi:property>
+			<bi:property name="GLOBALVARIABLE" index="1">
+				<bi:property name="NAME" value="XEXCHANGE"/>
+				<bi:property name="VALUE" value="false"/>
+				<bi:property name="URL_PARAM" value="X"/>
+			</bi:property>
+		</bi:property>
+		<bi:property name="ON_STARTUP">
+			<bi:value><![CDATA[APPLICATION.createInfoMessage("Color:; " + XCOLOR);
+
+if(XCOLOR == "RED") {
+	CUSTOMCSSCOLLECTOR_1.addCss("RED", "custom_red.css");
+}
+
+if(XCOLOR == "GREEN") {
+	CUSTOMCSSCOLLECTOR_1.addCss("RED", "custom_green.css");
+}
+
+if(XCOLOR == "BLUE") {
+	CUSTOMCSSCOLLECTOR_1.addCss("RED", "custom_blue.css");
+}
+
+CUSTOMCSSCOLLECTOR_1.addCss("PINK", "custom_pink.css");
+
+if(XEXCHANGE) {
+	CUSTOMCSSCOLLECTOR_1.updateCss("RED", "custom_black.css");
+}]]></bi:value>
+		</bi:property>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="PANEL_1" type="PANEL_COMPONENT">
+			<bi:property name="CSS_CLASS" value="special-background"/>
+			<bi:property name="LEFT_MARGIN" value="73"/>
+			<bi:property name="TOP_MARGIN" value="64"/>
+			<bi:property name="WIDTH" value="494"/>
+			<bi:property name="HEIGHT" value="175"/>
+		</bi:component>
+		<bi:component name="CUSTOMCSSCOLLECTOR_1" type="org_kalisz_karol_scn_constants_CustomCssCollector">
+			<bi:property name="LEFT_MARGIN" value="74"/>
+			<bi:property name="TOP_MARGIN" value="351"/>
+			<bi:property name="additionalCss" value="custom_red.css"/>
+		</bi:component>
+		<bi:component name="PANEL_2" type="PANEL_COMPONENT">
+			<bi:property name="CSS_CLASS" value="special-background-2"/>
+			<bi:property name="LEFT_MARGIN" value="73"/>
+			<bi:property name="TOP_MARGIN" value="254"/>
+			<bi:property name="WIDTH" value="494"/>
+			<bi:property name="HEIGHT" value="175"/>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Exchange"/>
+			<bi:property name="LEFT_MARGIN" value="665"/>
+			<bi:property name="TOP_MARGIN" value="72"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[CUSTOMCSSCOLLECTOR_1.updateCss("RED", "custom_black.css", true);]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Disable"/>
+			<bi:property name="LEFT_MARGIN" value="665"/>
+			<bi:property name="TOP_MARGIN" value="117"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[CUSTOMCSSCOLLECTOR_1.updateCss("RED", "", false);]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Enable"/>
+			<bi:property name="LEFT_MARGIN" value="665"/>
+			<bi:property name="TOP_MARGIN" value="162"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[CUSTOMCSSCOLLECTOR_1.updateCss("RED", "", true);]]></bi:value>
+			</bi:property>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
