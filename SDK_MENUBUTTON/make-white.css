@@ -1,0 +1,8 @@
+body {
+	background: white !important;
+}
+
+li#item0-3.sapUiMnuItm {
+	visibility: hidden !important;
+	height: 0px !important;
+}
