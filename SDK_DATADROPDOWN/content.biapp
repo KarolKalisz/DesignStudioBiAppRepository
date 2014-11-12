@@ -1,0 +1,151 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.kalisz.karol.scn.databound" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="Q93 [PUBLIC]"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_009_BICSTEST_Q0007"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[eNrtWttu4zYQ/RXD74Xs2EEaQCuApsY2u5SokJQvKQrCTdxtgG5SJN6H9us71M2SI18SO0gTaBEsJA5nOOQ5Q86IdgeMKjNhMPVcBXLCKBgfFJUs0kyE2DhXGgJDOCPKu7rstX6N4gFn9DfXqYhcn2hiiATi+TAkMdeus2463MxVDHLudRK3Op1LYx80KG2uOp3OheukctSqc5aFQ2EiKSbMB9m6X3xffmkXptpOZn1TsDFGG+cSo2GiwTvrdPvdbvcM55I3FS4o4EDtuEZFBD1RQmoWjlqrf/5G69ki2EFLHTVaOLhjqSHrS4lEPxkJ7ST9mGr0lY6JJFSDZErjPDYbislSE4FU3XbJqsIxnWr3Xeo45CvV+8Ppz7QfXfb60/Nej59P+2Hvl3Miwr3mnGfTcwqF8nO+Yi9YjWw6E6Zi5N41ScxwmABfM7hO6BKtJRvEiETpuWSZCv4quwEEA5CGUAoKTUcSFIQ66bLx6mmYoZVKU/UVFepplhjCFxaCb9IRlRES4wWX32cyW1qiKIQ+qiPzi0Zc79QmPm04WwKl4kbr97v727v7b1/aFQXL9jKQNFZaBCZCrAJAsCwX0Aw6bBTo49diDZkduGzZKUT1YI6kiBs0PwuaAdENmJ8FzEgy+tZo+kxFnMzNV5g3oL54SV6P7RTYqMH242PrlJOlitut7w+3di1ZAKGyAGoy4NB+A/9Kz16+b9QT0MtP/B1izO52SPGA2SG1rN6+PP93klUR38O4MQNJJB3PW7c/lv5iZeM6+9fO4rxdIWbGh4EQX3GiE8JjUO2iA8Y6GzDO9NxLHjkUnCuJDpvKiTj/tnBVAuroIqvJeI7cQF9M5zrmjpnvQ3gy4r7/upenOxQyiDnJzaEhKtAPFiobWUM2irG3t3r8sUQ+10jca5DCqDiyM0gOBLsRR3agVGm7/CUfMbJvIKev+skImoTlcyajYxFAs4l+lrJREd4E6icMVBpLCSGdN5H6ESN1b6EYEIXO2TsY8voi8QjnN2s5eyjsKPUwHdgmzYm6Qxv3qKZO/Dh14nEx8Y6F5PPrtTqMfMk4N76Yhmaj//a7zHSXNZt3n1glmLJHJ77hfI8ryiPvW/fccB64jmSW7FAzpjIHpJhaBhfhhULUn4D3x+KvJ6ymsrcM2/QU7CCHSq+uU9JW8wD5IBk1aZdA+IWtWlkekZFQLJnLQGhkVkHIov154ZfohyKEmqIvtf2sGf+SXxtgjMk5/m+/JfppEwXO1bYacq/ePvZ5BdL7mOEVDH1tHDoW3wrKVPA4COuBTmdch/NZg/PLcd66QZwOzaEEaGL29Fg6OwFw0r1zrd96uvt2Hz0un5b3q8Xq7uEesw3ADRdMGNtjuN36d/n4UO0QChkkdWVhJs9ii3S2dfPn4nFxs1o+3j2t7m52HTmVM2k6C3rjmF/1g+48GuqLSxgmKXxh3gfKcHDl/YQ7S/HiKopVTjgyQ1wJIRPhRpMLQTQmil2Dn9Oi1OIqNgrxkJngIIQXvKk04tiaMG7QLo15muykJKgR1HQ265xl/auxXb0QyCC3l3lUanFJFPG5qbGgRXZcqiKYDuia2bOfNm3pcbjZgzTyaHu+eDWCegaX2HZq4smwdzHinX4vHJ6dCX01nM15ryFeQ7xN4jmVnTerbY2WJFSpiaxiq5ZxxmJtOAuYtmdYvSA76QTmVyRPoGFGIcpfqMDap0it179l/Q/bEm0l]]></bi:value>
+			</bi:property>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="DATARANGESLIDER_1" type="org_kalisz_karol_scn_databound_DataRangeSlider">
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="data" value="{&quot;4FW8C4P934W533L5W4N3J5AON&quot;: &quot;4FW8C4WXM3HULQ4M1YPFT79EF&quot;}"/>
+			<bi:property name="WIDTH" value="638"/>
+			<bi:property name="TOP_MARGIN" value="10"/>
+			<bi:property name="LEFT_MARGIN" value="10"/>
+			<bi:property name="onSelectionChanged">
+				<bi:value><![CDATA[var selection1 = DATARANGESLIDER_1.getSelectedKey();
+var selection2 = DATARANGESLIDER_1.getSelectedKey2();
+
+APPLICATION.createInfoMessage("Selected Range: " + selection1 + " - " + selection2);
+APPLICATION.createInfoMessage("Selected Range Keys: " + DATARANGESLIDER_1.getSelectedKeys());
+
+
+if(selection1.indexOf("-N/A-") > -1 || selection2.indexOf("-N/A-") > -1) {
+	//
+} else {
+	DS_1.setFilterExt("0BC_PERS1", "" + DATARANGESLIDER_1.getSelectedKey()  + " - " + DATARANGESLIDER_1.getSelectedKey2());
+}]]></bi:value>
+			</bi:property>
+			<bi:property name="maxNumber" value="20"/>
+		</bi:component>
+		<bi:component name="DATARANGESLIDER_2" type="org_kalisz_karol_scn_databound_DataRangeSlider">
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="data" value="{&quot;4FW8C4P934W533L5W4N3J5AON&quot;: &quot;4FW8C4WXM3HULQ4M1YPFT79EF&quot;}"/>
+			<bi:property name="WIDTH" value="637"/>
+			<bi:property name="TOP_MARGIN" value="73"/>
+			<bi:property name="LEFT_MARGIN" value="11"/>
+			<bi:property name="onSelectionChanged">
+				<bi:value><![CDATA[var selectedKeys = DATARANGESLIDER_2.getSelectedKeys();
+
+// remove the NAs, in this scenarios I do not care
+selectedKeys = Convert.replaceAll(selectedKeys, "-N/A-1;", "");
+selectedKeys = Convert.replaceAll(selectedKeys, ";-N/A-2", "");
+
+APPLICATION.createInfoMessage("Selected Range Keys: " + selectedKeys);
+
+DS_1.setFilterExt("0BC_PERS1", selectedKeys);
+]]></bi:value>
+			</bi:property>
+			<bi:property name="maxNumber" value="3"/>
+			<bi:property name="sorting" value="By Value"/>
+			<bi:property name="onDataChanged">
+				<bi:value><![CDATA[DATARANGESLIDER_2.pauseRefresh();]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="CROSSTAB_1" type="CROSSTAB_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="12"/>
+			<bi:property name="TOP_MARGIN" value="134"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="HEIGHT" value="800"/>
+			<bi:property name="WIDTH" value="418"/>
+		</bi:component>
+		<bi:component name="DATADROPDOWN_1" type="org_kalisz_karol_scn_databound_DataDropDown">
+			<bi:property name="LEFT_MARGIN" value="452"/>
+			<bi:property name="TOP_MARGIN" value="197"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="data" value="{&quot;4FW8C4P934W533L5W4N3J5AON&quot;: &quot;4FW8C4WXM3HULQ4M1YPFT79EF&quot;}"/>
+			<bi:property name="maxNumber" value="99"/>
+			<bi:property name="WIDTH" value="182"/>
+			<bi:property name="HEIGHT" value="22"/>
+			<bi:property name="dimension" value="0BC_PERS1"/>
+			<bi:property name="onSelectionChanged">
+				<bi:value><![CDATA[DS_1.setFilter(DATADROPDOWN_1.getDimension(), DATADROPDOWN_1.getSelectedKey());]]></bi:value>
+			</bi:property>
+			<bi:property name="onClear">
+				<bi:value><![CDATA[DS_1.clearFilter(DATADROPDOWN_1.getDimension());]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="DATADROPDOWN_2" type="org_kalisz_karol_scn_databound_DataDropDown">
+			<bi:property name="LEFT_MARGIN" value="452"/>
+			<bi:property name="TOP_MARGIN" value="244"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="data" value="{&quot;4FW8C4P934W533L5W4N3J5AON&quot;: &quot;4FW8C4WXM3HULQ4M1YPFT79EF&quot;}"/>
+			<bi:property name="maxNumber" value="99"/>
+			<bi:property name="WIDTH" value="182"/>
+			<bi:property name="HEIGHT" value="22"/>
+			<bi:property name="dimension" value="0BC_PROD1"/>
+			<bi:property name="onSelectionChanged">
+				<bi:value><![CDATA[DS_1.setFilter(DATADROPDOWN_2.getDimension(), DATADROPDOWN_2.getSelectedKey());]]></bi:value>
+			</bi:property>
+			<bi:property name="onClear">
+				<bi:value><![CDATA[DS_1.clearFilter(DATADROPDOWN_2.getDimension());]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="DATADROPDOWN_3" type="org_kalisz_karol_scn_databound_DataDropDown">
+			<bi:property name="LEFT_MARGIN" value="452"/>
+			<bi:property name="TOP_MARGIN" value="339"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="data" value="{&quot;4FW8C4P934W533L5W4N3J5AON&quot;: &quot;4FW8C4WXM3HULQ4M1YPFT79EF&quot;}"/>
+			<bi:property name="maxNumber" value="99"/>
+			<bi:property name="WIDTH" value="182"/>
+			<bi:property name="HEIGHT" value="22"/>
+			<bi:property name="dimension" value="0BC_PROD1"/>
+			<bi:property name="onSelectionChanged">
+				<bi:value><![CDATA[DS_1.setFilter(DATADROPDOWN_3.getDimension(), DATADROPDOWN_3.getSelectedKey());]]></bi:value>
+			</bi:property>
+			<bi:property name="onClear">
+				<bi:value><![CDATA[DS_1.clearFilter(DATADROPDOWN_3.getDimension());]]></bi:value>
+			</bi:property>
+			<bi:property name="onDataChanged">
+				<bi:value><![CDATA[DATADROPDOWN_3.pauseRefresh();]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="DATADROPDOWN_4" type="org_kalisz_karol_scn_databound_DataDropDown">
+			<bi:property name="LEFT_MARGIN" value="452"/>
+			<bi:property name="TOP_MARGIN" value="292"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="data" value="{&quot;4FW8C4P934W533L5W4N3J5AON&quot;: &quot;4FW8C4WXM3HULQ4M1YPFT79EF&quot;}"/>
+			<bi:property name="maxNumber" value="99"/>
+			<bi:property name="WIDTH" value="182"/>
+			<bi:property name="HEIGHT" value="22"/>
+			<bi:property name="dimension" value="0BC_PERS1"/>
+			<bi:property name="onSelectionChanged">
+				<bi:value><![CDATA[DS_1.setFilter(DATADROPDOWN_4.getDimension(), DATADROPDOWN_4.getSelectedKey());]]></bi:value>
+			</bi:property>
+			<bi:property name="onClear">
+				<bi:value><![CDATA[DS_1.clearFilter(DATADROPDOWN_4.getDimension());]]></bi:value>
+			</bi:property>
+			<bi:property name="onDataChanged">
+				<bi:value><![CDATA[DATADROPDOWN_4.pauseRefresh();]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Unload DS"/>
+			<bi:property name="LEFT_MARGIN" value="452"/>
+			<bi:property name="TOP_MARGIN" value="146"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[DS_1.assignDataSource("Q93 [PUBLIC]",DataSourceType.QUERY, "");
+
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
