@@ -1,0 +1,59 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.kalisz.karol.scn.ui5basics" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="VALIINPUT_1" type="org_kalisz_karol_scn_ui5basics_ValiInput">
+			<bi:property name="LEFT_MARGIN" value="50"/>
+			<bi:property name="TOP_MARGIN" value="19"/>
+			<bi:property name="WIDTH" value="268"/>
+		</bi:component>
+		<bi:component name="VALIINPUT_2" type="org_kalisz_karol_scn_ui5basics_ValiInput">
+			<bi:property name="LEFT_MARGIN" value="51"/>
+			<bi:property name="TOP_MARGIN" value="91"/>
+			<bi:property name="WIDTH" value="268"/>
+			<bi:property name="DValidation" value="max_length"/>
+			<bi:property name="DLength" value="8"/>
+		</bi:component>
+		<bi:component name="VALIINPUT_4" type="org_kalisz_karol_scn_ui5basics_ValiInput">
+			<bi:property name="LEFT_MARGIN" value="51"/>
+			<bi:property name="TOP_MARGIN" value="127"/>
+			<bi:property name="WIDTH" value="268"/>
+			<bi:property name="DValidation" value="integer"/>
+		</bi:component>
+		<bi:component name="VALIINPUT_5" type="org_kalisz_karol_scn_ui5basics_ValiInput">
+			<bi:property name="LEFT_MARGIN" value="51"/>
+			<bi:property name="TOP_MARGIN" value="163"/>
+			<bi:property name="WIDTH" value="268"/>
+			<bi:property name="DValidation" value="exact_length"/>
+			<bi:property name="DTooltip" value="halo"/>
+			<bi:property name="DValidState" value="Warning"/>
+			<bi:property name="DLength" value="10"/>
+		</bi:component>
+		<bi:component name="VALIINPUT_6" type="org_kalisz_karol_scn_ui5basics_ValiInput">
+			<bi:property name="LEFT_MARGIN" value="50"/>
+			<bi:property name="TOP_MARGIN" value="197"/>
+			<bi:property name="WIDTH" value="268"/>
+			<bi:property name="DValidation" value="less_than"/>
+			<bi:property name="DTooltip" value="halo"/>
+			<bi:property name="DValidState" value="Warning"/>
+			<bi:property name="DLength" value="10"/>
+			<bi:property name="DNumber" value="2.3"/>
+		</bi:component>
+		<bi:component name="VALIINPUT_7" type="org_kalisz_karol_scn_ui5basics_ValiInput">
+			<bi:property name="LEFT_MARGIN" value="49"/>
+			<bi:property name="TOP_MARGIN" value="234"/>
+			<bi:property name="WIDTH" value="268"/>
+			<bi:property name="DValidation" value="alpha_dash"/>
+			<bi:property name="DTooltip" value="halo"/>
+			<bi:property name="DValidState" value="Warning"/>
+			<bi:property name="DLength" value="10"/>
+		</bi:component>
+		<bi:component name="VALIINPUT_3" type="org_kalisz_karol_scn_ui5basics_ValiInput">
+			<bi:property name="LEFT_MARGIN" value="51"/>
+			<bi:property name="TOP_MARGIN" value="56"/>
+			<bi:property name="WIDTH" value="268"/>
+			<bi:property name="DValidation" value="alpha"/>
+		</bi:component>
+	</bi:component>
+</bi:biapp>

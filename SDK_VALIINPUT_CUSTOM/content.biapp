@@ -1,0 +1,26 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.kalisz.karol.scn.ui5basics" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="VALIINPUT_1" type="org_kalisz_karol_scn_ui5basics_ValiInput">
+			<bi:property name="LEFT_MARGIN" value="27"/>
+			<bi:property name="TOP_MARGIN" value="42"/>
+			<bi:property name="WIDTH" value="268"/>
+			<bi:property name="DValidation" value="custom"/>
+			<bi:property name="onChanged">
+				<bi:value><![CDATA[var currentValue = VALIINPUT_1.getValue();
+
+if(currentValue.indexOf("KAROL") > -1){
+	VALIINPUT_1.setValidState("Success");
+} else {
+	VALIINPUT_1.setValidState("Error");
+	VALIINPUT_1.setTooltip("Should have KAROL in content");
+}
+
+APPLICATION.createInfoMessage("HALO");]]></bi:value>
+			</bi:property>
+		</bi:component>
+	</bi:component>
+</bi:biapp>

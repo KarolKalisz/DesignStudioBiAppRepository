@@ -1,0 +1,155 @@
+<bi:biapp bi:version="1302" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="org.kalisz.karol.scn.ui5basics" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="FIORIBUTTON_1" type="org_kalisz_karol_scn_ui5basics_FioriButton">
+			<bi:property name="LEFT_MARGIN" value="36"/>
+			<bi:property name="TOP_MARGIN" value="33"/>
+			<bi:property name="WIDTH" value="100"/>
+			<bi:property name="dText" value="Button"/>
+			<bi:property name="dBackColor" value="#400080"/>
+			<bi:property name="dFontColor" value="#FFFFFF"/>
+			<bi:property name="dIcon" value="e03d"/>
+		</bi:component>
+		<bi:component name="FIORIBUTTON_3" type="org_kalisz_karol_scn_ui5basics_FioriButton">
+			<bi:property name="LEFT_MARGIN" value="162"/>
+			<bi:property name="TOP_MARGIN" value="34"/>
+			<bi:property name="WIDTH" value="100"/>
+			<bi:property name="dText" value="Button"/>
+			<bi:property name="dBackColor" value="#400080"/>
+			<bi:property name="dFontColor" value="#FFFFFF"/>
+			<bi:property name="onClick">
+				<bi:value><![CDATA[APPLICATION.createInfoMessage("Click:");]]></bi:value>
+			</bi:property>
+			<bi:property name="dIcon" value="e0e5"/>
+		</bi:component>
+		<bi:component name="FIORIBUTTON_4" type="org_kalisz_karol_scn_ui5basics_FioriButton">
+			<bi:property name="LEFT_MARGIN" value="163"/>
+			<bi:property name="TOP_MARGIN" value="90"/>
+			<bi:property name="WIDTH" value="100"/>
+			<bi:property name="dBackColor" value="#FF0080"/>
+			<bi:property name="dFontColor" value="#00FF00"/>
+			<bi:property name="onClick">
+				<bi:value><![CDATA[APPLICATION.createInfoMessage("Click:");]]></bi:value>
+			</bi:property>
+			<bi:property name="dText" value="Button"/>
+		</bi:component>
+		<bi:component name="FIORIBUTTON_2" type="org_kalisz_karol_scn_ui5basics_FioriButton">
+			<bi:property name="LEFT_MARGIN" value="38"/>
+			<bi:property name="TOP_MARGIN" value="87"/>
+			<bi:property name="dSize" value="M"/>
+			<bi:property name="WIDTH" value="100"/>
+			<bi:property name="dText" value="Button"/>
+			<bi:property name="HEIGHT" value="32"/>
+			<bi:property name="dIcon" value="e19b"/>
+		</bi:component>
+		<bi:component name="FIORIBUTTON_8" type="org_kalisz_karol_scn_ui5basics_FioriButton">
+			<bi:property name="LEFT_MARGIN" value="294"/>
+			<bi:property name="TOP_MARGIN" value="36"/>
+			<bi:property name="dSize" value="M"/>
+			<bi:property name="WIDTH" value="32"/>
+			<bi:property name="HEIGHT" value="32"/>
+			<bi:property name="dIcon" value="e19b"/>
+		</bi:component>
+		<bi:component name="FIORIBUTTON_9" type="org_kalisz_karol_scn_ui5basics_FioriButton">
+			<bi:property name="LEFT_MARGIN" value="294"/>
+			<bi:property name="TOP_MARGIN" value="75"/>
+			<bi:property name="dSize" value="M"/>
+			<bi:property name="WIDTH" value="32"/>
+			<bi:property name="HEIGHT" value="32"/>
+			<bi:property name="dIcon" value="e19b"/>
+			<bi:property name="dStyle" value="Emph"/>
+		</bi:component>
+		<bi:component name="FIORIBUTTON_10" type="org_kalisz_karol_scn_ui5basics_FioriButton">
+			<bi:property name="LEFT_MARGIN" value="294"/>
+			<bi:property name="TOP_MARGIN" value="114"/>
+			<bi:property name="dSize" value="M"/>
+			<bi:property name="WIDTH" value="32"/>
+			<bi:property name="HEIGHT" value="32"/>
+			<bi:property name="dIcon" value="e19b"/>
+			<bi:property name="dStyle" value="Accept"/>
+		</bi:component>
+		<bi:component name="FIORIBUTTON_11" type="org_kalisz_karol_scn_ui5basics_FioriButton">
+			<bi:property name="LEFT_MARGIN" value="294"/>
+			<bi:property name="TOP_MARGIN" value="154"/>
+			<bi:property name="dSize" value="M"/>
+			<bi:property name="WIDTH" value="32"/>
+			<bi:property name="HEIGHT" value="32"/>
+			<bi:property name="dIcon" value="e19b"/>
+			<bi:property name="dStyle" value="Reject"/>
+		</bi:component>
+		<bi:component name="FIORIBUTTON_5" type="org_kalisz_karol_scn_ui5basics_FioriButton">
+			<bi:property name="LEFT_MARGIN" value="38"/>
+			<bi:property name="TOP_MARGIN" value="126"/>
+			<bi:property name="dSize" value="M"/>
+			<bi:property name="WIDTH" value="100"/>
+			<bi:property name="dText" value="Button"/>
+			<bi:property name="HEIGHT" value="32"/>
+			<bi:property name="dIcon" value="e19b"/>
+			<bi:property name="dStyle" value="Emph"/>
+		</bi:component>
+		<bi:component name="FIORIBUTTON_6" type="org_kalisz_karol_scn_ui5basics_FioriButton">
+			<bi:property name="LEFT_MARGIN" value="38"/>
+			<bi:property name="TOP_MARGIN" value="165"/>
+			<bi:property name="dSize" value="M"/>
+			<bi:property name="WIDTH" value="100"/>
+			<bi:property name="dText" value="Button"/>
+			<bi:property name="HEIGHT" value="32"/>
+			<bi:property name="dIcon" value="e19a"/>
+			<bi:property name="dStyle" value="Accept"/>
+		</bi:component>
+		<bi:component name="FIORIBUTTON_7" type="org_kalisz_karol_scn_ui5basics_FioriButton">
+			<bi:property name="LEFT_MARGIN" value="38"/>
+			<bi:property name="TOP_MARGIN" value="205"/>
+			<bi:property name="dSize" value="M"/>
+			<bi:property name="WIDTH" value="100"/>
+			<bi:property name="dText" value="Button"/>
+			<bi:property name="HEIGHT" value="32"/>
+			<bi:property name="dIcon" value="e10d"/>
+			<bi:property name="dStyle" value="Reject"/>
+		</bi:component>
+		<bi:component name="FIORIBUTTON_12" type="org_kalisz_karol_scn_ui5basics_FioriButton">
+			<bi:property name="LEFT_MARGIN" value="335"/>
+			<bi:property name="TOP_MARGIN" value="36"/>
+			<bi:property name="dSize" value="M"/>
+			<bi:property name="WIDTH" value="162"/>
+			<bi:property name="dText" value="Default + Pink"/>
+			<bi:property name="HEIGHT" value="32"/>
+			<bi:property name="dIcon" value="e19b"/>
+			<bi:property name="dFontColor" value="#FF0080"/>
+		</bi:component>
+		<bi:component name="FIORIBUTTON_13" type="org_kalisz_karol_scn_ui5basics_FioriButton">
+			<bi:property name="LEFT_MARGIN" value="335"/>
+			<bi:property name="TOP_MARGIN" value="75"/>
+			<bi:property name="dSize" value="M"/>
+			<bi:property name="WIDTH" value="162"/>
+			<bi:property name="dText" value="Emphased + Yellow"/>
+			<bi:property name="HEIGHT" value="32"/>
+			<bi:property name="dIcon" value="e19b"/>
+			<bi:property name="dStyle" value="Emph"/>
+			<bi:property name="dFontColor" value="#FFFF00"/>
+		</bi:component>
+		<bi:component name="FIORIBUTTON_14" type="org_kalisz_karol_scn_ui5basics_FioriButton">
+			<bi:property name="LEFT_MARGIN" value="335"/>
+			<bi:property name="TOP_MARGIN" value="114"/>
+			<bi:property name="dSize" value="M"/>
+			<bi:property name="WIDTH" value="162"/>
+			<bi:property name="dText" value="Accept"/>
+			<bi:property name="HEIGHT" value="32"/>
+			<bi:property name="dIcon" value="e19b"/>
+			<bi:property name="dStyle" value="Accept"/>
+		</bi:component>
+		<bi:component name="FIORIBUTTON_15" type="org_kalisz_karol_scn_ui5basics_FioriButton">
+			<bi:property name="LEFT_MARGIN" value="335"/>
+			<bi:property name="TOP_MARGIN" value="154"/>
+			<bi:property name="dSize" value="M"/>
+			<bi:property name="WIDTH" value="162"/>
+			<bi:property name="dText" value="Reject"/>
+			<bi:property name="HEIGHT" value="32"/>
+			<bi:property name="dIcon" value="e19b"/>
+			<bi:property name="dStyle" value="Reject"/>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
