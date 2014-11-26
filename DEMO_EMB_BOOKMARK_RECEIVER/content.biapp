@@ -1,0 +1,693 @@
+<bi:biapp bi:version="1400" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="com.sap.ip.bi" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+		<bi:property name="CUSTOM_CSS" value="styles.css"/>
+		<bi:property name="ON_STARTUP">
+			<bi:value><![CDATA[SCRIPT_LOAD.fillContent();
+
+SCRIPT_LOAD.fillDropDown();
+
+SCRIPT_FRAGMENTS.loadState();]]></bi:value>
+		</bi:property>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="BUTTON_POSITION" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Position"/>
+			<bi:property name="LEFT_MARGIN" value="233"/>
+			<bi:property name="TOP_MARGIN" value="346"/>
+			<bi:property name="WIDTH" value="107"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[var placement = DROPDOWN_POSITION.getSelectedValue();
+var rowCol = placement.split("-");
+
+var row = -1;
+var col = -1;
+
+rowCol.forEach(function(element, index) {
+	if(index == 0) {
+		row = Convert.stringToInt(element);		
+	}
+	if(index == 1) {
+		col = Convert.stringToInt(element);		
+	}
+});
+
+var free = SCRIPT_FRAGMENTS.isFree(row, col);
+
+if(free) {
+	SCRIPT_FRAGMENTS.position(row, col);
+}]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="FRAGMENTGALLERY" type="com_sap_ip_bi_FragmentGallery">
+			<bi:property name="LEFT_MARGIN" value="17"/>
+			<bi:property name="TOP_MARGIN" value="15"/>
+			<bi:property name="WIDTH" value="133"/>
+			<bi:property name="galleryOrientation" value="vertical"/>
+			<bi:property name="HEIGHT" value="auto"/>
+			<bi:property name="BOTTOM_MARGIN" value="71"/>
+		</bi:component>
+		<bi:component name="DROPDOWN_POSITION" type="DROPDOWN_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="180"/>
+			<bi:property name="TOP_MARGIN" value="319"/>
+			<bi:property name="WIDTH" value="160"/>
+		</bi:component>
+		<bi:component name="TEXT_1" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Place at..."/>
+			<bi:property name="LEFT_MARGIN" value="180"/>
+			<bi:property name="TOP_MARGIN" value="301"/>
+			<bi:property name="WIDTH" value="160"/>
+		</bi:component>
+		<bi:component name="PANEL_BACKGROUND" type="PANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="160"/>
+			<bi:property name="TOP_MARGIN" value="9"/>
+			<bi:property name="HEIGHT" value="260"/>
+			<bi:property name="WIDTH" value="180"/>
+			<bi:property name="CSS_STYLE" value="background-color: #666666;"/>
+			<bi:component name="TEXT_2" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="Drop Here"/>
+				<bi:property name="TOP_MARGIN" value="121"/>
+				<bi:property name="LEFT_MARGIN" value="40"/>
+				<bi:property name="STYLE" value="HEADING3"/>
+				<bi:property name="WIDTH" value="103"/>
+				<bi:property name="HEIGHT" value="54"/>
+			</bi:component>
+		</bi:component>
+		<bi:component name="PANEL_VISUALIZATION" type="PANEL_COMPONENT">
+			<bi:property name="WIDTH" value="766"/>
+			<bi:property name="HEIGHT" value="723"/>
+			<bi:property name="LEFT_MARGIN" value="350"/>
+			<bi:property name="TOP_MARGIN" value="9"/>
+			<bi:property name="CSS_STYLE" value="background-color: #999999;"/>
+			<bi:component name="PANEL_SCL_1" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="-190"/>
+				<bi:property name="WIDTH" value="180"/>
+				<bi:property name="HEIGHT" value="260"/>
+				<bi:component name="SPLITCELLCONTAINER_1" type="SPLITCELLCONTAINER_COMPONENT">
+					<bi:property name="GRID_ORIENTATION" value="V"/>
+					<bi:property name="COLUMN_SETTINGS_LIST" type="ORDEREDLIST" value="">
+						<bi:property name="COLUMN_WIDTH" index="0" value="1"/>
+					</bi:property>
+					<bi:property name="ROW_SETTINGS_LIST" type="ORDEREDLIST" value="">
+						<bi:property name="ROW_HEIGHT" index="0" value="1"/>
+					</bi:property>
+					<bi:property name="WIDTH" value="auto"/>
+					<bi:property name="HEIGHT" value="auto"/>
+					<bi:property name="RIGHT_MARGIN" value="0"/>
+					<bi:property name="BOTTOM_MARGIN" value="0"/>
+					<bi:property name="TOP_MARGIN" value="20"/>
+				</bi:component>
+				<bi:component name="BUTTON_REMOVE_1" type="BUTTON_COMPONENT">
+					<bi:property name="TEXT" value="X"/>
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="auto"/>
+					<bi:property name="WIDTH" value="30"/>
+					<bi:property name="ON_CLICK">
+						<bi:value><![CDATA[SCRIPT_FRAGMENTS.onRemove(PANEL_SCL_1);]]></bi:value>
+					</bi:property>
+					<bi:property name="BOTTOM_MARGIN" value="0"/>
+					<bi:property name="RIGHT_MARGIN" value="0"/>
+				</bi:component>
+			</bi:component>
+			<bi:component name="PANEL_SCL_2" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="-190"/>
+				<bi:property name="WIDTH" value="180"/>
+				<bi:property name="HEIGHT" value="260"/>
+				<bi:component name="SPLITCELLCONTAINER_2" type="SPLITCELLCONTAINER_COMPONENT">
+					<bi:property name="GRID_ORIENTATION" value="V"/>
+					<bi:property name="COLUMN_SETTINGS_LIST" type="ORDEREDLIST" value="">
+						<bi:property name="COLUMN_WIDTH" index="0" value="1"/>
+					</bi:property>
+					<bi:property name="ROW_SETTINGS_LIST" type="ORDEREDLIST" value="">
+						<bi:property name="ROW_HEIGHT" index="0" value="1"/>
+					</bi:property>
+					<bi:property name="WIDTH" value="auto"/>
+					<bi:property name="HEIGHT" value="auto"/>
+					<bi:property name="RIGHT_MARGIN" value="0"/>
+					<bi:property name="BOTTOM_MARGIN" value="0"/>
+					<bi:property name="TOP_MARGIN" value="20"/>
+				</bi:component>
+				<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+					<bi:property name="TEXT" value="X"/>
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="auto"/>
+					<bi:property name="WIDTH" value="30"/>
+					<bi:property name="ON_CLICK">
+						<bi:value><![CDATA[SCRIPT_FRAGMENTS.onRemove(PANEL_SCL_2);]]></bi:value>
+					</bi:property>
+					<bi:property name="BOTTOM_MARGIN" value="0"/>
+					<bi:property name="RIGHT_MARGIN" value="0"/>
+				</bi:component>
+			</bi:component>
+			<bi:component name="PANEL_SCL_3" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="-190"/>
+				<bi:property name="WIDTH" value="180"/>
+				<bi:property name="HEIGHT" value="260"/>
+				<bi:component name="SPLITCELLCONTAINER_3" type="SPLITCELLCONTAINER_COMPONENT">
+					<bi:property name="GRID_ORIENTATION" value="V"/>
+					<bi:property name="COLUMN_SETTINGS_LIST" type="ORDEREDLIST" value="">
+						<bi:property name="COLUMN_WIDTH" index="0" value="1"/>
+					</bi:property>
+					<bi:property name="ROW_SETTINGS_LIST" type="ORDEREDLIST" value="">
+						<bi:property name="ROW_HEIGHT" index="0" value="1"/>
+					</bi:property>
+					<bi:property name="WIDTH" value="auto"/>
+					<bi:property name="HEIGHT" value="auto"/>
+					<bi:property name="RIGHT_MARGIN" value="0"/>
+					<bi:property name="BOTTOM_MARGIN" value="0"/>
+					<bi:property name="TOP_MARGIN" value="20"/>
+				</bi:component>
+				<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+					<bi:property name="TEXT" value="X"/>
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="auto"/>
+					<bi:property name="WIDTH" value="30"/>
+					<bi:property name="ON_CLICK">
+						<bi:value><![CDATA[SCRIPT_FRAGMENTS.onRemove(PANEL_SCL_3);]]></bi:value>
+					</bi:property>
+					<bi:property name="BOTTOM_MARGIN" value="0"/>
+					<bi:property name="RIGHT_MARGIN" value="0"/>
+				</bi:component>
+			</bi:component>
+			<bi:component name="PANEL_SCL_4" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="-190"/>
+				<bi:property name="WIDTH" value="180"/>
+				<bi:property name="HEIGHT" value="260"/>
+				<bi:component name="SPLITCELLCONTAINER_4" type="SPLITCELLCONTAINER_COMPONENT">
+					<bi:property name="GRID_ORIENTATION" value="V"/>
+					<bi:property name="COLUMN_SETTINGS_LIST" type="ORDEREDLIST" value="">
+						<bi:property name="COLUMN_WIDTH" index="0" value="1"/>
+					</bi:property>
+					<bi:property name="ROW_SETTINGS_LIST" type="ORDEREDLIST" value="">
+						<bi:property name="ROW_HEIGHT" index="0" value="1"/>
+					</bi:property>
+					<bi:property name="WIDTH" value="auto"/>
+					<bi:property name="HEIGHT" value="auto"/>
+					<bi:property name="RIGHT_MARGIN" value="0"/>
+					<bi:property name="BOTTOM_MARGIN" value="0"/>
+					<bi:property name="TOP_MARGIN" value="20"/>
+				</bi:component>
+				<bi:component name="BUTTON_4" type="BUTTON_COMPONENT">
+					<bi:property name="TEXT" value="X"/>
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="auto"/>
+					<bi:property name="WIDTH" value="30"/>
+					<bi:property name="ON_CLICK">
+						<bi:value><![CDATA[SCRIPT_FRAGMENTS.onRemove(PANEL_SCL_4);]]></bi:value>
+					</bi:property>
+					<bi:property name="BOTTOM_MARGIN" value="0"/>
+					<bi:property name="RIGHT_MARGIN" value="0"/>
+				</bi:component>
+			</bi:component>
+			<bi:component name="PANEL_SCL_5" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="-190"/>
+				<bi:property name="WIDTH" value="180"/>
+				<bi:property name="HEIGHT" value="260"/>
+				<bi:component name="SPLITCELLCONTAINER_5" type="SPLITCELLCONTAINER_COMPONENT">
+					<bi:property name="GRID_ORIENTATION" value="V"/>
+					<bi:property name="COLUMN_SETTINGS_LIST" type="ORDEREDLIST" value="">
+						<bi:property name="COLUMN_WIDTH" index="0" value="1"/>
+					</bi:property>
+					<bi:property name="ROW_SETTINGS_LIST" type="ORDEREDLIST" value="">
+						<bi:property name="ROW_HEIGHT" index="0" value="1"/>
+					</bi:property>
+					<bi:property name="WIDTH" value="auto"/>
+					<bi:property name="HEIGHT" value="auto"/>
+					<bi:property name="RIGHT_MARGIN" value="0"/>
+					<bi:property name="BOTTOM_MARGIN" value="0"/>
+					<bi:property name="TOP_MARGIN" value="20"/>
+				</bi:component>
+				<bi:component name="BUTTON_6" type="BUTTON_COMPONENT">
+					<bi:property name="TEXT" value="X"/>
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="auto"/>
+					<bi:property name="WIDTH" value="30"/>
+					<bi:property name="ON_CLICK">
+						<bi:value><![CDATA[SCRIPT_FRAGMENTS.onRemove(PANEL_SCL_5);]]></bi:value>
+					</bi:property>
+					<bi:property name="BOTTOM_MARGIN" value="0"/>
+					<bi:property name="RIGHT_MARGIN" value="0"/>
+				</bi:component>
+			</bi:component>
+			<bi:component name="PANEL_SCL_6" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="-190"/>
+				<bi:property name="WIDTH" value="180"/>
+				<bi:property name="HEIGHT" value="260"/>
+				<bi:component name="SPLITCELLCONTAINER_6" type="SPLITCELLCONTAINER_COMPONENT">
+					<bi:property name="GRID_ORIENTATION" value="V"/>
+					<bi:property name="COLUMN_SETTINGS_LIST" type="ORDEREDLIST" value="">
+						<bi:property name="COLUMN_WIDTH" index="0" value="1"/>
+					</bi:property>
+					<bi:property name="ROW_SETTINGS_LIST" type="ORDEREDLIST" value="">
+						<bi:property name="ROW_HEIGHT" index="0" value="1"/>
+					</bi:property>
+					<bi:property name="WIDTH" value="auto"/>
+					<bi:property name="HEIGHT" value="auto"/>
+					<bi:property name="RIGHT_MARGIN" value="0"/>
+					<bi:property name="BOTTOM_MARGIN" value="0"/>
+					<bi:property name="TOP_MARGIN" value="20"/>
+				</bi:component>
+				<bi:component name="BUTTON_7" type="BUTTON_COMPONENT">
+					<bi:property name="TEXT" value="X"/>
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="auto"/>
+					<bi:property name="WIDTH" value="30"/>
+					<bi:property name="ON_CLICK">
+						<bi:value><![CDATA[SCRIPT_FRAGMENTS.onRemove(PANEL_SCL_6);]]></bi:value>
+					</bi:property>
+					<bi:property name="BOTTOM_MARGIN" value="0"/>
+					<bi:property name="RIGHT_MARGIN" value="0"/>
+				</bi:component>
+			</bi:component>
+			<bi:component name="PANEL_SCL_7" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="-190"/>
+				<bi:property name="WIDTH" value="180"/>
+				<bi:property name="HEIGHT" value="260"/>
+				<bi:component name="SPLITCELLCONTAINER_7" type="SPLITCELLCONTAINER_COMPONENT">
+					<bi:property name="GRID_ORIENTATION" value="V"/>
+					<bi:property name="COLUMN_SETTINGS_LIST" type="ORDEREDLIST" value="">
+						<bi:property name="COLUMN_WIDTH" index="0" value="1"/>
+					</bi:property>
+					<bi:property name="ROW_SETTINGS_LIST" type="ORDEREDLIST" value="">
+						<bi:property name="ROW_HEIGHT" index="0" value="1"/>
+					</bi:property>
+					<bi:property name="WIDTH" value="auto"/>
+					<bi:property name="HEIGHT" value="auto"/>
+					<bi:property name="RIGHT_MARGIN" value="0"/>
+					<bi:property name="BOTTOM_MARGIN" value="0"/>
+					<bi:property name="TOP_MARGIN" value="20"/>
+				</bi:component>
+				<bi:component name="BUTTON_8" type="BUTTON_COMPONENT">
+					<bi:property name="TEXT" value="X"/>
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="auto"/>
+					<bi:property name="WIDTH" value="30"/>
+					<bi:property name="ON_CLICK">
+						<bi:value><![CDATA[SCRIPT_FRAGMENTS.onRemove(PANEL_SCL_7);]]></bi:value>
+					</bi:property>
+					<bi:property name="BOTTOM_MARGIN" value="0"/>
+					<bi:property name="RIGHT_MARGIN" value="0"/>
+				</bi:component>
+			</bi:component>
+			<bi:component name="PANEL_SCL_8" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="-190"/>
+				<bi:property name="WIDTH" value="180"/>
+				<bi:property name="HEIGHT" value="260"/>
+				<bi:component name="SPLITCELLCONTAINER_8" type="SPLITCELLCONTAINER_COMPONENT">
+					<bi:property name="GRID_ORIENTATION" value="V"/>
+					<bi:property name="COLUMN_SETTINGS_LIST" type="ORDEREDLIST" value="">
+						<bi:property name="COLUMN_WIDTH" index="0" value="1"/>
+					</bi:property>
+					<bi:property name="ROW_SETTINGS_LIST" type="ORDEREDLIST" value="">
+						<bi:property name="ROW_HEIGHT" index="0" value="1"/>
+					</bi:property>
+					<bi:property name="WIDTH" value="auto"/>
+					<bi:property name="HEIGHT" value="auto"/>
+					<bi:property name="RIGHT_MARGIN" value="0"/>
+					<bi:property name="BOTTOM_MARGIN" value="0"/>
+					<bi:property name="TOP_MARGIN" value="20"/>
+				</bi:component>
+				<bi:component name="BUTTON_9" type="BUTTON_COMPONENT">
+					<bi:property name="TEXT" value="X"/>
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="auto"/>
+					<bi:property name="WIDTH" value="30"/>
+					<bi:property name="ON_CLICK">
+						<bi:value><![CDATA[SCRIPT_FRAGMENTS.onRemove(PANEL_SCL_8);]]></bi:value>
+					</bi:property>
+					<bi:property name="BOTTOM_MARGIN" value="0"/>
+					<bi:property name="RIGHT_MARGIN" value="0"/>
+				</bi:component>
+			</bi:component>
+			<bi:component name="PANEL_BLOCKED_POSITIONS" type="PANEL_COMPONENT">
+				<bi:property name="WIDTH" value="182"/>
+				<bi:property name="LEFT_MARGIN" value="-193"/>
+				<bi:property name="TOP_MARGIN" value="379"/>
+				<bi:property name="HEIGHT" value="129"/>
+				<bi:component name="TEXT_BLOCKED_POS" type="TEXT_COMPONENT">
+					<bi:property name="WIDTH" value="181"/>
+					<bi:property name="HEIGHT" value="122"/>
+				</bi:component>
+			</bi:component>
+		</bi:component>
+		<bi:component name="TEXT_LOG" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Sample text"/>
+			<bi:property name="LEFT_MARGIN" value="1125"/>
+			<bi:property name="TOP_MARGIN" value="10"/>
+			<bi:property name="HEIGHT" value="643"/>
+			<bi:property name="WIDTH" value="260"/>
+		</bi:component>
+		<bi:component name="DROPDOWN_BOOKMARKS" type="DROPDOWN_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="157"/>
+			<bi:property name="TOP_MARGIN" value="543"/>
+			<bi:property name="WIDTH" value="184"/>
+		</bi:component>
+		<bi:component name="BUTTON_12" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Load"/>
+			<bi:property name="LEFT_MARGIN" value="232"/>
+			<bi:property name="TOP_MARGIN" value="568"/>
+			<bi:property name="WIDTH" value="107"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[Bookmark.PortableFragmentBookmark.loadBookmark(DROPDOWN_BOOKMARKS.getSelectedValue());]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+		<bi:component name="SCRIPT_FRAGMENTS" type="GLOBAL_SCRIPTS_COMPONENT">
+			<bi:property name="FUNCTIONS" type="ORDEREDLIST">
+				<bi:property name="FUNCTION" index="0">
+					<bi:property name="NAME" value="position"/>
+					<bi:property name="FUNCTION_BODY">
+						<bi:value><![CDATA[var splitContainerInUse = PANEL_SCL_1;
+
+var allSplitContainers = [8,7,6,5,4,3,2,1];
+
+var leftMargin = 0;
+var nextFound = false;
+allSplitContainers.forEach(function(element, index) {
+  if(nextFound == false) {
+	  if(element == 1) {
+	  	splitContainerInUse = PANEL_SCL_1;
+	  }
+	  if(element == 2) {
+	  	splitContainerInUse = PANEL_SCL_2;
+	  }
+	  if(element == 3) {
+	  	splitContainerInUse = PANEL_SCL_3;
+	  }
+	  if(element == 4) {
+	  	splitContainerInUse = PANEL_SCL_4;
+	  }
+	  if(element == 5) {
+	  	splitContainerInUse = PANEL_SCL_5;
+	  }
+	  if(element == 6) {
+	  	splitContainerInUse = PANEL_SCL_6;
+	  }
+	  if(element == 7) {
+	  	splitContainerInUse = PANEL_SCL_7;
+	  }
+	  if(element == 8) {
+	  	splitContainerInUse = PANEL_SCL_8;
+	  }
+	  
+	  leftMargin = splitContainerInUse.getLeftMargin();
+	  if(leftMargin == -190) {
+	  	nextFound = true;
+	  }
+  }
+});
+
+var text = "Moved. Done. " + row + " " +col;
+APPLICATION.createInfoMessage(text);
+LOG.write(text);
+
+var positionY = 10 + (row-1) * splitContainerInUse.getHeight();
+var positionX = 10 + (col-1) * splitContainerInUse.getWidth();
+
+splitContainerInUse.setTopMargin(positionY);
+splitContainerInUse.setLeftMargin(positionX);
+
+SCRIPT_FRAGMENTS.blockPosition(row, col);
+SCRIPT_FRAGMENTS.saveState();]]></bi:value>
+					</bi:property>
+					<bi:property name="INPUT_PARAMETERS" type="ORDEREDLIST">
+						<bi:property name="INPUT_PARAMETER" index="0">
+							<bi:property name="NAME" value="row"/>
+							<bi:property name="PARAMETER_TYPE" value="int"/>
+						</bi:property>
+						<bi:property name="INPUT_PARAMETER" index="1">
+							<bi:property name="NAME" value="col"/>
+							<bi:property name="PARAMETER_TYPE" value="int"/>
+						</bi:property>
+					</bi:property>
+				</bi:property>
+				<bi:property name="FUNCTION" index="1">
+					<bi:property name="NAME" value="onRemove"/>
+					<bi:property name="FUNCTION_BODY">
+						<bi:value><![CDATA[
+var positionY = container.getTopMargin();
+var positionX = container.getLeftMargin();
+
+var row = 1;
+var col = 1;
+
+//10 + (row-1) * container.getHeight();
+//10 + (col+1) * container.getWidth();
+
+row = positionY - 10;
+col = positionX - 10;
+
+if(row >= container.getHeight()) {
+	row = row / container.getHeight();	
+}
+row = row + 1;
+
+if(col >= container.getWidth()) {
+	col = col / container.getWidth();	
+}
+col = col + 1;
+
+container.setTopMargin(0);
+container.setLeftMargin(-190);
+
+
+var text = "Unblock. " + row + ", " + col;
+APPLICATION.createInfoMessage(text);
+LOG.write(text);
+
+SCRIPT_FRAGMENTS.unblockPosition(row, col);
+SCRIPT_FRAGMENTS.saveState();]]></bi:value>
+					</bi:property>
+					<bi:property name="INPUT_PARAMETERS" type="ORDEREDLIST">
+						<bi:property name="INPUT_PARAMETER" index="0">
+							<bi:property name="NAME" value="container"/>
+							<bi:property name="PARAMETER_TYPE" value="Panel"/>
+							<bi:property name="PARAMETER_DESC" value="panel to remove from layout"/>
+						</bi:property>
+					</bi:property>
+				</bi:property>
+				<bi:property name="FUNCTION" index="2">
+					<bi:property name="NAME" value="isFree"/>
+					<bi:property name="RETURN_TYPE" value="boolean"/>
+					<bi:property name="FUNCTION_BODY">
+						<bi:value><![CDATA[var content = TEXT_BLOCKED_POS.getText();
+APPLICATION.createWarningMessage("BlockConent:" + content);
+LOG.write("BlockConent:" + content);
+	
+if(content.indexOf(";" + row + col) > -1) {
+	var text = "Position is Blocked! " + row + ", " + col;
+	APPLICATION.createWarningMessage(text);
+	LOG.write(text);
+	return false;	
+}
+return true;]]></bi:value>
+					</bi:property>
+					<bi:property name="INPUT_PARAMETERS" type="ORDEREDLIST">
+						<bi:property name="INPUT_PARAMETER" index="0">
+							<bi:property name="NAME" value="row"/>
+							<bi:property name="PARAMETER_TYPE" value="int"/>
+						</bi:property>
+						<bi:property name="INPUT_PARAMETER" index="1">
+							<bi:property name="NAME" value="col"/>
+							<bi:property name="PARAMETER_TYPE" value="int"/>
+						</bi:property>
+					</bi:property>
+				</bi:property>
+				<bi:property name="FUNCTION" index="3">
+					<bi:property name="NAME" value="blockPosition"/>
+					<bi:property name="FUNCTION_BODY">
+						<bi:value><![CDATA[// save that the row/col is blocked
+TEXT_BLOCKED_POS.setText(TEXT_BLOCKED_POS.getText() + ";" + row + col);
+
+var text = "Blocked Set. " + row + " " +col;
+APPLICATION.createInfoMessage(text);
+LOG.write(text);
+
+SCRIPT_FRAGMENTS.saveState();]]></bi:value>
+					</bi:property>
+					<bi:property name="INPUT_PARAMETERS" type="ORDEREDLIST">
+						<bi:property name="INPUT_PARAMETER" index="0">
+							<bi:property name="NAME" value="row"/>
+							<bi:property name="PARAMETER_TYPE" value="int"/>
+						</bi:property>
+						<bi:property name="INPUT_PARAMETER" index="1">
+							<bi:property name="NAME" value="col"/>
+							<bi:property name="PARAMETER_TYPE" value="int"/>
+						</bi:property>
+					</bi:property>
+				</bi:property>
+				<bi:property name="FUNCTION" index="4">
+					<bi:property name="NAME" value="unblockPosition"/>
+					<bi:property name="FUNCTION_BODY">
+						<bi:value><![CDATA[// save that the row/col is unblocked
+
+var blocked = TEXT_BLOCKED_POS.getText();
+blocked = Convert.replaceAll(blocked, ";" + row + col, "");
+TEXT_BLOCKED_POS.setText(blocked);
+
+var text = "Un-Blocked Set. " + row + " " +col;
+APPLICATION.createInfoMessage(text);
+LOG.write(text);
+
+SCRIPT_FRAGMENTS.saveState();]]></bi:value>
+					</bi:property>
+					<bi:property name="INPUT_PARAMETERS" type="ORDEREDLIST">
+						<bi:property name="INPUT_PARAMETER" index="0">
+							<bi:property name="NAME" value="row"/>
+							<bi:property name="PARAMETER_TYPE" value="int"/>
+						</bi:property>
+						<bi:property name="INPUT_PARAMETER" index="1">
+							<bi:property name="NAME" value="col"/>
+							<bi:property name="PARAMETER_TYPE" value="int"/>
+						</bi:property>
+					</bi:property>
+				</bi:property>
+				<bi:property name="FUNCTION" index="5">
+					<bi:property name="NAME" value="saveState"/>
+					<bi:property name="FUNCTION_BODY">
+						<bi:value><![CDATA[// part 1, save the visualization information
+var bookmarkIdViz = "";
+var bookmarksViz = Bookmark.FragmentBookmark.getAllBookmarkInfos();
+bookmarksViz.forEach(function(element, index) {
+	// we expect only one!
+	if(index == 0) {
+ 		bookmarkIdViz = element.id;
+	}
+});
+
+// first time there is no bookmark
+if(bookmarkIdViz == "") {
+	Bookmark.FragmentBookmark.saveBookmark(PANEL_VISUALIZATION);	
+} else {
+	// or overwrite existing
+	Bookmark.FragmentBookmark.saveBookmark(PANEL_VISUALIZATION, "", "", bookmarkIdViz);	
+}
+
+// part 2, save the blocked positions information
+var bookmarkId = "";
+var bookmarks = Bookmark.PortableFragmentBookmark.getAllBookmarkInfos("BLOCKED_POSITIONS");
+bookmarks.forEach(function(element, index) {
+	// we expect only one!
+	if(index == 0) {
+ 		bookmarkId = element.id;
+	}
+});
+
+// first time there is no bookmark
+if(bookmarkId == "") {
+	Bookmark.PortableFragmentBookmark.saveBookmark("BLOCKED_POSITIONS", PANEL_BLOCKED_POSITIONS);	
+} else {
+	// or overwrite existing
+	Bookmark.PortableFragmentBookmark.saveBookmark("BLOCKED_POSITIONS", PANEL_BLOCKED_POSITIONS, "", "", "", bookmarkId);	
+}
+]]></bi:value>
+					</bi:property>
+				</bi:property>
+				<bi:property name="FUNCTION" index="6">
+					<bi:property name="NAME" value="loadState"/>
+					<bi:property name="FUNCTION_BODY">
+						<bi:value><![CDATA[// overwrite logic
+var bookmarkId = "";
+var bookmarks = Bookmark.PortableFragmentBookmark.getAllBookmarkInfos("BLOCKED_POSITIONS");
+bookmarks.forEach(function(element, index) {
+	// we expect only one!
+	if(index == 0) {
+ 		bookmarkId = element.id;
+	}
+});
+
+// first time there is no bookmark
+if(bookmarkId == "") {
+
+} else {
+	// or load this
+	Bookmark.PortableFragmentBookmark.loadBookmark(bookmarkId);	
+}
+
+// overwrite logic
+var bookmarkIdViz = "";
+var bookmarksViz = Bookmark.FragmentBookmark.getAllBookmarkInfos();
+bookmarksViz.forEach(function(element, index) {
+	// we expect only one!
+	if(index == 0) {
+ 		bookmarkIdViz = element.id;
+	}
+});
+
+// first time there is no bookmark
+if(bookmarkIdViz == "") {
+
+} else {
+	// or load this
+	Bookmark.FragmentBookmark.loadBookmark(bookmarkIdViz);	
+}]]></bi:value>
+					</bi:property>
+				</bi:property>
+			</bi:property>
+		</bi:component>
+		<bi:component name="LOG" type="GLOBAL_SCRIPTS_COMPONENT">
+			<bi:property name="FUNCTIONS" type="ORDEREDLIST">
+				<bi:property name="FUNCTION" index="0">
+					<bi:property name="NAME" value="write"/>
+					<bi:property name="FUNCTION_BODY">
+						<bi:value><![CDATA[
+var old = TEXT_LOG.getText();
+if(old.length > 1000) {
+	old = old.substring(0, 999);
+}
+TEXT_LOG.setText(text + "\r\n" + old);
+]]></bi:value>
+					</bi:property>
+					<bi:property name="INPUT_PARAMETERS" type="ORDEREDLIST">
+						<bi:property name="INPUT_PARAMETER" index="0">
+							<bi:property name="NAME" value="text"/>
+							<bi:property name="PARAMETER_TYPE" value="String"/>
+						</bi:property>
+					</bi:property>
+				</bi:property>
+			</bi:property>
+		</bi:component>
+		<bi:component name="SCRIPT_SOMETHING" type="GLOBAL_SCRIPTS_COMPONENT">
+			<bi:property name="FUNCTIONS" type="ORDEREDLIST">
+				<bi:property name="FUNCTION" index="0">
+					<bi:property name="NAME" value="saySomething"/>
+					<bi:property name="FUNCTION_BODY">
+						<bi:value><![CDATA[APPLICATION.alert("Something in Receiver!");]]></bi:value>
+					</bi:property>
+				</bi:property>
+			</bi:property>
+		</bi:component>
+		<bi:component name="SCRIPT_LOAD" type="GLOBAL_SCRIPTS_COMPONENT">
+			<bi:property name="FUNCTIONS" type="ORDEREDLIST">
+				<bi:property name="FUNCTION" index="0">
+					<bi:property name="NAME" value="fillContent"/>
+					<bi:property name="FUNCTION_BODY">
+						<bi:value><![CDATA[var frBookmark = Bookmark.PortableFragmentBookmark.getAllBookmarkInfos("MIN8CHARS_NOSPECIAL_AREA_D");
+
+frBookmark.forEach(function(element, index) {
+  DROPDOWN_BOOKMARKS.addItem(element.id, element.title);
+});
+
+FRAGMENTGALLERY.addItems(frBookmark);]]></bi:value>
+					</bi:property>
+				</bi:property>
+				<bi:property name="FUNCTION" index="1">
+					<bi:property name="NAME" value="fillDropDown"/>
+					<bi:property name="FUNCTION_BODY">
+						<bi:value><![CDATA[// primitive filling of the drop down
+var rows = ["1","2"];
+var cols = ["1","2","3","4"];
+
+rows.forEach(function(elementR, indexR) {
+  cols.forEach(function(elementC, indexC) {
+	DROPDOWN_POSITION.addItem(elementR+"-"+elementC, "Row "+elementR+", Colum " + elementC);    
+  });
+});
+]]></bi:value>
+					</bi:property>
+				</bi:property>
+			</bi:property>
+		</bi:component>
+	</bi:component>
+</bi:biapp>

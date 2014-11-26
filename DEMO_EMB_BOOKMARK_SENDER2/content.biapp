@@ -1,0 +1,251 @@
+<bi:biapp bi:version="1400" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="com.sap.ip.bi" sdk1:version="1.0">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+		<bi:property name="CUSTOM_CSS" value="styles.css"/>
+		<bi:property name="ON_STARTUP">
+			<bi:value><![CDATA[var frBookmark = Bookmark.PortableFragmentBookmark.getAllBookmarkInfos("MIN8CHARS_NOSPECIAL_AREA_D");
+
+frBookmark.forEach(function(element, index) {
+  DROPDOWN_1.addItem(element.id, element.title);
+});
+
+FRAGMENTGALLERY_1.addItems(frBookmark);
+]]></bi:value>
+		</bi:property>
+	</bi:component>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="PANEL_1" type="PANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="12"/>
+			<bi:property name="TOP_MARGIN" value="11"/>
+			<bi:property name="WIDTH" value="165"/>
+			<bi:property name="HEIGHT" value="226"/>
+			<bi:property name="CSS_STYLE" value="background: red;"/>
+			<bi:component name="PANEL_7" type="PANEL_COMPONENT">
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="HEIGHT" value="auto"/>
+				<bi:property name="CSS_CLASS" value="red"/>
+				<bi:property name="BOTTOM_MARGIN" value="0"/>
+				<bi:property name="RIGHT_MARGIN" value="0"/>
+				<bi:component name="TEXT_1" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="Static Area A"/>
+					<bi:property name="LEFT_MARGIN" value="21"/>
+					<bi:property name="TOP_MARGIN" value="20"/>
+					<bi:property name="WIDTH" value="118"/>
+				</bi:component>
+				<bi:component name="PANEL_8" type="PANEL_COMPONENT">
+					<bi:property name="LEFT_MARGIN" value="25"/>
+					<bi:property name="TOP_MARGIN" value="52"/>
+					<bi:property name="CSS_STYLE" value="background: white;"/>
+					<bi:property name="WIDTH" value="124"/>
+					<bi:component name="TEXT_8" type="TEXT_COMPONENT">
+						<bi:property name="TEXT" value="A) Content Red"/>
+						<bi:property name="LEFT_MARGIN" value="11"/>
+						<bi:property name="TOP_MARGIN" value="13"/>
+						<bi:property name="WIDTH" value="118"/>
+						<bi:property name="STYLE" value="HEADING1"/>
+					</bi:component>
+				</bi:component>
+			</bi:component>
+		</bi:component>
+		<bi:component name="PANEL_2" type="PANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="12"/>
+			<bi:property name="TOP_MARGIN" value="258"/>
+			<bi:property name="WIDTH" value="165"/>
+			<bi:property name="HEIGHT" value="226"/>
+			<bi:property name="CSS_STYLE" value="background: darkgray;"/>
+			<bi:component name="TEXT_4" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="Static Area C"/>
+				<bi:property name="LEFT_MARGIN" value="21"/>
+				<bi:property name="TOP_MARGIN" value="20"/>
+				<bi:property name="WIDTH" value="118"/>
+			</bi:component>
+			<bi:component name="PANEL_9" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="17"/>
+				<bi:property name="TOP_MARGIN" value="118"/>
+				<bi:property name="WIDTH" value="136"/>
+				<bi:property name="HEIGHT" value="74"/>
+				<bi:property name="CSS_CLASS" value="red"/>
+				<bi:component name="TEXT_9" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="Dynamic Area X"/>
+					<bi:property name="LEFT_MARGIN" value="21"/>
+					<bi:property name="TOP_MARGIN" value="20"/>
+					<bi:property name="WIDTH" value="118"/>
+				</bi:component>
+			</bi:component>
+		</bi:component>
+		<bi:component name="PANEL_3" type="PANEL_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="218"/>
+			<bi:property name="TOP_MARGIN" value="11"/>
+			<bi:property name="WIDTH" value="165"/>
+			<bi:property name="HEIGHT" value="226"/>
+			<bi:property name="CSS_STYLE" value="background: darkgray;"/>
+			<bi:component name="TEXT_3" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="Static Area B"/>
+				<bi:property name="LEFT_MARGIN" value="21"/>
+				<bi:property name="TOP_MARGIN" value="20"/>
+				<bi:property name="WIDTH" value="118"/>
+			</bi:component>
+		</bi:component>
+		<bi:component name="PANEL_6" type="PANEL_COMPONENT">
+			<bi:property name="TOP_MARGIN" value="258"/>
+			<bi:property name="LEFT_MARGIN" value="218"/>
+			<bi:property name="WIDTH" value="165"/>
+			<bi:property name="HEIGHT" value="226"/>
+			<bi:component name="PANEL_4" type="PANEL_COMPONENT">
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="HEIGHT" value="auto"/>
+				<bi:property name="CSS_CLASS" value="red"/>
+				<bi:property name="BOTTOM_MARGIN" value="0"/>
+				<bi:property name="RIGHT_MARGIN" value="0"/>
+				<bi:component name="TEXT_2" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="Dynamic Area D"/>
+					<bi:property name="LEFT_MARGIN" value="21"/>
+					<bi:property name="TOP_MARGIN" value="20"/>
+					<bi:property name="WIDTH" value="118"/>
+				</bi:component>
+				<bi:component name="PANEL_5" type="PANEL_COMPONENT">
+					<bi:property name="LEFT_MARGIN" value="25"/>
+					<bi:property name="TOP_MARGIN" value="52"/>
+					<bi:property name="CSS_STYLE" value="background: white;"/>
+					<bi:property name="WIDTH" value="124"/>
+					<bi:component name="TEXT_5" type="TEXT_COMPONENT">
+						<bi:property name="TEXT" value="D) Content Red"/>
+						<bi:property name="LEFT_MARGIN" value="11"/>
+						<bi:property name="TOP_MARGIN" value="13"/>
+						<bi:property name="WIDTH" value="118"/>
+						<bi:property name="STYLE" value="HEADING1"/>
+					</bi:component>
+				</bi:component>
+				<bi:component name="BUTTON_11" type="BUTTON_COMPONENT">
+					<bi:property name="TEXT" value="Say Hallo!"/>
+					<bi:property name="LEFT_MARGIN" value="20"/>
+					<bi:property name="TOP_MARGIN" value="167"/>
+					<bi:property name="WIDTH" value="128"/>
+					<bi:property name="ON_CLICK">
+						<bi:value><![CDATA[APPLICATION.alert("Hallo!");]]></bi:value>
+					</bi:property>
+				</bi:component>
+				<bi:component name="BUTTON_6" type="BUTTON_COMPONENT">
+					<bi:property name="TEXT" value="Say Something"/>
+					<bi:property name="LEFT_MARGIN" value="20"/>
+					<bi:property name="TOP_MARGIN" value="126"/>
+					<bi:property name="WIDTH" value="128"/>
+					<bi:property name="ON_CLICK">
+						<bi:value><![CDATA[SCRIPT_SOMETHING.saySomething();]]></bi:value>
+					</bi:property>
+				</bi:component>
+			</bi:component>
+		</bi:component>
+		<bi:component name="BUTTON_1" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Change Content in Area D to &quot;Content Blue&quot;"/>
+			<bi:property name="LEFT_MARGIN" value="430"/>
+			<bi:property name="TOP_MARGIN" value="12"/>
+			<bi:property name="WIDTH" value="298"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[PANEL_4.setCSSClass("blue");
+TEXT_5.setText("D) Content Blue");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_2" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Change Content in Area D to &quot;Content Green&quot;"/>
+			<bi:property name="LEFT_MARGIN" value="430"/>
+			<bi:property name="TOP_MARGIN" value="46"/>
+			<bi:property name="WIDTH" value="298"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[PANEL_4.setCSSClass("green");
+TEXT_5.setText("D) Content Green");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_3" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Change Content in Area D to &quot;Content Yellow&quot;"/>
+			<bi:property name="LEFT_MARGIN" value="430"/>
+			<bi:property name="TOP_MARGIN" value="81"/>
+			<bi:property name="WIDTH" value="298"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[PANEL_4.setCSSClass("yellow");
+TEXT_5.setText("D) Content Yellow");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_8" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Change Content in Area A to &quot;Content Blue&quot;"/>
+			<bi:property name="LEFT_MARGIN" value="430"/>
+			<bi:property name="TOP_MARGIN" value="121"/>
+			<bi:property name="WIDTH" value="298"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[PANEL_7.setCSSClass("blue");
+TEXT_8.setText("A) Content Blue");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_9" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Change Content in Area D to &quot;Content Green&quot;"/>
+			<bi:property name="LEFT_MARGIN" value="430"/>
+			<bi:property name="TOP_MARGIN" value="156"/>
+			<bi:property name="WIDTH" value="298"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[PANEL_7.setCSSClass("green");
+TEXT_8.setText("A) Content Green");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_10" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Change Content in Area A to &quot;Content Yellow&quot;"/>
+			<bi:property name="LEFT_MARGIN" value="430"/>
+			<bi:property name="TOP_MARGIN" value="192"/>
+			<bi:property name="WIDTH" value="298"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[PANEL_7.setCSSClass("yellow");
+TEXT_8.setText("A) Content Yellow");]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_4" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Save Area D"/>
+			<bi:property name="LEFT_MARGIN" value="431"/>
+			<bi:property name="TOP_MARGIN" value="233"/>
+			<bi:property name="WIDTH" value="214"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[// save the bookmark
+var bookmark = Bookmark.PortableFragmentBookmark.saveBookmark("MIN8CHARS_NOSPECIAL_AREA_D", PANEL_4, TEXT_5.getText());
+// update drop down
+DROPDOWN_1.addItem(bookmark.id, bookmark.title);
+// update the gallery
+FRAGMENTGALLERY_1.addItems(Bookmark.PortableFragmentBookmark.getAllBookmarkInfos("MIN8CHARS_NOSPECIAL_AREA_D"));
+]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_5" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Load Selected Area D"/>
+			<bi:property name="LEFT_MARGIN" value="432"/>
+			<bi:property name="TOP_MARGIN" value="319"/>
+			<bi:property name="WIDTH" value="214"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[Bookmark.loadBookmark(DROPDOWN_1.getSelectedValue());]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="DROPDOWN_1" type="DROPDOWN_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="431"/>
+			<bi:property name="TOP_MARGIN" value="291"/>
+			<bi:property name="WIDTH" value="240"/>
+		</bi:component>
+		<bi:component name="TEXT_6" type="TEXT_COMPONENT">
+			<bi:property name="TEXT" value="Available Bookmarks with KEY: AREA_D"/>
+			<bi:property name="LEFT_MARGIN" value="431"/>
+			<bi:property name="TOP_MARGIN" value="270"/>
+			<bi:property name="WIDTH" value="240"/>
+		</bi:component>
+		<bi:component name="FRAGMENTGALLERY_1" type="com_sap_ip_bi_FragmentGallery">
+			<bi:property name="LEFT_MARGIN" value="15"/>
+			<bi:property name="TOP_MARGIN" value="517"/>
+			<bi:property name="WIDTH" value="710"/>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+		<bi:component name="SCRIPT_SOMETHING" type="GLOBAL_SCRIPTS_COMPONENT">
+			<bi:property name="FUNCTIONS" type="ORDEREDLIST">
+				<bi:property name="FUNCTION" index="0">
+					<bi:property name="NAME" value="saySomething"/>
+					<bi:property name="FUNCTION_BODY">
+						<bi:value><![CDATA[APPLICATION.alert("Something in Sender!");]]></bi:value>
+					</bi:property>
+				</bi:property>
+			</bi:property>
+		</bi:component>
+	</bi:component>
+</bi:biapp>
