@@ -1,0 +1,203 @@
+<bi:biapp bi:version="1400" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_bluecrystal"/>
+		<bi:property name="MESSAGE_TYPES" value="ALL"/>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="cuid:FsoJblSxlgYAxQUAAACHpscAAFBWtyK7"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="QUERY"/>
+			<bi:property name="DATA_SOURCE_NAME" value="0BICS_009_BICSTEST_Q0007"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[eNrtWm1v4jgQ/iuI76fQQtXriY1knAl468Sp7QDpF4ttuR5Sl64KK+3er7/JKwkN0Beq261SoSr2eMZjP8/YM4T+gFFlxgwmdl+BHDMKxgFFJQs0Ez52RkqDZwhnRNk33xe3f7mrh89f7tWP+7uI/LgKCSF09G11Q4g7mKx/Xp73rYpO3yGaGCKB2A64JOS6b226jmD/KgQZ2Z1kIZ3OhYkfNChtrjqdDo5O5ahVtzzmu8IEUoyZA7K1nH2df2oXptpWZn1bsDVHGxcZomGiwT7tnPROTjs9XGTeVbiggAON5zUqIOiJElIzf9ha//yG1rPdiSctDdRo4dkDSx3ZWEok+smIHy/SCalGX+mISEI1SKY0rmO7o1gsTXRO2iWrCue0qsN3qPfcyZ+0F1x0e5OzbpefTXp+9/MZEf7rzCXegFSHvbGeLM8qFMrP+Y69fDfGTIXIvWuSmOEwBr6hdp2wT7SWbBAiEqXnkmUq+KvseuANQBpCKSg0HUhQ4OtkyFbT1jBFK5WuahMV6mmWGMIG88Ex6YzKCInxgtvvMJltLVEUfAfVkflFJ+53ahOftpwtgVJxo/VlsbxdLO8+tSsKMdvLQNJQaeGZALHyAMGKuYBm0GGjQL99LzaQxROXLVuFqB7MoRRhg+ZHQdMjugHzo4AZSEbfG02HqYCTyFxC1ID64i15PbYTYMMG298fW6ucLFXcbn19uMW9HAhxibs3JjwE1X4H70rPdn5q1NPPzu/7PWLM7fZI8XrZI405vXtzfnWKVfE+wLcRA0kkHUWt2+9zZ7aOozr7a2dR3q7QcgcbsgEY6WzAONORnTxyKBhXEj1vKUdi/PvCVQmnN1doTb7zxuPzxXSuY+6IOQ74RyPu/7/v5eW6QnohJ7k5NEQF+sF8FUeWy4YhjrbXj9/nyOcaSf8apDAqDOIVqJiJ8UEcxBOlSrvlr/jO4fg1PxlCk658zFR0JDxoDtGPUjQqwptA/YCBSkMpwadRE6m/Y6T+emVifOrvqeXwvt8lzZm4RxsPoaYQbArBtxaCT1+O1UHgSMa5ccTEN1vjd7+JTE9Js/3mErN8U/aoeT954P3kM/eRTJMDaMpU5oAUk5igRfSgEPXHYP89u19hNZS1MmzTW6yDHCo1+1ZJW0Ue8kEyatIhnnAKW7WyPOACoViyloHQyKyCkEX/08It0feFDzVFW2r7STd+kh8RYIzJCP8TDGwn7aLAudpVAx7UO8Q+u+DdIWbYBSdeG4dWjG8FZSp46Pn1QKcrrsP5tMH55TjvPCCOh6YrAZqYPT6W1l4ArPTs3Oi3Vou7ZfA4X82X69l68bDEZALwwAXjh/E13G79O398qA7whfSSurAwk2ehRTrauvln9ji7Wc8fF6v14mbflVO5kyZTrzsK+VXPO4kCV59fgJuk4IV5ByjDyZX9B54sRaOvKFYp/tC4uBNCJsKtrj54wYgodg1OTotST1+xoY+XzBgnIbzgTaUT59aEcYN2acjTZCclQY2gZrDZ5CybH4PtG4VAerm9zKNST58EAY9MjQUtsutSFcH0jKGZvfirScz6XmD2WRp5tD3dvBpBPYNLbDs28aTfPR/yTq/ru6enQl+504h3G+I1xNsmnlU5ebPS1WhJfJWayAqyapVmYqwNZx7T8R1WL8huOoFZE8kTaJhSCPIGFVj7FKn15rer/wHTK20F]]></bi:value>
+			</bi:property>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="PANEL_3" type="PANEL_COMPONENT">
+			<bi:property name="BOTTOM_MARGIN" value="0"/>
+			<bi:property name="WIDTH" value="auto"/>
+			<bi:property name="RIGHT_MARGIN" value="0"/>
+			<bi:property name="HEIGHT" value="auto"/>
+			<bi:property name="CSS_STYLE" value="background: #ffffff;"/>
+		</bi:component>
+		<bi:component name="CROSSTAB" type="CROSSTAB_COMPONENT">
+			<bi:property name="LEFT_MARGIN" value="37"/>
+			<bi:property name="TOP_MARGIN" value="21"/>
+			<bi:property name="WIDTH" value="430"/>
+			<bi:property name="HEIGHT" value="682"/>
+			<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+			<bi:property name="CROSSTAB_ENABLE_SELECTION" value="X"/>
+			<bi:property name="ON_SELECT">
+				<bi:value><![CDATA[var characteristic1 = "0BC_PROD1";
+var selection1 = CROSSTAB.getSelectedMember(characteristic1);
+
+var characteristic2 = "0BC_PERS1";
+var selection2 = CROSSTAB.getSelectedMember(characteristic2);
+
+var internalKeyPattern = "| " + selection1.internalKey + "|" + selection2.internalKey;
+var groupIdentifier = "COMMENTS_" + characteristic1 + "_" + characteristic2;
+
+TEXT_SELECTION.setText(selection1.text + " and " + selection2.text);
+
+var frBookmark = Bookmark.PortableFragmentBookmark.getAllBookmarkInfos(groupIdentifier);
+
+var bookmarkId = "";
+
+frBookmark.forEach(function(element, index) {
+	if (bookmarkId == "") {
+	  var description = element.description;
+	  
+	  if(description.indexOf(internalKeyPattern) > -1) {
+	  	// there is one.
+	  	bookmarkId = element.id;
+	  }
+	}
+});
+
+if(bookmarkId != "") {
+	Bookmark.PortableFragmentBookmark.loadBookmark(bookmarkId);	
+} else {
+	TEXT_COMMENT_CONTENT.setText("");
+}]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="BUTTON_COMMENTARY" type="BUTTON_COMPONENT">
+			<bi:property name="TEXT" value="Comments"/>
+			<bi:property name="LEFT_MARGIN" value="472"/>
+			<bi:property name="TOP_MARGIN" value="22"/>
+			<bi:property name="HEIGHT" value="22"/>
+			<bi:property name="ON_CLICK">
+				<bi:value><![CDATA[PANEL_COMENTARY.setVisible(!PANEL_COMENTARY.isVisible());]]></bi:value>
+			</bi:property>
+		</bi:component>
+		<bi:component name="PANEL_COMENTARY" type="PANEL_COMPONENT">
+			<bi:property name="TOP_MARGIN" value="24"/>
+			<bi:property name="LEFT_MARGIN" value="554"/>
+			<bi:property name="WIDTH" value="549"/>
+			<bi:property name="HEIGHT" value="355"/>
+			<bi:property name="CSS_STYLE" value="background: #fafafa;&#13;&#10;border: #000000 1px solid !important;"/>
+			<bi:property name="VISIBLE" value=""/>
+			<bi:component name="PANEL_COMMENTARY_CONTENT" type="PANEL_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="10"/>
+				<bi:property name="TOP_MARGIN" value="60"/>
+				<bi:property name="WIDTH" value="auto"/>
+				<bi:property name="HEIGHT" value="257"/>
+				<bi:property name="CSS_STYLE" value="overflow-y: scroll !important; &#13;&#10;overflow-x: hidden !important;"/>
+				<bi:property name="RIGHT_MARGIN" value="10"/>
+				<bi:component name="TEXT_COMMENT_CONTENT" type="TEXT_COMPONENT">
+					<bi:property name="LEFT_MARGIN" value="1"/>
+					<bi:property name="TOP_MARGIN" value="1"/>
+					<bi:property name="WIDTH" value="auto"/>
+					<bi:property name="HEIGHT" value="auto"/>
+					<bi:property name="RIGHT_MARGIN" value="10"/>
+					<bi:property name="BOTTOM_MARGIN" value="1"/>
+				</bi:component>
+			</bi:component>
+			<bi:component name="INPUTFIELD_COMMENT" type="INPUTFIELD_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="20"/>
+				<bi:property name="TOP_MARGIN" value="30"/>
+				<bi:property name="WIDTH" value="394"/>
+			</bi:component>
+			<bi:component name="TEXT_COMMENT_INPUT" type="TEXT_COMPONENT">
+				<bi:property name="TEXT" value="Add your comment on current selection:"/>
+				<bi:property name="LEFT_MARGIN" value="20"/>
+				<bi:property name="TOP_MARGIN" value="15"/>
+				<bi:property name="WIDTH" value="220"/>
+			</bi:component>
+			<bi:component name="TEXT_SELECTION" type="TEXT_COMPONENT">
+				<bi:property name="LEFT_MARGIN" value="240"/>
+				<bi:property name="TOP_MARGIN" value="15"/>
+				<bi:property name="WIDTH" value="300"/>
+			</bi:component>
+			<bi:component name="BUTTON_SAVE" type="BUTTON_COMPONENT">
+				<bi:property name="TEXT" value="Add"/>
+				<bi:property name="LEFT_MARGIN" value="auto"/>
+				<bi:property name="TOP_MARGIN" value="30"/>
+				<bi:property name="HEIGHT" value="22"/>
+				<bi:property name="ON_CLICK">
+					<bi:value><![CDATA[var characteristic1 = "0BC_PROD1";
+var selection1 = CROSSTAB.getSelectedMember(characteristic1);
+
+var characteristic2 = "0BC_PERS1";
+var selection2 = CROSSTAB.getSelectedMember(characteristic2);
+
+var internalKeyPattern = "| " + selection1.internalKey + "|" + selection2.internalKey;
+var groupIdentifier = "COMMENTS_" + characteristic1 + "_" + characteristic2;
+
+if(selection2.internalKey != "")  {
+	var frBookmark = Bookmark.PortableFragmentBookmark.getAllBookmarkInfos(groupIdentifier);
+	
+	var bookmarkId = "";
+	
+	TEXT_COMMENT_CONTENT.setText(APPLICATION.getInfo().dateNow + ": " + INPUTFIELD_COMMENT.getValue() + "\n" + TEXT_COMMENT_CONTENT.getText());
+	
+	frBookmark.forEach(function(element, index) {
+		if (bookmarkId == "") {
+		  var description = element.description;
+		  
+		  if(description.indexOf(internalKeyPattern) > -1) {
+		  	// there is one.
+		  	bookmarkId = element.id;
+		  }
+		}
+	});
+	
+	if(bookmarkId != "") {
+		Bookmark.PortableFragmentBookmark.saveBookmark(groupIdentifier, PANEL_COMMENTARY_CONTENT, "", internalKeyPattern, "", bookmarkId);		
+	} else {
+		Bookmark.PortableFragmentBookmark.saveBookmark(groupIdentifier, PANEL_COMMENTARY_CONTENT, "", internalKeyPattern, "");	
+	}
+	
+	INPUTFIELD_COMMENT.setValue("");
+}]]></bi:value>
+				</bi:property>
+				<bi:property name="RIGHT_MARGIN" value="10"/>
+			</bi:component>
+			<bi:component name="BUTTON_DELETE" type="BUTTON_COMPONENT">
+				<bi:property name="TEXT" value="Delete"/>
+				<bi:property name="LEFT_MARGIN" value="auto"/>
+				<bi:property name="TOP_MARGIN" value="auto"/>
+				<bi:property name="HEIGHT" value="22"/>
+				<bi:property name="ON_CLICK">
+					<bi:value><![CDATA[var characteristic1 = "0BC_PROD1";
+var selection1 = CROSSTAB.getSelectedMember(characteristic1);
+
+var characteristic2 = "0BC_PERS1";
+var selection2 = CROSSTAB.getSelectedMember(characteristic2);
+
+var internalKeyPattern = "| " + selection1.internalKey + "|" + selection2.internalKey;
+var groupIdentifier = "COMMENTS_" + characteristic1 + "_" + characteristic2;
+
+if(selection2.internalKey != "")  {
+	var frBookmark = Bookmark.PortableFragmentBookmark.getAllBookmarkInfos(groupIdentifier);
+	
+	var bookmarkId = "";
+	
+	TEXT_COMMENT_CONTENT.setText(APPLICATION.getInfo().dateNow + ": " + INPUTFIELD_COMMENT.getValue() + "\n" + TEXT_COMMENT_CONTENT.getText());
+	
+	frBookmark.forEach(function(element, index) {
+		if (bookmarkId == "") {
+		  var description = element.description;
+		  
+		  if(description.indexOf(internalKeyPattern) > -1) {
+		  	// there is one.
+		  	bookmarkId = element.id;
+		  }
+		}
+	});
+	
+	if(bookmarkId != "") {
+		Bookmark.PortableFragmentBookmark.deleteBookmark(bookmarkId);		
+		
+		TEXT_COMMENT_CONTENT.setText("");
+	}
+}]]></bi:value>
+				</bi:property>
+				<bi:property name="RIGHT_MARGIN" value="10"/>
+				<bi:property name="BOTTOM_MARGIN" value="10"/>
+			</bi:component>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>
